@@ -24,6 +24,8 @@ import {
   SocialMediaPlatform,
   validateConsultationInput,
   createConsultationTicket,
+  isRtl,
+  tr,
 } from '../utils/lawFirmLogic';
 
 const renderSocialPlatformIcon = (
@@ -161,22 +163,31 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {/* Section Header */}
         <div className="max-w-2xl mb-12">
           <div className="text-xs font-semibold text-[#D1B46A] mb-2">
-            {lang === 'ar'
-              ? '05. التواصل وحجز الاستشارات · Contact & Consultation'
-              : '05. Contact & Consultation Booking · التواصل وحجز الاستشارات'}
+            {tr(
+              lang,
+              '05. التواصل وحجز الاستشارات · Contact & Consultation',
+              '05. Contact & Consultation Booking · التواصل وحجز الاستشارات',
+              '05. رابطہ اور مشاورت کی بکنگ · Contact & Consultation'
+            )}
           </div>
           <h2
             className="text-2xl sm:text-3xl font-bold text-white leading-snug mb-3"
             style={{ textWrap: 'balance' }}
           >
-            {lang === 'ar'
-              ? 'تواصل مع شركة سامي الشريف للمحاماة والاستشارات القانونية'
-              : 'Connect With Sami Al-Sharif Law Firm & Legal Consultations'}
+            {tr(
+              lang,
+              'تواصل مع شركة سامي الشريف للمحاماة والاستشارات القانونية',
+              'Connect With Sami Al-Sharif Law Firm & Legal Consultations',
+              'سامی الشریف لاء فرم اینڈ لیگل کنسلٹیشنز سے رابطہ کریں'
+            )}
           </h2>
           <p className="text-sm md:text-base text-[#C2B69C]">
-            {lang === 'ar'
-              ? 'نسعد باستقبال طلبات الاستشارات القانونية والتمثيل القضائي لقطاع الأعمال والأفراد في مكة المكرمة وجدة وجميع مناطق المملكة.'
-              : 'Submit your legal consultation request or reach our office directly in Makkah and Jeddah.'}
+            {tr(
+              lang,
+              'نسعد باستقبال طلبات الاستشارات القانونية والتمثيل القضائي لقطاع الأعمال والأفراد في مكة المكرمة وجدة وجميع مناطق المملكة.',
+              'Submit your legal consultation request or reach our office directly in Makkah and Jeddah.',
+              'مکہ مکرمہ، جدہ اور مملکت کے تمام علاقوں میں کاروباری اداروں اور افراد کے لیے قانونی مشاورت اور عدالتی نمائندگی کی درخواستیں جمع کرائیں۔'
+            )}
           </p>
         </div>
 
@@ -187,12 +198,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="flex flex-col items-center text-center px-3">
               <MapPin className="w-7 h-7 text-[#D1B46A] mb-3" />
               <div className="text-sm font-bold text-white mb-1">
-                {lang === 'ar' ? 'العنوان | Location' : 'Location | العنوان'}
+                {tr(
+                  lang,
+                  'العنوان | Location',
+                  'Location | العنوان',
+                  'پتہ | Location'
+                )}
               </div>
               <div className="text-sm text-[#D5CEBF] mb-2">
-                {lang === 'ar'
-                  ? FIRM_CONTACT.locationAr
-                  : FIRM_CONTACT.locationEn}
+                {tr(
+                  lang,
+                  FIRM_CONTACT.locationAr,
+                  FIRM_CONTACT.locationEn,
+                  FIRM_CONTACT.locationUr
+                )}
               </div>
               <a
                 href={FIRM_CONTACT.googleMapsUrl}
@@ -202,7 +221,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               >
                 <MapPin className="w-3.5 h-3.5" />
                 <span>
-                  {lang === 'ar' ? 'فتح في خرائط قوقل' : 'Open in Google Maps'}
+                  {tr(
+                    lang,
+                    'فتح في خرائط قوقل',
+                    'Open in Google Maps',
+                    'گوگل میپس میں کھولیں'
+                  )}
                 </span>
               </a>
             </div>
@@ -211,9 +235,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="flex flex-col items-center text-center px-3">
               <Mail className="w-7 h-7 text-[#D1B46A] mb-3" />
               <div className="text-sm font-bold text-white mb-1">
-                {lang === 'ar'
-                  ? 'البريد الإلكتروني | Email'
-                  : 'Email | البريد الإلكتروني'}
+                {tr(
+                  lang,
+                  'البريد الإلكتروني | Email',
+                  'Email | البريد الإلكتروني',
+                  'ای میل | Email'
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <a
@@ -225,9 +252,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <button
                   type="button"
                   onClick={() => handleCopy(FIRM_CONTACT.email, 'email')}
-                  aria-label={
-                    lang === 'ar' ? 'نسخ البريد الإلكتروني' : 'Copy email address'
-                  }
+                  aria-label={tr(
+                    lang,
+                    'نسخ البريد الإلكتروني',
+                    'Copy email address',
+                    'ای میل کاپی کریں'
+                  )}
                   className="p-1.5 rounded bg-white/5 hover:bg-white/10 text-[#D1B46A] transition-colors cursor-pointer"
                 >
                   {copiedKey === 'email' ? (
@@ -243,7 +273,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="flex flex-col items-center text-center px-3">
               <Phone className="w-7 h-7 text-[#D1B46A] mb-3" />
               <div className="text-sm font-bold text-white mb-1">
-                {lang === 'ar' ? 'التواصل الهاتفي | Phone' : 'Phone | التواصل'}
+                {tr(
+                  lang,
+                  'التواصل الهاتفي | Phone',
+                  'Phone | التواصل',
+                  'فون نمبر | Phone'
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <a
@@ -255,7 +290,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <button
                   type="button"
                   onClick={() => handleCopy(FIRM_CONTACT.phoneDisplay, 'phone')}
-                  aria-label={lang === 'ar' ? 'نسخ رقم الهاتف' : 'Copy phone number'}
+                  aria-label={tr(
+                    lang,
+                    'نسخ رقم الهاتف',
+                    'Copy phone number',
+                    'فون نمبر کاپی کریں'
+                  )}
                   className="p-1.5 rounded bg-white/5 hover:bg-white/10 text-[#D1B46A] transition-colors cursor-pointer"
                 >
                   {copiedKey === 'phone' ? (
@@ -279,9 +319,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </svg>
               </div>
               <div className="text-sm font-bold text-white mb-1">
-                {lang === 'ar'
-                  ? 'واتساب الاستشارات | WhatsApp'
-                  : 'WhatsApp Consultation'}
+                {tr(
+                  lang,
+                  'واتساب الاستشارات | WhatsApp',
+                  'WhatsApp Consultation',
+                  'واٹس ایپ مشاورت | WhatsApp'
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <a
@@ -295,9 +338,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <button
                   type="button"
                   onClick={() => handleCopy(FIRM_CONTACT.whatsappDisplay, 'whatsapp')}
-                  aria-label={
-                    lang === 'ar' ? 'نسخ رقم الواتساب' : 'Copy WhatsApp number'
-                  }
+                  aria-label={tr(
+                    lang,
+                    'نسخ رقم الواتساب',
+                    'Copy WhatsApp number',
+                    'واٹس ایپ نمبر کاپی کریں'
+                  )}
                   className="p-1.5 rounded bg-white/5 hover:bg-white/10 text-[#D1B46A] transition-colors cursor-pointer"
                 >
                   {copiedKey === 'whatsapp' ? (
@@ -318,8 +364,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 href={platform.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={lang === 'ar' ? platform.nameAr : platform.nameEn}
-                aria-label={lang === 'ar' ? platform.nameAr : platform.nameEn}
+                title={tr(lang, platform.nameAr, platform.nameEn, platform.nameUr)}
+                aria-label={tr(lang, platform.nameAr, platform.nameEn, platform.nameUr)}
                 className="w-12 h-12 rounded-xl bg-[#141414] border border-[#B69648]/60 text-[#D1B46A] hover:bg-[#B69648] hover:text-white hover:border-white transition-all flex items-center justify-center"
               >
                 {renderSocialPlatformIcon(platform.id, 'w-5 h-5')}
@@ -333,14 +379,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           {/* Consultation Request Form (7 cols) */}
           <div className="lg:col-span-7 bg-white text-[#141414] rounded-2xl p-7 md:p-9 border border-[#E5DEC9]">
             <h3 className="text-xl font-bold text-[#141414] mb-2">
-              {lang === 'ar'
-                ? 'نموذج طلب استشارة أو تمثيل قانوني'
-                : 'Legal Consultation & Representation Request Form'}
+              {tr(
+                lang,
+                'نموذج طلب استشارة أو تمثيل قانوني',
+                'Legal Consultation & Representation Request Form',
+                'قانونی مشاورت یا عدالتی نمائندگی کی درخواست کا فارم'
+              )}
             </h3>
             <p className="text-xs md:text-sm text-[#5C564B] mb-6">
-              {lang === 'ar'
-                ? 'أدخل بيانات التواصل وتفاصيل الموضوع القانوني ليقوم المستشار المختص بمراجعتها والتواصل معكم.'
-                : 'Fill in your contact details and legal summary for review by our specialized legal counsel.'}
+              {tr(
+                lang,
+                'أدخل بيانات التواصل وتفاصيل الموضوع القانوني ليقوم المستشار المختص بمراجعتها والتواصل معكم.',
+                'Fill in your contact details and legal summary for review by our specialized legal counsel.',
+                'اپنے رابطے کی تفصیلات اور قانونی معاملے کا خلاصہ درج کریں تاکہ ہمارے ماہر قانونی مشیر اس کا جائزہ لے کر آپ سے رابطہ کر سکیں۔'
+              )}
             </p>
 
             <form onSubmit={handleSubmit} noValidate className="space-y-5">
@@ -351,9 +403,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     htmlFor="client-fullname"
                     className="block text-xs font-bold text-[#141414] mb-1.5"
                   >
-                    {lang === 'ar'
-                      ? 'الاسم الكامل / اسم المنشأة *'
-                      : 'Full Name / Company Name *'}
+                    {tr(
+                      lang,
+                      'الاسم الكامل / اسم المنشأة *',
+                      'Full Name / Company Name *',
+                      'مکمل نام / کمپنی کا نام *'
+                    )}
                   </label>
                   <input
                     id="client-fullname"
@@ -363,11 +418,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       setForm({ ...form, fullName: e.target.value });
                       if (errors.fullName) setErrors({ ...errors, fullName: undefined });
                     }}
-                    placeholder={
-                      lang === 'ar'
-                        ? 'مثال: شركة الرواد للتجارة / محمد العتيبي'
-                        : 'e.g., Al-Rowad Trading Co. / Mohammed'
-                    }
+                    placeholder={tr(
+                      lang,
+                      'مثال: شركة الرواد للتجارة / محمد العتيبي',
+                      'e.g., Al-Rowad Trading Co. / Mohammed',
+                      'مثال: الرواد ٹریڈنگ کمپنی / محمد العتیبی'
+                    )}
                     className={`w-full px-4 py-2.5 text-sm bg-[#FAF8F5] border rounded-lg text-[#141414] focus:outline-none ${
                       errors.fullName
                         ? 'border-red-600 focus:border-red-600'
@@ -391,7 +447,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     htmlFor="client-phone"
                     className="block text-xs font-bold text-[#141414] mb-1.5"
                   >
-                    {lang === 'ar' ? 'رقم الجوال *' : 'Mobile Number *'}
+                    {tr(lang, 'رقم الجوال *', 'Mobile Number *', 'موبائل نمبر *')}
                   </label>
                   <input
                     id="client-phone"
@@ -404,7 +460,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     }}
                     placeholder="0569888100"
                     className={`w-full px-4 py-2.5 text-sm bg-[#FAF8F5] border rounded-lg text-[#141414] font-mono-tabular focus:outline-none ${
-                      lang === 'ar' ? 'text-right' : 'text-left'
+                      isRtl(lang) ? 'text-right' : 'text-left'
                     } ${
                       errors.phone
                         ? 'border-red-600 focus:border-red-600'
@@ -430,7 +486,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     htmlFor="client-email"
                     className="block text-xs font-bold text-[#141414] mb-1.5"
                   >
-                    {lang === 'ar' ? 'البريد الإلكتروني *' : 'Email Address *'}
+                    {tr(lang, 'البريد الإلكتروني *', 'Email Address *', 'ای میل ایڈریس *')}
                   </label>
                   <input
                     id="client-email"
@@ -443,7 +499,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     }}
                     placeholder="name@company.sa"
                     className={`w-full px-4 py-2.5 text-sm bg-[#FAF8F5] border rounded-lg text-[#141414] focus:outline-none ${
-                      lang === 'ar' ? 'text-right' : 'text-left'
+                      isRtl(lang) ? 'text-right' : 'text-left'
                     } ${
                       errors.email
                         ? 'border-red-600 focus:border-red-600'
@@ -467,7 +523,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     htmlFor="client-entity-type"
                     className="block text-xs font-bold text-[#141414] mb-1.5"
                   >
-                    {lang === 'ar' ? 'صفة الموكل' : 'Client Type'}
+                    {tr(lang, 'صفة الموكل', 'Client Type', 'مؤکل کی حیثیت')}
                   </label>
                   <select
                     id="client-entity-type"
@@ -481,13 +537,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     className="w-full px-4 py-2.5 text-sm bg-[#FAF8F5] border border-[#D8CEB8] rounded-lg text-[#141414] focus:outline-none focus:border-[#B69648]"
                   >
                     <option value="corporate">
-                      {lang === 'ar' ? 'شركة / مؤسسة تجارية' : 'Corporate / Entity'}
+                      {tr(lang, 'شركة / مؤسسة تجارية', 'Corporate / Entity', 'کمپنی / تجارتی ادارہ')}
                     </option>
                     <option value="individual">
-                      {lang === 'ar' ? 'فرد' : 'Individual'}
+                      {tr(lang, 'فرد', 'Individual', 'فرد')}
                     </option>
                     <option value="foreign_investor">
-                      {lang === 'ar' ? 'مستثمر أجنبي' : 'Foreign Investor'}
+                      {tr(lang, 'مستثمر أجنبي', 'Foreign Investor', 'غیر ملکی سرمایہ کار')}
                     </option>
                   </select>
                 </div>
@@ -500,9 +556,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     htmlFor="client-service"
                     className="block text-xs font-bold text-[#141414] mb-1.5"
                   >
-                    {lang === 'ar'
-                      ? 'الخدمة القانونية المطلوبة *'
-                      : 'Required Legal Service *'}
+                    {tr(
+                      lang,
+                      'الخدمة القانونية المطلوبة *',
+                      'Required Legal Service *',
+                      'مطلوبہ قانونی خدمت *'
+                    )}
                   </label>
                   <select
                     id="client-service"
@@ -516,7 +575,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   >
                     {LEGAL_SERVICES.map((srv) => (
                       <option key={srv.id} value={srv.id}>
-                        {srv.index}. {lang === 'ar' ? srv.titleAr : srv.titleEn}
+                        {srv.index}. {tr(lang, srv.titleAr, srv.titleEn, srv.titleUr)}
                       </option>
                     ))}
                   </select>
@@ -527,7 +586,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     htmlFor="client-urgency"
                     className="block text-xs font-bold text-[#141414] mb-1.5"
                   >
-                    {lang === 'ar' ? 'مستوى الأولوية' : 'Urgency Level'}
+                    {tr(lang, 'مستوى الأولوية', 'Urgency Level', 'ترجیحی درجہ')}
                   </label>
                   <select
                     id="client-urgency"
@@ -541,10 +600,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     className="w-full px-4 py-2.5 text-sm bg-[#FAF8F5] border border-[#D8CEB8] rounded-lg text-[#141414] focus:outline-none focus:border-[#B69648]"
                   >
                     <option value="standard">
-                      {lang === 'ar' ? 'اعتيادي' : 'Standard'}
+                      {tr(lang, 'اعتيادي', 'Standard', 'معمول کے مطابق')}
                     </option>
                     <option value="priority">
-                      {lang === 'ar' ? 'عاجل (جلسة قريبة / صفقة فورية)' : 'Priority / Urgent'}
+                      {tr(
+                        lang,
+                        'عاجل (جلسة قريبة / صفقة فورية)',
+                        'Priority / Urgent',
+                        'ہنگامی (قریبی سماعت / فوری معاملہ)'
+                      )}
                     </option>
                   </select>
                 </div>
@@ -556,9 +620,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   htmlFor="client-summary"
                   className="block text-xs font-bold text-[#141414] mb-1.5"
                 >
-                  {lang === 'ar'
-                    ? 'ملخص الموضوع أو الاستشارة القانونية *'
-                    : 'Brief Summary of Legal Matter *'}
+                  {tr(
+                    lang,
+                    'ملخص الموضوع أو الاستشارة القانونية *',
+                    'Brief Summary of Legal Matter *',
+                    'قانونی معاملے یا مشاورت کا مختصر خلاصہ *'
+                  )}
                 </label>
                 <textarea
                   id="client-summary"
@@ -568,11 +635,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     setForm({ ...form, summary: e.target.value });
                     if (errors.summary) setErrors({ ...errors, summary: undefined });
                   }}
-                  placeholder={
-                    lang === 'ar'
-                      ? 'اكتب نبذة مختصرة عن طبيعة الاستشارة أو القضية أو العقد المراد دراسته...'
-                      : 'Provide a concise overview of your legal consultation, contract, or dispute...'
-                  }
+                  placeholder={tr(
+                    lang,
+                    'اكتب نبذة مختصرة عن طبيعة الاستشارة أو القضية أو العقد المراد دراسته...',
+                    'Provide a concise overview of your legal consultation, contract, or dispute...',
+                    'اپنی قانونی مشاورت، مقدمے یا زیرِ غور معاہدے کا مختصر خلاصہ تحریر کریں...'
+                  )}
                   className={`w-full px-4 py-3 text-sm bg-[#FAF8F5] border rounded-lg text-[#141414] focus:outline-none ${
                     errors.summary
                       ? 'border-red-600 focus:border-red-600'
@@ -592,7 +660,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
               {/* PDPL Privacy & Non-Retainer Terms Notice */}
               <div className="rounded-xl bg-[#FAF8F5] border border-[#E5DEC9] p-3.5 text-xs text-[#5C564B] leading-relaxed">
-                {lang === 'ar' ? (
+                {lang === 'ar' && (
                   <>
                     تُعالج بياناتكم بسرية تامة وفق{' '}
                     <button
@@ -612,7 +680,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     </button>{' '}
                     فإن إرسال الاستشارة الأولية الإلكترونية لا يُعد توكيلاً رسمياً إلا بعد توقيع عقد وكالة وسداد الأتعاب.
                   </>
-                ) : (
+                )}
+                {lang === 'en' && (
                   <>
                     Your data is processed confidentially under our{' '}
                     <button
@@ -633,22 +702,49 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     , initial electronic consultations do not constitute formal representation until a retainer contract is signed and fees are paid.
                   </>
                 )}
+                {lang === 'ur' && (
+                  <>
+                    آپ کے ڈیٹا کو ہماری{' '}
+                    <button
+                      type="button"
+                      onClick={() => onNavigatePage('privacy')}
+                      className="font-bold text-[#9A7B34] hover:underline cursor-pointer"
+                    >
+                      رازداری کی پالیسی (سعودی PDPL)
+                    </button>{' '}
+                    کے مطابق مکمل رازداری سے رکھا جاتا ہے۔{' '}
+                    <button
+                      type="button"
+                      onClick={() => onNavigatePage('terms')}
+                      className="font-bold text-[#9A7B34] hover:underline cursor-pointer"
+                    >
+                      شرائط و ضوابط
+                    </button>{' '}
+                    کے تحت ابتدائی آن لائن مشاورت باقاعدہ معاہدے پر دستخط اور فیس کی ادائیگی تک سرکاری وکالت نہیں سمجھی جائے گی۔
+                  </>
+                )}
               </div>
 
               <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
                 <span className="text-xs text-[#5C564B]">
-                  {lang === 'ar'
-                    ? 'جميع الطلبات تعامل بسرية تامة وفق نظام المحاماة.'
-                    : 'All submissions are strictly confidential.'}
+                  {tr(
+                    lang,
+                    'جميع الطلبات تعامل بسرية تامة وفق نظام المحاماة.',
+                    'All submissions are strictly confidential.',
+                    'تمام درخواستوں کو وکالت کے قانون کے مطابق مکمل رازداری میں رکھا جاتا ہے۔'
+                  )}
                 </span>
 
                 <button
                   type="submit"
                   className="px-7 py-3 text-sm font-bold text-white bg-[#141414] hover:bg-[#9A7B34] rounded-lg transition-colors cursor-pointer whitespace-nowrap shrink-0"
                 >
-                  {lang === 'ar'
-                    ? 'إرسال طلب الاستشارة القانونية'
-                    : 'Submit Consultation Request'}
+                  {tr(
+                    lang,
+                    'إرسال طلب الاستشارة القانونية',
+                    'Submit Consultation Request',
+                    'قانونی مشاورت کی درخواست بھیجیں'
+                  )}
                 </button>
               </div>
             </form>
@@ -665,21 +761,27 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <div className="flex items-center gap-2.5 text-[#D1B46A] font-bold text-base mb-2">
                   <CheckCircle2 className="w-5 h-5 shrink-0" />
                   <span>
-                    {lang === 'ar'
-                      ? 'تم تسجيل طلب الاستشارة بنجاح'
-                      : 'Consultation Request Registered'}
+                    {tr(
+                      lang,
+                      'تم تسجيل طلب الاستشارة بنجاح',
+                      'Consultation Request Registered',
+                      'مشاورت کی درخواست کامیابی سے درج ہو گئی'
+                    )}
                   </span>
                 </div>
                 <p className="text-xs text-[#D5CEBF] leading-relaxed mb-4">
-                  {lang === 'ar'
-                    ? 'تم إصدار رقم مرجعي لطلبكم. سيتواصل معكم فريق شركة سامي الشريف للمحاماة عبر الجوال أو البريد الإلكتروني.'
-                    : 'Your consultation reference code has been generated. Our legal team will contact you shortly.'}
+                  {tr(
+                    lang,
+                    'تم إصدار رقم مرجعي لطلبكم. سيتواصل معكم فريق شركة سامي الشريف للمحاماة عبر الجوال أو البريد الإلكتروني.',
+                    'Your consultation reference code has been generated. Our legal team will contact you shortly.',
+                    'آپ کی درخواست کا حوالہ نمبر جاری کر دیا گیا ہے۔ سامی الشریف لاء فرم کی ٹیم جلد آپ سے رابطہ کرے گی۔'
+                  )}
                 </p>
 
                 <div className="bg-[#141414] rounded-lg p-4 border border-white/10 space-y-2 text-xs mb-4">
                   <div className="flex items-center justify-between">
                     <span className="text-[#C2B69C]">
-                      {lang === 'ar' ? 'الرقم المرجعي:' : 'Reference ID:'}
+                      {tr(lang, 'الرقم المرجعي:', 'Reference ID:', 'حوالہ نمبر:')}
                     </span>
                     <span className="font-mono-tabular font-bold text-[#D1B46A] text-sm">
                       {latestTicket.referenceId}
@@ -687,7 +789,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-[#C2B69C]">
-                      {lang === 'ar' ? 'مقدم الطلب:' : 'Client Name:'}
+                      {tr(lang, 'مقدم الطلب:', 'Client Name:', 'درخواست دہندہ:')}
                     </span>
                     <span className="font-semibold text-white">
                       {latestTicket.fullName}
@@ -695,12 +797,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-[#C2B69C]">
-                      {lang === 'ar' ? 'الخدمة:' : 'Service:'}
+                      {tr(lang, 'الخدمة:', 'Service:', 'خدمت:')}
                     </span>
                     <span className="font-semibold text-white">
-                      {lang === 'ar'
-                        ? latestTicket.serviceTitleAr
-                        : latestTicket.serviceTitleEn}
+                      {tr(
+                        lang,
+                        latestTicket.serviceTitleAr,
+                        latestTicket.serviceTitleEn,
+                        latestTicket.serviceTitleUr || latestTicket.serviceTitleAr
+                      )}
                     </span>
                   </div>
                 </div>
@@ -715,9 +820,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-[#D1B46A] text-[#141414] rounded-lg hover:bg-white transition-colors whitespace-nowrap shrink-0"
                   >
                     <span>
-                      {lang === 'ar'
-                        ? `إرسال عبر الواتساب (${FIRM_CONTACT.whatsappDisplay})`
-                        : `Send via WhatsApp (${FIRM_CONTACT.whatsappDisplay})`}
+                      {tr(
+                        lang,
+                        `إرسال عبر الواتساب (${FIRM_CONTACT.whatsappDisplay})`,
+                        `Send via WhatsApp (${FIRM_CONTACT.whatsappDisplay})`,
+                        `واٹس ایپ کے ذریعے بھیجیں (${FIRM_CONTACT.whatsappDisplay})`
+                      )}
                     </span>
                   </a>
 
@@ -731,9 +839,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   >
                     <Mail className="w-3.5 h-3.5" />
                     <span>
-                      {lang === 'ar'
-                        ? 'إرسال نسخة عبر البريد الرسمي'
-                        : 'Send Copy via Official Email'}
+                      {tr(
+                        lang,
+                        'إرسال نسخة عبر البريد الرسمي',
+                        'Send Copy via Official Email',
+                        'سرکاری ای میل کے ذریعے نقل بھیجیں'
+                      )}
                     </span>
                   </a>
                 </div>
@@ -745,14 +856,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div>
                   <span className="inline-block text-xs font-semibold text-[#D1B46A] mb-1">
-                    {lang === 'ar'
-                      ? 'استشارة قانونية مباشرة عبر الواتساب'
-                      : 'Direct WhatsApp Legal Consultation'}
+                    {tr(
+                      lang,
+                      'استشارة قانونية مباشرة عبر الواتساب',
+                      'Direct WhatsApp Legal Consultation',
+                      'واٹس ایپ پر براہِ راست قانونی مشاورت'
+                    )}
                   </span>
                   <h4 className="text-base md:text-lg font-bold text-white">
-                    {lang === 'ar'
-                      ? 'تواصل عن طريق الواتساب واحصل على استشارة'
-                      : 'Contact via WhatsApp & Get a Legal Consultation'}
+                    {tr(
+                      lang,
+                      'تواصل عن طريق الواتساب واحصل على استشارة',
+                      'Contact via WhatsApp & Get a Legal Consultation',
+                      'واٹس ایپ کے ذریعے رابطہ کریں اور قانونی مشورہ حاصل کریں'
+                    )}
                   </h4>
                 </div>
                 <div className="w-10 h-10 rounded-xl bg-[#B69648]/20 text-[#D1B46A] flex items-center justify-center shrink-0">
@@ -767,9 +884,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
 
               <p className="text-xs text-[#D5CEBF] leading-relaxed mb-4">
-                {lang === 'ar'
-                  ? 'يمكنكم مراسلتنا مباشرة عبر الواتساب لحجز موعد أو الحصول على استشارة قانونية سريعة على الرقم المخصص للاستشارات:'
-                  : 'Message our legal counselors directly on WhatsApp to book an appointment or get a consultation on our dedicated number:'}
+                {tr(
+                  lang,
+                  'يمكنكم مراسلتنا مباشرة عبر الواتساب لحجز موعد أو الحصول على استشارة قانونية سريعة على الرقم المخصص للاستشارات:',
+                  'Message our legal counselors directly on WhatsApp to book an appointment or get a consultation on our dedicated number:',
+                  'وقت بک کرنے یا فوری قانونی مشورہ حاصل کرنے کے لیے ہمارے مخصوص واٹس ایپ نمبر پر براہِ راست رابطہ کریں:'
+                )}
               </p>
 
               <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/10">
@@ -790,9 +910,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.625.846 5.059 2.284 7.033l-1.492 5.451 5.581-1.464c1.908 1.253 4.19 1.98 6.627 1.98 6.627 0 12-5.373 12-12s-5.373-12-12-12z" />
                   </svg>
                   <span>
-                    {lang === 'ar'
-                      ? 'احصل على استشارة عبر الواتساب'
-                      : 'Get WhatsApp Consultation'}
+                    {tr(
+                      lang,
+                      'احصل على استشارة عبر الواتساب',
+                      'Get WhatsApp Consultation',
+                      'واٹس ایپ پر مشورہ حاصل کریں'
+                    )}
                   </span>
                 </a>
               </div>
@@ -804,9 +927,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <h4 className="text-sm font-bold text-white flex items-center gap-2">
                   <MessageSquare className="w-4 h-4 text-[#D1B46A]" />
                   <span>
-                    {lang === 'ar'
-                      ? `سجل طلبات الاستشارة (${tickets.length})`
-                      : `Submitted Requests (${tickets.length})`}
+                    {tr(
+                      lang,
+                      `سجل طلبات الاستشارة (${tickets.length})`,
+                      `Submitted Requests (${tickets.length})`,
+                      `درج شدہ مشاورتی درخواستیں (${tickets.length})`
+                    )}
                   </span>
                 </h4>
 
@@ -817,16 +943,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     className="inline-flex items-center gap-1 text-xs text-[#C2B69C] hover:text-white transition-colors cursor-pointer"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
-                    <span>{lang === 'ar' ? 'مسح السجل' : 'Clear'}</span>
+                    <span>{tr(lang, 'مسح السجل', 'Clear', 'ریکارڈ صاف کریں')}</span>
                   </button>
                 )}
               </div>
 
               {tickets.length === 0 ? (
                 <p className="text-xs text-[#9E9585] leading-relaxed">
-                  {lang === 'ar'
-                    ? 'لم تقم بإرسال أي طلب استشارة في هذه الجلسة بعد. عند إرسال النموذج سيظهر الرقم المرجعي وتفاصيل الطلب هنا.'
-                    : 'No consultation requests submitted in this session yet. Submitted tickets and reference IDs will appear here.'}
+                  {tr(
+                    lang,
+                    'لم تقم بإرسال أي طلب استشارة في هذه الجلسة بعد. عند إرسال النموذج سيظهر الرقم المرجعي وتفاصيل الطلب هنا.',
+                    'No consultation requests submitted in this session yet. Submitted tickets and reference IDs will appear here.',
+                    'اس سیشن میں ابھی تک کوئی مشاورتی درخواست جمع نہیں کرائی گئی۔ فارم جمع کرانے پر حوالہ نمبر اور تفصیلات یہاں ظاہر ہوں گی۔'
+                  )}
                 </p>
               ) : (
                 <div className="space-y-3 max-h-64 overflow-y-auto">
@@ -845,7 +974,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       </div>
                       <div className="font-semibold text-white mb-0.5">
                         {t.fullName} ·{' '}
-                        {lang === 'ar' ? t.serviceTitleAr : t.serviceTitleEn}
+                        {tr(
+                          lang,
+                          t.serviceTitleAr,
+                          t.serviceTitleEn,
+                          t.serviceTitleUr || t.serviceTitleAr
+                        )}
                       </div>
                       <p className="text-[#C2B69C] line-clamp-2">{t.summary}</p>
                     </div>
@@ -857,15 +991,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             {/* Official Brand Stamp & Google Maps Location Card */}
             <div className="rounded-2xl bg-[#1C1B18] border border-[#B69648]/50 p-7 text-center sm:text-right">
               <div className="font-calligraphy text-xl text-[#D1B46A] leading-snug">
-                شركة سامي الشريف للمحاماة والاستشارات القانونية
+                {lang === 'ur' ? FIRM_CONTACT.firmNameUr : FIRM_CONTACT.firmNameAr}
               </div>
               <div className="text-[11px] tracking-[0.12em] text-[#C2B69C] mt-1 font-medium">
                 SAMI ALSHAREEF LAWFIRM AND LEGAL CONSULTATIONS
               </div>
               <div className="text-xs text-[#9E9585] mt-2 mb-4">
-                {lang === 'ar'
-                  ? 'المملكة العربية السعودية · مكة المكرمة - جدة'
-                  : 'Kingdom of Saudi Arabia · Makkah - Jeddah'}
+                {tr(
+                  lang,
+                  'المملكة العربية السعودية · مكة المكرمة - جدة',
+                  'Kingdom of Saudi Arabia · Makkah - Jeddah',
+                  'مملکتِ سعودی عرب · مکہ مکرمہ - جدہ'
+                )}
               </div>
               <a
                 href={FIRM_CONTACT.googleMapsUrl}
@@ -875,9 +1012,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               >
                 <MapPin className="w-4 h-4 shrink-0" />
                 <span>
-                  {lang === 'ar'
-                    ? 'موقعنا على خرائط قوقل (Google Maps)'
-                    : 'View Our Location on Google Maps'}
+                  {tr(
+                    lang,
+                    'موقعنا على خرائط قوقل (Google Maps)',
+                    'View Our Location on Google Maps',
+                    'گوگل میپس پر ہمارا مقام دیکھیں (Google Maps)'
+                  )}
                 </span>
               </a>
 
@@ -889,8 +1029,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     href={platform.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title={lang === 'ar' ? platform.nameAr : platform.nameEn}
-                    aria-label={lang === 'ar' ? platform.nameAr : platform.nameEn}
+                    title={tr(lang, platform.nameAr, platform.nameEn, platform.nameUr)}
+                    aria-label={tr(lang, platform.nameAr, platform.nameEn, platform.nameUr)}
                     className="w-10 h-10 rounded-lg bg-[#141414] border border-[#B69648]/60 text-white hover:bg-[#B69648] hover:text-[#141414] hover:border-white transition-colors flex items-center justify-center"
                   >
                     {renderSocialPlatformIcon(platform.id, 'w-4 h-4')}

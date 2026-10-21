@@ -6,6 +6,8 @@ import {
   UrgencyLevel,
   LEGAL_SERVICES,
   calculateScopeEstimate,
+  isRtl,
+  tr,
 } from '../utils/lawFirmLogic';
 
 interface ScopeEstimatorSectionProps {
@@ -28,12 +30,32 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
   const estimate = calculateScopeEstimate({ entityType, serviceId, urgency });
   const selectedService =
     LEGAL_SERVICES.find((s) => s.id === serviceId) || LEGAL_SERVICES[0];
-  const ArrowIcon = lang === 'ar' ? ArrowUpLeft : ArrowUpRight;
+  const ArrowIcon = isRtl(lang) ? ArrowUpLeft : ArrowUpRight;
 
-  const entityOptions: { id: ClientEntityType; labelAr: string; labelEn: string }[] = [
-    { id: 'corporate', labelAr: 'شركة / مؤسسة تجارية', labelEn: 'Corporate / Business' },
-    { id: 'individual', labelAr: 'فرد / مستفيد خاص', labelEn: 'Individual / Private Client' },
-    { id: 'foreign_investor', labelAr: 'مستثمر أجنبي / شركة دولية', labelEn: 'Foreign Investor' },
+  const entityOptions: {
+    id: ClientEntityType;
+    labelAr: string;
+    labelEn: string;
+    labelUr: string;
+  }[] = [
+    {
+      id: 'corporate',
+      labelAr: 'شركة / مؤسسة تجارية',
+      labelEn: 'Corporate / Business',
+      labelUr: 'کمپنی / تجارتی ادارہ',
+    },
+    {
+      id: 'individual',
+      labelAr: 'فرد / مستفيد خاص',
+      labelEn: 'Individual / Private Client',
+      labelUr: 'فرد / نجی مؤکل',
+    },
+    {
+      id: 'foreign_investor',
+      labelAr: 'مستثمر أجنبي / شركة دولية',
+      labelEn: 'Foreign Investor',
+      labelUr: 'غیر ملکی سرمایہ کار',
+    },
   ];
 
   return (
@@ -41,22 +63,31 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="max-w-2xl mb-10">
           <div className="text-xs font-semibold text-[#9A7B34] mb-2">
-            {lang === 'ar'
-              ? '03. أداة تقييم المسار القانوني · Legal Scope Estimator'
-              : '03. Legal Scope & Readiness Estimator · تقييم المسار القانوني'}
+            {tr(
+              lang,
+              '03. أداة تقييم المسار القانوني · Legal Scope Estimator',
+              '03. Legal Scope & Readiness Estimator · تقييم المسار القانوني',
+              '03. قانونی دائرہ کار کا تخمینہ · Legal Scope Estimator'
+            )}
           </div>
           <h2
             className="text-2xl sm:text-3xl font-bold text-[#141414] leading-snug mb-3"
             style={{ textWrap: 'balance' }}
           >
-            {lang === 'ar'
-              ? 'حدد نطاق احتياجك القانوني وتعرف فوراً على المستندات ومراحل العمل'
-              : 'Configure Your Legal Requirement & Preview Required Documents'}
+            {tr(
+              lang,
+              'حدد نطاق احتياجك القانوني وتعرف فوراً على المستندات ومراحل العمل',
+              'Configure Your Legal Requirement & Preview Required Documents',
+              'اپنی قانونی ضرورت کا تعین کریں اور مطلوبہ دستاویزات و مراحلِ کار جانیں'
+            )}
           </h2>
           <p className="text-sm md:text-base text-[#4A463D]">
-            {lang === 'ar'
-              ? 'أداة تفاعلية تساعد قطاع الأعمال والمستثمرين والأفراد على معرفة آلية التعاقد الأنسب والمسار الإجرائي قبل بدء الاستشارة.'
-              : 'An interactive readiness guide to identify your optimal legal engagement structure, review timeframe, and required statutory documents.'}
+            {tr(
+              lang,
+              'أداة تفاعلية تساعد قطاع الأعمال والمستثمرين والأفراد على معرفة آلية التعاقد الأنسب والمسار الإجرائي قبل بدء الاستشارة.',
+              'An interactive readiness guide to identify your optimal legal engagement structure, review timeframe, and required statutory documents.',
+              'ایک انٹرایکٹو رہنما ٹول جو کاروباری اداروں، سرمایہ کاروں اور افراد کو مشاورت شروع کرنے سے قبل موزوں قانونی معاہدے اور طریقہ کار سے آگاہ کرتا ہے۔'
+            )}
           </p>
         </div>
 
@@ -67,9 +98,12 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
               {/* Step 1: Entity Type */}
               <div>
                 <label className="block text-xs font-bold text-[#141414] mb-2.5">
-                  {lang === 'ar'
-                    ? '1. صفة طالب الخدمة القانونية'
-                    : '1. Client Entity Classification'}
+                  {tr(
+                    lang,
+                    '1. صفة طالب الخدمة القانونية',
+                    '1. Client Entity Classification',
+                    '1. قانونی خدمت کے طالب کی حیثیت'
+                  )}
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   {entityOptions.map((opt) => {
@@ -85,7 +119,7 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                             : 'bg-[#FAF8F5] text-[#4A463D] border-[#D8CEB8] hover:border-[#141414]'
                         }`}
                       >
-                        {lang === 'ar' ? opt.labelAr : opt.labelEn}
+                        {tr(lang, opt.labelAr, opt.labelEn, opt.labelUr)}
                       </button>
                     );
                   })}
@@ -98,9 +132,12 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                   htmlFor="estimator-service-select"
                   className="block text-xs font-bold text-[#141414] mb-2.5"
                 >
-                  {lang === 'ar'
-                    ? '2. نوع الخدمة القانونية أو القضائية'
-                    : '2. Target Legal or Judicial Service'}
+                  {tr(
+                    lang,
+                    '2. نوع الخدمة القانونية أو القضائية',
+                    '2. Target Legal or Judicial Service',
+                    '2. قانونی یا عدالتی خدمت کی قسم'
+                  )}
                 </label>
                 <select
                   id="estimator-service-select"
@@ -110,7 +147,7 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                 >
                   {LEGAL_SERVICES.map((srv) => (
                     <option key={srv.id} value={srv.id}>
-                      {srv.index}. {lang === 'ar' ? srv.titleAr : srv.titleEn}
+                      {srv.index}. {tr(lang, srv.titleAr, srv.titleEn, srv.titleUr)}
                     </option>
                   ))}
                 </select>
@@ -119,9 +156,12 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
               {/* Step 3: Urgency Level */}
               <div>
                 <label className="block text-xs font-bold text-[#141414] mb-2.5">
-                  {lang === 'ar'
-                    ? '3. مستوى الأولوية الزمنية'
-                    : '3. Processing Priority'}
+                  {tr(
+                    lang,
+                    '3. مستوى الأولوية الزمنية',
+                    '3. Processing Priority',
+                    '3. ترجیحی درجہ'
+                  )}
                 </label>
                 <div className="grid grid-cols-2 gap-3">
                   <button
@@ -133,7 +173,7 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                         : 'bg-[#FAF8F5] text-[#4A463D] border-[#D8CEB8] hover:border-[#141414]'
                     }`}
                   >
-                    {lang === 'ar' ? 'مسار اعتيادي منظم' : 'Standard Schedule'}
+                    {tr(lang, 'مسار اعتيادي منظم', 'Standard Schedule', 'معمول کا شیڈول')}
                   </button>
                   <button
                     type="button"
@@ -144,7 +184,12 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                         : 'bg-[#FAF8F5] text-[#4A463D] border-[#D8CEB8] hover:border-[#B69648]'
                     }`}
                   >
-                    {lang === 'ar' ? 'مسار عاجل (أولوية قصوى)' : 'Priority Fast-Track'}
+                    {tr(
+                      lang,
+                      'مسار عاجل (أولوية قصوى)',
+                      'Priority Fast-Track',
+                      'ہنگامی / فوری ترجیح'
+                    )}
                   </button>
                 </div>
               </div>
@@ -152,9 +197,14 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
 
             <div className="mt-8 pt-5 border-t border-[#F0ECE1] flex items-center justify-between gap-4">
               <div className="text-xs text-[#5C564B]">
-                {lang === 'ar' ? 'الخدمة المختارة:' : 'Selected Service:'}{' '}
+                {tr(lang, 'الخدمة المختارة:', 'Selected Service:', 'منتخب خدمت:')}{' '}
                 <strong className="text-[#141414]">
-                  {lang === 'ar' ? selectedService.titleAr : selectedService.titleEn}
+                  {tr(
+                    lang,
+                    selectedService.titleAr,
+                    selectedService.titleEn,
+                    selectedService.titleUr
+                  )}
                 </strong>
               </div>
               <button
@@ -165,9 +215,12 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                 className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-[#141414] hover:bg-[#9A7B34] rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
                 <span>
-                  {lang === 'ar'
-                    ? 'متابعة حجز هذه الاستشارة'
-                    : 'Proceed with This Scope'}
+                  {tr(
+                    lang,
+                    'متابعة حجز هذه الاستشارة',
+                    'Proceed with This Scope',
+                    'اس مشاورت کی بکنگ جاری رکھیں'
+                  )}
                 </span>
                 <ArrowIcon className="w-3.5 h-3.5" />
               </button>
@@ -180,24 +233,30 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
               <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-white/10">
                 <div>
                   <div className="text-xs text-[#D1B46A] font-semibold mb-1">
-                    {lang === 'ar'
-                      ? 'نموذج التعاقد القانوني المقترح'
-                      : 'Recommended Legal Engagement Model'}
+                    {tr(
+                      lang,
+                      'نموذج التعاقد القانوني المقترح',
+                      'Recommended Legal Engagement Model',
+                      'تجویز کردہ قانونی معاہدے کا ماڈل'
+                    )}
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-white">
-                    {lang === 'ar'
-                      ? estimate.engagementModelAr
-                      : estimate.engagementModelEn}
+                    {tr(
+                      lang,
+                      estimate.engagementModelAr,
+                      estimate.engagementModelEn,
+                      estimate.engagementModelUr
+                    )}
                   </h3>
                 </div>
 
                 <div className="text-right">
                   <div className="text-xs text-[#C2B69C]">
-                    {lang === 'ar' ? 'الدارسة الأولية' : 'Initial Review'}
+                    {tr(lang, 'الدراسة الأولية', 'Initial Review', 'ابتدائی جائزہ')}
                   </div>
                   <div className="text-xl font-bold text-[#D1B46A] tabular-nums">
                     {estimate.initialReviewDays}{' '}
-                    {lang === 'ar' ? 'أيام عمل' : 'Business Days'}
+                    {tr(lang, 'أيام عمل', 'Business Days', 'کاروباری دن')}
                   </div>
                 </div>
               </div>
@@ -207,15 +266,20 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                 <h4 className="text-xs font-semibold text-[#D1B46A] mb-3 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>
-                    {lang === 'ar'
-                      ? 'مراحل العمل الإجرائية'
-                      : 'Procedural Execution Stages'}
+                    {tr(
+                      lang,
+                      'مراحل العمل الإجرائية',
+                      'Procedural Execution Stages',
+                      'عملدرآمد کے مراحل'
+                    )}
                   </span>
                 </h4>
                 <ol className="space-y-2.5 text-xs md:text-sm text-white/90">
-                  {(lang === 'ar'
-                    ? estimate.executionPhasesAr
-                    : estimate.executionPhasesEn
+                  {tr(
+                    lang,
+                    estimate.executionPhasesAr,
+                    estimate.executionPhasesEn,
+                    estimate.executionPhasesUr
                   ).map((phase, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
                       <span className="font-mono-tabular text-[#D1B46A] font-bold">
@@ -232,20 +296,26 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                 <h4 className="text-xs font-semibold text-[#D1B46A] mb-3 flex items-center gap-2">
                   <FileCheck2 className="w-4 h-4" />
                   <span>
-                    {lang === 'ar'
-                      ? 'قائمة المستندات اللازمة لبدء الدراسة'
-                      : 'Required Initial Document Checklist'}
+                    {tr(
+                      lang,
+                      'قائمة المستندات اللازمة لبدء الدراسة',
+                      'Required Initial Document Checklist',
+                      'ابتدائی مطالعے کے لیے مطلوبہ دستاویزات کی فہرست'
+                    )}
                   </span>
                 </h4>
                 <ul className="space-y-2 text-xs md:text-sm text-[#D5CEBF]">
-                  {(lang === 'ar' ? estimate.checklistAr : estimate.checklistEn).map(
-                    (doc, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[#D1B46A]">•</span>
-                        <span>{doc}</span>
-                      </li>
-                    )
-                  )}
+                  {tr(
+                    lang,
+                    estimate.checklistAr,
+                    estimate.checklistEn,
+                    estimate.checklistUr
+                  ).map((doc, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-[#D1B46A]">•</span>
+                      <span>{doc}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -253,16 +323,22 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
             <div className="mt-6 pt-4 border-t border-white/10 text-xs text-[#C2B69C] space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-[#D1B46A]">
-                  {lang === 'ar'
-                    ? 'إخلاء مسؤولية قانونية · السرية المهنية (PDPL)'
-                    : 'Legal Disclaimer · Confidentiality (PDPL)'}
+                  {tr(
+                    lang,
+                    'إخلاء مسؤولية قانونية · السرية المهنية (PDPL)',
+                    'Legal Disclaimer · Confidentiality (PDPL)',
+                    'قانونی دستبرداری · پیشہ ورانہ رازداری (PDPL)'
+                  )}
                 </span>
                 <span className="text-[#D1B46A] font-mono-tabular">KSA · JED</span>
               </div>
               <p className="leading-relaxed text-[#D5CEBF]">
-                {lang === 'ar'
-                  ? 'المعلومات والتقديرات المعروضة أعلاه هي لأغراض تثقيفية عامة فقط ولا تغني عن الاستشارة القانونية الخاصة، ولا تُعد توكيلاً رسمياً إلا بعد توقيع عقد وكالة وسداد الأتعاب.'
-                  : 'Estimates above are for general educational purposes only, do not substitute for specific legal advice, and do not constitute formal representation until a retainer contract is signed and fees are paid.'}
+                {tr(
+                  lang,
+                  'المعلومات والتقديرات المعروضة أعلاه هي لأغراض تثقيفية عامة فقط ولا تغني عن الاستشارة القانونية الخاصة، ولا تُعد توكيلاً رسمياً إلا بعد توقيع عقد وكالة وسداد الأتعاب.',
+                  'Estimates above are for general educational purposes only, do not substitute for specific legal advice, and do not constitute formal representation until a retainer contract is signed and fees are paid.',
+                  'مذکورہ بالا معلومات اور تخمینے صرف عمومی آگاہی کے لیے ہیں اور مخصوص قانونی مشورے کا متبادل نہیں ہیں، نیز باقاعدہ معاہدے پر دستخط اور فیس کی ادائیگی تک انہیں باضابطہ وکالت نہیں سمجھا جائے گا۔'
+                )}
               </p>
             </div>
           </div>

@@ -14,6 +14,8 @@ import {
   ServiceCategory,
   LEGAL_SERVICES,
   filterServices,
+  isRtl,
+  tr,
 } from '../utils/lawFirmLogic';
 
 interface ServicesSectionProps {
@@ -30,20 +32,34 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   const [activeService, setActiveService] = useState<LegalService | null>(null);
 
   const filteredServices = filterServices(LEGAL_SERVICES, category, searchQuery);
-  const ArrowIcon = lang === 'ar' ? ArrowUpLeft : ArrowUpRight;
+  const ArrowIcon = isRtl(lang) ? ArrowUpLeft : ArrowUpRight;
 
-  const filterButtons: { id: ServiceCategory; labelAr: string; labelEn: string; count: number }[] = [
-    { id: 'all', labelAr: 'جميع الخدمات', labelEn: 'All Services', count: 14 },
+  const filterButtons: {
+    id: ServiceCategory;
+    labelAr: string;
+    labelEn: string;
+    labelUr: string;
+    count: number;
+  }[] = [
+    {
+      id: 'all',
+      labelAr: 'جميع الخدمات',
+      labelEn: 'All Services',
+      labelUr: 'تمام خدمات',
+      count: 14,
+    },
     {
       id: 'advisory',
       labelAr: 'خدمات الاستشارات القانونية',
       labelEn: 'Legal Advisory',
+      labelUr: 'قانونی مشاورتی خدمات',
       count: 6,
     },
     {
       id: 'representation',
       labelAr: 'خدمات التمثيل القانوني',
       labelEn: 'Legal Representation',
+      labelUr: 'قانونی و عدالتی نمائندگی',
       count: 8,
     },
   ];
@@ -55,28 +71,39 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <div>
             <div className="text-xs font-semibold text-[#9A7B34] mb-2">
-              {lang === 'ar'
-                ? '02. خدماتنا القانونية · Our Legal Services'
-                : '02. Our Legal Services · خدماتنا القانونية'}
+              {tr(
+                lang,
+                '02. خدماتنا القانونية · Our Legal Services',
+                '02. Our Legal Services · خدماتنا القانونية',
+                '02. ہماری قانونی خدمات · Our Legal Services'
+              )}
             </div>
             <h2
               className="text-2xl sm:text-3xl font-bold text-[#141414] leading-snug"
               style={{ textWrap: 'balance' }}
             >
-              {lang === 'ar'
-                ? 'منظومة متكاملة من الاستشارات والتمثيل القضائي'
-                : 'Integrated System of Legal Consultations & Judicial Representation'}
+              {tr(
+                lang,
+                'منظومة متكاملة من الاستشارات والتمثيل القضائي',
+                'Integrated System of Legal Consultations & Judicial Representation',
+                'قانونی مشاورت اور عدالتی نمائندگی کا مکمل اور مربوط نظام'
+              )}
             </h2>
           </div>
 
           {/* Interactive Search Input */}
           <div className="relative w-full lg:w-80">
             <label htmlFor="service-search" className="sr-only">
-              {lang === 'ar' ? 'ابحث في الخدمات القانونية' : 'Search legal services'}
+              {tr(
+                lang,
+                'ابحث في الخدمات القانونية',
+                'Search legal services',
+                'قانونی خدمات تلاش کریں'
+              )}
             </label>
             <Search
               className={`w-4 h-4 text-[#6E675B] absolute top-1/2 -translate-y-1/2 ${
-                lang === 'ar' ? 'right-3.5' : 'left-3.5'
+                isRtl(lang) ? 'right-3.5' : 'left-3.5'
               }`}
             />
             <input
@@ -84,13 +111,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               type="search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={
-                lang === 'ar'
-                  ? 'ابحث عن خدمة (مثل: عقود، تحكيم، شركات)...'
-                  : 'Search services (e.g. contracts, arbitration)...'
-              }
+              placeholder={tr(
+                lang,
+                'ابحث عن خدمة (مثل: عقود، تحكيم، شركات)...',
+                'Search services (e.g. contracts, arbitration)...',
+                'خدمت تلاش کریں (مثلاً: معاہدے، ثالثی، کمپنیاں)...'
+              )}
               className={`w-full py-2.5 text-sm bg-[#FAF8F5] border border-[#D8CEB8] rounded-lg text-[#141414] placeholder:text-[#7A7265] focus:outline-none focus:border-[#B69648] ${
-                lang === 'ar' ? 'pr-10 pl-4' : 'pl-10 pr-4'
+                isRtl(lang) ? 'pr-10 pl-4' : 'pl-10 pr-4'
               }`}
             />
           </div>
@@ -100,7 +128,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b border-[#F0ECE1]">
           <div
             role="tablist"
-            aria-label={lang === 'ar' ? 'تصنيف الخدمات القانونية' : 'Legal Services Filter'}
+            aria-label={tr(
+              lang,
+              'تصنيف الخدمات القانونية',
+              'Legal Services Filter',
+              'قانونی خدمات کی درجہ بندی'
+            )}
             className="inline-flex flex-wrap items-center gap-1.5 p-1.5 bg-[#FAF8F5] border border-[#E5DEC9] rounded-lg"
           >
             {filterButtons.map((btn) => {
@@ -118,7 +151,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       : 'text-[#4A463D] hover:text-[#141414]'
                   }`}
                 >
-                  <span>{lang === 'ar' ? btn.labelAr : btn.labelEn}</span>
+                  <span>{tr(lang, btn.labelAr, btn.labelEn, btn.labelUr)}</span>
                   <span className="mx-1.5 opacity-60 tabular-nums">({btn.count})</span>
                 </button>
               );
@@ -126,9 +159,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           </div>
 
           <div className="text-xs text-[#5C564B] tabular-nums">
-            {lang === 'ar'
-              ? `عرض ${filteredServices.length} من أصل ${LEGAL_SERVICES.length} خدمة قانونية`
-              : `Showing ${filteredServices.length} of ${LEGAL_SERVICES.length} legal services`}
+            {tr(
+              lang,
+              `عرض ${filteredServices.length} من أصل ${LEGAL_SERVICES.length} خدمة قانونية`,
+              `Showing ${filteredServices.length} of ${LEGAL_SERVICES.length} legal services`,
+              `کل ${LEGAL_SERVICES.length} میں سے ${filteredServices.length} قانونی خدمات دکھائی جا رہی ہیں`
+            )}
           </div>
         </div>
 
@@ -136,14 +172,20 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         {filteredServices.length === 0 ? (
           <div className="bg-[#FAF8F5] rounded-xl p-12 text-center border border-[#E5DEC9]">
             <p className="text-base font-semibold text-[#141414] mb-2">
-              {lang === 'ar'
-                ? 'لا توجد خدمات مطابقة لعبارة البحث'
-                : 'No legal services match your search query'}
+              {tr(
+                lang,
+                'لا توجد خدمات مطابقة لعبارة البحث',
+                'No legal services match your search query',
+                'آپ کی تلاش کے مطابق کوئی قانونی خدمت نہیں ملی'
+              )}
             </p>
             <p className="text-sm text-[#5C564B] mb-6">
-              {lang === 'ar'
-                ? 'جرب البحث بكلمات أخرى أو استعرض جميع الخدمات القانونية المتاحة.'
-                : 'Try searching with a different keyword or reset the filter to view all services.'}
+              {tr(
+                lang,
+                'جرب البحث بكلمات أخرى أو استعرض جميع الخدمات القانونية المتاحة.',
+                'Try searching with a different keyword or reset the filter to view all services.',
+                'مختلف الفاظ کے ساتھ تلاش کریں یا تمام قانونی خدمات دیکھنے کے لیے فلٹر ری سیٹ کریں۔'
+              )}
             </p>
             <button
               type="button"
@@ -153,7 +195,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               }}
               className="px-5 py-2.5 text-xs font-semibold text-white bg-[#141414] rounded-lg hover:bg-[#9A7B34] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
-              {lang === 'ar' ? 'إعادة ضبط البحث' : 'Reset Search Filter'}
+              {tr(lang, 'إعادة ضبط البحث', 'Reset Search Filter', 'تلاش ری سیٹ کریں')}
             </button>
           </div>
         ) : (
@@ -182,18 +224,27 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         </span>
                         <span>
                           {service.category === 'advisory'
-                            ? lang === 'ar'
-                              ? 'خدمات الاستشارات'
-                              : 'Legal Advisory'
-                            : lang === 'ar'
-                            ? 'التمثيل القانوني'
-                            : 'Representation'}
+                            ? tr(
+                                lang,
+                                'خدمات الاستشارات',
+                                'Legal Advisory',
+                                'قانونی مشاورت'
+                              )
+                            : tr(
+                                lang,
+                                'التمثيل القانوني',
+                                'Representation',
+                                'قانونی نمائندگی'
+                              )}
                         </span>
                         <span aria-hidden="true">·</span>
                         <span className="tabular-nums">
-                          {lang === 'ar'
-                            ? service.typicalTimelineAr
-                            : service.typicalTimelineEn}
+                          {tr(
+                            lang,
+                            service.typicalTimelineAr,
+                            service.typicalTimelineEn,
+                            service.typicalTimelineUr
+                          )}
                         </span>
                       </div>
                     </div>
@@ -204,7 +255,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         isRepresentation ? 'text-white' : 'text-[#141414]'
                       }`}
                     >
-                      {lang === 'ar' ? service.titleAr : service.titleEn}
+                      {tr(lang, service.titleAr, service.titleEn, service.titleUr)}
                     </h3>
 
                     {/* Summary */}
@@ -213,7 +264,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         isRepresentation ? 'text-[#D5CEBF]' : 'text-[#4A463D]'
                       }`}
                     >
-                      {lang === 'ar' ? service.summaryAr : service.summaryEn}
+                      {tr(lang, service.summaryAr, service.summaryEn, service.summaryUr)}
                     </p>
                   </div>
 
@@ -232,9 +283,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                           : 'text-[#9A7B34] hover:text-[#141414]'
                       }`}
                     >
-                      {lang === 'ar'
-                        ? 'تفاصيل المخرجات والمتطلبات'
-                        : 'Deliverables & Requirements'}
+                      {tr(
+                        lang,
+                        'تفاصيل المخرجات والمتطلبات',
+                        'Deliverables & Requirements',
+                        'مخرجات اور مطلوبہ دستاویزات'
+                      )}
                     </button>
 
                     <button
@@ -246,7 +300,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                           : 'bg-[#141414] text-white hover:bg-[#9A7B34]'
                       }`}
                     >
-                      <span>{lang === 'ar' ? 'طلب الخدمة' : 'Request Service'}</span>
+                      <span>
+                        {tr(lang, 'طلب الخدمة', 'Request Service', 'خدمت حاصل کریں')}
+                      </span>
                       <ArrowIcon className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -259,11 +315,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         {/* Inline Content Legal Disclaimer Notice */}
         <div className="mt-10 rounded-xl bg-white border border-[#D8CEB8] p-4 md:p-5 text-xs text-[#5C564B] leading-relaxed">
           <strong className="text-[#9A7B34]">
-            {lang === 'ar' ? 'إخلاء مسؤولية قانونية: ' : 'Legal Disclaimer: '}
+            {tr(
+              lang,
+              'إخلاء مسؤولية قانونية: ',
+              'Legal Disclaimer: ',
+              'قانونی دستبرداری: '
+            )}
           </strong>
-          {lang === 'ar'
-            ? 'المعلومات وتفاصيل الخدمات المقدمة في هذه الصفحة هي لأغراض تثقيفية وتعريفية عامة فقط ولا تغني عن الاستشارة القانونية الخاصة لكل حالة بحسب وقائعها ومستنداتها.'
-            : 'The service descriptions and information provided on this page are for general educational purposes only and do not substitute for specialized legal counsel tailored to your specific case.'}
+          {tr(
+            lang,
+            'المعلومات وتفاصيل الخدمات المقدمة في هذه الصفحة هي لأغراض تثقيفية وتعريفية عامة فقط ولا تغني عن الاستشارة القانونية الخاصة لكل حالة بحسب وقائعها ومستنداتها.',
+            'The service descriptions and information provided on this page are for general educational purposes only and do not substitute for specialized legal counsel tailored to your specific case.',
+            'اس صفحے پر فراہم کردہ خدمات کی تفصیلات اور معلومات صرف عمومی آگاہی اور معلوماتی مقاصد کے لیے ہیں اور ہر مقدمے کے مخصوص واقعات اور دستاویزات کے مطابق باقاعدہ قانونی مشورے کا متبادل نہیں ہیں۔'
+          )}
         </div>
 
         {/* Service Details Modal Dialog */}
@@ -284,22 +348,38 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   <div className="text-xs font-semibold text-[#9A7B34] mb-1">
                     {activeService.index} ·{' '}
                     {activeService.category === 'advisory'
-                      ? lang === 'ar'
-                        ? 'خدمات الاستشارات القانونية'
-                        : 'Legal Advisory Services'
-                      : lang === 'ar'
-                      ? 'خدمات التمثيل القانوني'
-                      : 'Legal Representation Services'}
+                      ? tr(
+                          lang,
+                          'خدمات الاستشارات القانونية',
+                          'Legal Advisory Services',
+                          'قانونی مشاورتی خدمات'
+                        )
+                      : tr(
+                          lang,
+                          'خدمات التمثيل القانوني',
+                          'Legal Representation Services',
+                          'قانونی و عدالتی نمائندگی کی خدمات'
+                        )}
                   </div>
                   <h3 id="service-modal-title" className="text-xl md:text-2xl font-bold">
-                    {lang === 'ar' ? activeService.titleAr : activeService.titleEn}
+                    {tr(
+                      lang,
+                      activeService.titleAr,
+                      activeService.titleEn,
+                      activeService.titleUr
+                    )}
                   </h3>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => setActiveService(null)}
-                  aria-label={lang === 'ar' ? 'إغلاق التفاصيل' : 'Close details'}
+                  aria-label={tr(
+                    lang,
+                    'إغلاق التفاصيل',
+                    'Close details',
+                    'تفصیلات بند کریں'
+                  )}
                   className="p-2 rounded-lg text-[#5C564B] hover:text-[#141414] hover:bg-[#FAF8F5] transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
@@ -307,7 +387,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               </div>
 
               <p className="text-sm md:text-base text-[#3D3930] leading-relaxed mb-6">
-                {lang === 'ar' ? activeService.summaryAr : activeService.summaryEn}
+                {tr(
+                  lang,
+                  activeService.summaryAr,
+                  activeService.summaryEn,
+                  activeService.summaryUr
+                )}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -316,15 +401,20 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   <h4 className="text-sm font-bold text-[#141414] mb-3 flex items-center gap-2">
                     <Check className="w-4 h-4 text-[#9A7B34]" />
                     <span>
-                      {lang === 'ar'
-                        ? 'المخرجات ونطاق العمل'
-                        : 'Key Legal Deliverables'}
+                      {tr(
+                        lang,
+                        'المخرجات ونطاق العمل',
+                        'Key Legal Deliverables',
+                        'قانونی مخرجات اور کام کا دائرہ کار'
+                      )}
                     </span>
                   </h4>
                   <ul className="space-y-2.5 text-xs md:text-sm text-[#4A463D]">
-                    {(lang === 'ar'
-                      ? activeService.deliverablesAr
-                      : activeService.deliverablesEn
+                    {tr(
+                      lang,
+                      activeService.deliverablesAr,
+                      activeService.deliverablesEn,
+                      activeService.deliverablesUr
                     ).map((item, idx) => (
                       <li key={idx} className="leading-relaxed">
                         • {item}
@@ -338,15 +428,20 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   <h4 className="text-sm font-bold text-[#141414] mb-3 flex items-center gap-2">
                     <FileText className="w-4 h-4 text-[#9A7B34]" />
                     <span>
-                      {lang === 'ar'
-                        ? 'المستندات الأساسية المطلوبة'
-                        : 'Required Initial Documents'}
+                      {tr(
+                        lang,
+                        'المستندات الأساسية المطلوبة',
+                        'Required Initial Documents',
+                        'مطلوبہ بنیادی دستاویزات'
+                      )}
                     </span>
                   </h4>
                   <ul className="space-y-2.5 text-xs md:text-sm text-[#4A463D]">
-                    {(lang === 'ar'
-                      ? activeService.requiredDocsAr
-                      : activeService.requiredDocsEn
+                    {tr(
+                      lang,
+                      activeService.requiredDocsAr,
+                      activeService.requiredDocsEn,
+                      activeService.requiredDocsUr
                     ).map((doc, idx) => (
                       <li key={idx} className="leading-relaxed">
                         • {doc}
@@ -360,11 +455,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 <div className="flex items-center gap-2 text-xs text-[#5C564B]">
                   <Clock className="w-4 h-4 text-[#9A7B34]" />
                   <span>
-                    {lang === 'ar' ? 'الإطار الزمني المعتاد:' : 'Typical Timeline:'}{' '}
+                    {tr(
+                      lang,
+                      'الإطار الزمني المعتاد:',
+                      'Typical Timeline:',
+                      'متوقع مدت:'
+                    )}{' '}
                     <strong className="text-[#141414]">
-                      {lang === 'ar'
-                        ? activeService.typicalTimelineAr
-                        : activeService.typicalTimelineEn}
+                      {tr(
+                        lang,
+                        activeService.typicalTimelineAr,
+                        activeService.typicalTimelineEn,
+                        activeService.typicalTimelineUr
+                      )}
                     </strong>
                   </span>
                 </div>
@@ -375,7 +478,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     onClick={() => setActiveService(null)}
                     className="px-4 py-2 text-xs font-semibold text-[#4A463D] bg-[#FAF8F5] hover:bg-[#E5DEC9] rounded-lg transition-colors cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    {lang === 'ar' ? 'إغلاق' : 'Close'}
+                    {tr(lang, 'إغلاق', 'Close', 'بند کریں')}
                   </button>
                   <button
                     type="button"
@@ -386,9 +489,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     }}
                     className="px-5 py-2.5 text-xs font-semibold text-white bg-[#141414] hover:bg-[#9A7B34] rounded-lg transition-colors cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    {lang === 'ar'
-                      ? 'اعتماد الخدمة وحجز استشارة'
-                      : 'Book Consultation for This Service'}
+                    {tr(
+                      lang,
+                      'اعتماد الخدمة وحجز استشارة',
+                      'Book Consultation for This Service',
+                      'اس خدمت کے لیے مشاورت بک کریں'
+                    )}
                   </button>
                 </div>
               </div>

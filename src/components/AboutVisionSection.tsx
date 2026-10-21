@@ -14,6 +14,7 @@ import {
   Language,
   FIRM_VALUES,
   FIRM_GOALS,
+  tr,
 } from '../utils/lawFirmLogic';
 
 interface AboutVisionSectionProps {
@@ -44,28 +45,42 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           <div className="lg:col-span-5">
             <div className="text-xs font-semibold text-[#9A7B34] mb-2">
-              {lang === 'ar' ? '01. من نحن · About Us' : '01. About Us · من نحن'}
+              {tr(
+                lang,
+                '01. من نحن · About Us',
+                '01. About Us · من نحن',
+                '01. ہمارے بارے میں · About Us'
+              )}
             </div>
             <h2
               className="text-2xl sm:text-3xl font-bold text-[#141414] leading-snug"
               style={{ textWrap: 'balance' }}
             >
-              {lang === 'ar'
-                ? 'شراكة قانونية موثوقة لقطاع الأعمال والمؤسسات والأفراد'
-                : 'A Trusted Legal Partner for Business Sectors, Entities & Individuals'}
+              {tr(
+                lang,
+                'شراكة قانونية موثوقة لقطاع الأعمال والمؤسسات والأفراد',
+                'A Trusted Legal Partner for Business Sectors, Entities & Individuals',
+                'کاروباری شعبوں، اداروں اور افراد کے لیے ایک قابلِ اعتماد قانونی شراکت دار'
+              )}
             </h2>
           </div>
 
           <div className="lg:col-span-7 bg-white rounded-xl p-7 md:p-8 border border-[#E5DEC9]">
             <p className="text-base md:text-lg text-[#2C2821] leading-relaxed mb-4">
-              {lang === 'ar'
-                ? 'نتشرف في شركة سامي الشريف للمحاماة والاستشارات القانونية بتقديم خدمات واستشارات قانونية شاملة وموثوقة، تلبي الاحتياجات المتجددة لقطاع الأعمال والمؤسسات والأفراد.'
-                : 'At Sami Al-Sharif Law Firm & Legal Consultations, we are honored to deliver comprehensive and trusted legal services tailored to the evolving needs of business sectors, entities, and individuals.'}
+              {tr(
+                lang,
+                'نتشرف في شركة سامي الشريف للمحاماة والاستشارات القانونية بتقديم خدمات واستشارات قانونية شاملة وموثوقة، تلبي الاحتياجات المتجددة لقطاع الأعمال والمؤسسات والأفراد.',
+                'At Sami Al-Sharif Law Firm & Legal Consultations, we are honored to deliver comprehensive and trusted legal services tailored to the evolving needs of business sectors, entities, and individuals.',
+                'سامی الشریف لاء فرم اینڈ لیگل کنسلٹیشنز میں ہمیں کاروباری اداروں، کمپنیوں اور افراد کی بدلتی ہوئی ضروریات کو پورا کرنے کے لیے جامع اور قابلِ اعتماد قانونی خدمات و مشاورت فراہم کرنے کا شرف حاصل ہے۔'
+              )}
             </p>
             <p className="text-sm text-[#5C564B] leading-relaxed">
-              {lang === 'ar'
-                ? 'نجمع بين التأصيل الشرعي والنظامي العميق في أنظمة المملكة العربية السعودية وبين المرونة والابتكار في صياغة الحلول القانونية الوقائية والعلاجية.'
-                : 'We combine deep statutory mastery of Saudi Arabian regulations with agile, innovative legal strategies that protect assets and resolve complex disputes.'}
+              {tr(
+                lang,
+                'نجمع بين التأصيل الشرعي والنظامي العميق في أنظمة المملكة العربية السعودية وبين المرونة والابتكار في صياغة الحلول القانونية الوقائية والعلاجية.',
+                'We combine deep statutory mastery of Saudi Arabian regulations with agile, innovative legal strategies that protect assets and resolve complex disputes.',
+                'ہم مملکتِ سعودی عرب کے قوانین اور شرعی اصولوں میں گہری مہارت کو جدید اور لچکدار قانونی حکمتِ عملی کے ساتھ یکجا کرتے ہیں تاکہ اثاثوں کا تحفظ اور پیچیدہ تنازعات کا حل ممکن ہو سکے۔'
+              )}
             </p>
           </div>
         </div>
@@ -76,20 +91,31 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
           <div className="lg:col-span-5 rounded-xl bg-[#B69648] text-white p-8 flex flex-col justify-between">
             <div className="flex items-center justify-between mb-6">
               <span className="text-xs font-semibold text-white/90">
-                {lang === 'ar' ? 'رؤيتنا · Our Vision' : 'Our Vision · رؤيتنا'}
+                {tr(
+                  lang,
+                  'رؤيتنا · Our Vision',
+                  'Our Vision · رؤيتنا',
+                  'ہمارا وژن · Our Vision'
+                )}
               </span>
               <Eye className="w-6 h-6 text-white" />
             </div>
             <div>
               <h3 className="text-xl md:text-2xl font-bold mb-3 leading-snug">
-                {lang === 'ar'
-                  ? 'المرجع الأول للخدمات القانونية الاحترافية والتخصصية'
-                  : 'The Benchmark for Specialized Legal Excellence'}
+                {tr(
+                  lang,
+                  'المرجع الأول للخدمات القانونية الاحترافية والتخصصية',
+                  'The Benchmark for Specialized Legal Excellence',
+                  'پیشہ ورانہ اور خصوصی قانونی خدمات کا اولین مرکز'
+                )}
               </h3>
               <p className="text-sm md:text-base text-white/95 leading-relaxed">
-                {lang === 'ar'
-                  ? 'أن نكون عنواناً للخدمات والاستشارات القانونية الاحترافية والتخصصية بطرق مبتكرة وغير تقليدية لكسب ثقة العملاء والتركيز على تحقيق رضاهم وتجاوز توقعاتهم.'
-                  : 'To be the benchmark for professional and specialized legal services through innovative and unconventional approaches, earning client trust and exceeding expectations.'}
+                {tr(
+                  lang,
+                  'أن نكون عنواناً للخدمات والاستشارات القانونية الاحترافية والتخصصية بطرق مبتكرة وغير تقليدية لكسب ثقة العملاء والتركيز على تحقيق رضاهم وتجاوز توقعاتهم.',
+                  'To be the benchmark for professional and specialized legal services through innovative and unconventional approaches, earning client trust and exceeding expectations.',
+                  'جدید اور منفرد طریقوں سے پیشہ ورانہ اور خصوصی قانونی خدمات و مشاورت کا اولین مرکز بننا، تاکہ مؤکلین کا اعتماد حاصل کیا جا سکے اور ان کی توقعات سے بڑھ کر اطمینان یقینی بنایا جا سکے۔'
+                )}
               </p>
             </div>
           </div>
@@ -101,25 +127,34 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <span className="text-xs font-semibold text-[#9A7B34]">
-                    {lang === 'ar' ? 'رسالتنا · 01' : 'Our Mission · 01'}
+                    {tr(lang, 'رسالتنا · 01', 'Our Mission · 01', 'ہمارا مشن · 01')}
                   </span>
                   <Award className="w-6 h-6 text-[#9A7B34]" />
                 </div>
                 <h3 className="text-lg font-bold text-[#141414] mb-2.5">
-                  {lang === 'ar'
-                    ? 'الصدارة والسمعة المرموقة'
-                    : 'Leadership & Reputation'}
+                  {tr(
+                    lang,
+                    'الصدارة والسمعة المرموقة',
+                    'Leadership & Reputation',
+                    'قیادت اور باوقار ساکھ'
+                  )}
                 </h3>
                 <p className="text-sm text-[#4A463D] leading-relaxed">
-                  {lang === 'ar'
-                    ? 'نحرص على المحافظة على سمعتنا المرموقة والبقاء في صدارة مكاتب المحاماة محلياً وإقليمياً ودولياً، عبر التوظيف الأمثل للخبرات الطويلة.'
-                    : 'Maintaining our prestigious reputation and leading law firms locally, regionally, and internationally through optimal deployment of extensive expertise.'}
+                  {tr(
+                    lang,
+                    'نحرص على المحافظة على سمعتنا المرموقة والبقاء في صدارة مكاتب المحاماة محلياً وإقليمياً ودولياً، عبر التوظيف الأمثل للخبرات الطويلة.',
+                    'Maintaining our prestigious reputation and leading law firms locally, regionally, and internationally through optimal deployment of extensive expertise.',
+                    'طویل تجربے کے بہترین استعمال کے ذریعے اپنی باوقار ساکھ کو برقرار رکھنا اور مقامی، علاقائی اور بین الاقوامی سطح پر سرِفہرست لاء فرمز میں شامل رہنا۔'
+                  )}
                 </p>
               </div>
               <div className="pt-4 mt-6 border-t border-[#F0ECE1] text-xs text-[#6E675B]">
-                {lang === 'ar'
-                  ? 'تمثيل قانوني محلي وإقليمي ودولي'
-                  : 'Local · Regional · International Presence'}
+                {tr(
+                  lang,
+                  'تمثيل قانوني محلي وإقليمي ودولي',
+                  'Local · Regional · International Presence',
+                  'مقامی، علاقائی اور بین الاقوامی قانونی نمائندگی'
+                )}
               </div>
             </div>
 
@@ -128,25 +163,34 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <span className="text-xs font-semibold text-[#9A7B34]">
-                    {lang === 'ar' ? 'رسالتنا · 02' : 'Our Mission · 02'}
+                    {tr(lang, 'رسالتنا · 02', 'Our Mission · 02', 'ہمارا مشن · 02')}
                   </span>
                   <Cpu className="w-6 h-6 text-[#9A7B34]" />
                 </div>
                 <h3 className="text-lg font-bold text-[#141414] mb-2.5">
-                  {lang === 'ar'
-                    ? 'التقنية والجودة العالية'
-                    : 'Technology & High Quality'}
+                  {tr(
+                    lang,
+                    'التقنية والجودة العالية',
+                    'Technology & High Quality',
+                    'جدید ٹیکنالوجی اور اعلیٰ معیار'
+                  )}
                 </h3>
                 <p className="text-sm text-[#4A463D] leading-relaxed">
-                  {lang === 'ar'
-                    ? 'نسعى للريادة عبر توفير تمثيل ورعاية قانونية راقية وفقاً لأعلى المستويات وأفضل الممارسات الدولية، باستعمال التقنيات الحديثة.'
-                    : 'Providing top-tier legal representation and care adhering to the highest international practices and modern legal technologies.'}
+                  {tr(
+                    lang,
+                    'نسعى للريادة عبر توفير تمثيل ورعاية قانونية راقية وفقاً لأعلى المستويات وأفضل الممارسات الدولية، باستعمال التقنيات الحديثة.',
+                    'Providing top-tier legal representation and care adhering to the highest international practices and modern legal technologies.',
+                    'جدید قانونی ٹیکنالوجی کے استعمال اور اعلیٰ ترین بین الاقوامی معیارات کے مطابق بہترین قانونی نمائندگی اور معاونت فراہم کرنا۔'
+                  )}
                 </p>
               </div>
               <div className="pt-4 mt-6 border-t border-[#F0ECE1] text-xs text-[#6E675B]">
-                {lang === 'ar'
-                  ? 'أفضل الممارسات الدولية والتقنيات الحديثة'
-                  : 'International Standards · Modern LegalTech'}
+                {tr(
+                  lang,
+                  'أفضل الممارسات الدولية والتقنيات الحديثة',
+                  'International Standards · Modern LegalTech',
+                  'بین الاقوامی معیارات اور جدید لیگل ٹیک'
+                )}
               </div>
             </div>
           </div>
@@ -157,18 +201,29 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <div className="text-xs font-semibold text-[#9A7B34] mb-1.5">
-                {lang === 'ar' ? 'قيمنا الجوهرية · Our Values' : 'Core Values · قيمنا'}
+                {tr(
+                  lang,
+                  'قيمنا الجوهرية · Our Values',
+                  'Core Values · قيمنا',
+                  'ہماری بنیادی اقدار · Our Values'
+                )}
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-[#141414]">
-                {lang === 'ar'
-                  ? 'المبادئ الخمسة الحاكمة لأعمالنا القانونية'
-                  : 'Five Guiding Principles of Our Legal Practice'}
+                {tr(
+                  lang,
+                  'المبادئ الخمسة الحاكمة لأعمالنا القانونية',
+                  'Five Guiding Principles of Our Legal Practice',
+                  'ہماری قانونی خدمات کے پانچ بنیادی اصول'
+                )}
               </h3>
             </div>
             <p className="text-xs md:text-sm text-[#5C564B]">
-              {lang === 'ar'
-                ? 'الشفافية · السرعة والدقة · الاحترافية · الابتكار · روح الفريق'
-                : 'Transparency · Speed & Accuracy · Professionalism · Innovation · Teamwork'}
+              {tr(
+                lang,
+                'الشفافية · السرعة والدقة · الاحترافية · الابتكار · روح الفريق',
+                'Transparency · Speed & Accuracy · Professionalism · Innovation · Teamwork',
+                'شفافیت · تیز رفتاری اور درستگی · پیشہ ورانہ مہارت · جدت · ٹیم ورک'
+              )}
             </p>
           </div>
 
@@ -181,14 +236,14 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
                 <div>
                   <div className="mb-4">{renderValueIcon(val.iconKey)}</div>
                   <h4 className="text-base font-bold text-white mb-2">
-                    {lang === 'ar' ? val.titleAr : val.titleEn}
+                    {tr(lang, val.titleAr, val.titleEn, val.titleUr)}
                   </h4>
                   <p className="text-xs text-[#C2B69C] leading-relaxed">
-                    {lang === 'ar' ? val.descAr : val.descEn}
+                    {tr(lang, val.descAr, val.descEn, val.descUr)}
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-white/10 text-[11px] text-[#D1B46A]">
-                  {lang === 'ar' ? val.titleEn : val.titleAr}
+                  {lang === 'en' ? val.titleAr : val.titleEn}
                 </div>
               </div>
             ))}
@@ -199,12 +254,20 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
         <div>
           <div className="mb-8">
             <div className="text-xs font-semibold text-[#9A7B34] mb-1.5">
-              {lang === 'ar' ? 'أهدافنا الاستراتيجية · Our Goals' : 'Strategic Goals · أهدافنا'}
+              {tr(
+                lang,
+                'أهدافنا الاستراتيجية · Our Goals',
+                'Strategic Goals · أهدافنا',
+                'ہمارے اسٹریٹجک اہداف · Our Goals'
+              )}
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-[#141414]">
-              {lang === 'ar'
-                ? 'التزام راسخ بحماية المصالح وصون الخصوصية'
-                : 'Steadfast Commitment to Client Protection & Excellence'}
+              {tr(
+                lang,
+                'التزام راسخ بحماية المصالح وصون الخصوصية',
+                'Steadfast Commitment to Client Protection & Excellence',
+                'مؤکلین کے مفادات کے تحفظ اور رازداری کا پختہ عزم'
+              )}
             </h3>
           </div>
 
@@ -220,12 +283,12 @@ export const AboutVisionSection: React.FC<AboutVisionSectionProps> = ({ lang }) 
                 <div className="flex-1">
                   <div className="flex items-center justify-between gap-2 mb-1.5">
                     <h4 className="text-base font-bold text-[#141414]">
-                      {lang === 'ar' ? goal.titleAr : goal.titleEn}
+                      {tr(lang, goal.titleAr, goal.titleEn, goal.titleUr)}
                     </h4>
                     <CheckCircle2 className="w-4 h-4 text-[#9A7B34] shrink-0" />
                   </div>
                   <p className="text-xs md:text-sm text-[#4A463D] leading-relaxed">
-                    {lang === 'ar' ? goal.descAr : goal.descEn}
+                    {tr(lang, goal.descAr, goal.descEn, goal.descUr)}
                   </p>
                 </div>
               </div>

@@ -38,6 +38,10 @@ test('filterServices filters accurately by Arabic and English search queries', (
   const governanceEn = filterServices(LEGAL_SERVICES, 'advisory', 'Governance');
   assert.equal(governanceEn.length, 1);
   assert.equal(governanceEn[0].id, 'corporate-governance');
+
+  const arbitrationUr = filterServices(LEGAL_SERVICES, 'all', 'ثالثی');
+  assert.equal(arbitrationUr.length, 1);
+  assert.equal(arbitrationUr[0].id, 'arbitration-mediation');
 });
 
 test('validateConsultationInput catches empty and invalid fields and passes valid Saudi inputs', () => {
