@@ -1,8 +1,10 @@
 import React from 'react';
-import { Language, FIRM_CONTACT } from '../utils/lawFirmLogic';
+import { Language, ActivePage, FIRM_CONTACT } from '../utils/lawFirmLogic';
 
 interface HeaderProps {
   lang: Language;
+  activePage: ActivePage;
+  onNavigatePage: (page: ActivePage, sectionId?: string) => void;
   onBookClick: () => void;
 }
 
@@ -10,22 +12,26 @@ interface HeaderProps {
  * Strictly adheres to the 3-Zone Top Bar Contract:
  * [Brand title, one line] — [4-5 nav links, 1-2 word labels, single-line] — [1 primary action]
  */
-export const Header: React.FC<HeaderProps> = ({ lang, onBookClick }) => {
+export const Header: React.FC<HeaderProps> = ({
+  lang,
+  onNavigatePage,
+  onBookClick,
+}) => {
   const navItems =
     lang === 'ar'
       ? [
-          { href: '#about', label: 'من نحن' },
-          { href: '#services', label: 'خدماتنا' },
-          { href: '#estimator', label: 'نطاق الخدمة' },
-          { href: '#team', label: 'فريقنا' },
-          { href: '#contact', label: 'التواصل' },
+          { id: 'about', label: 'من نحن' },
+          { id: 'services', label: 'خدماتنا' },
+          { id: 'estimator', label: 'نطاق الخدمة' },
+          { id: 'team', label: 'فريقنا' },
+          { id: 'contact', label: 'التواصل' },
         ]
       : [
-          { href: '#about', label: 'About' },
-          { href: '#services', label: 'Services' },
-          { href: '#estimator', label: 'Scope' },
-          { href: '#team', label: 'Team' },
-          { href: '#contact', label: 'Contact' },
+          { id: 'about', label: 'About' },
+          { id: 'services', label: 'Services' },
+          { id: 'estimator', label: 'Scope' },
+          { id: 'team', label: 'Team' },
+          { id: 'contact', label: 'Contact' },
         ];
 
   return (
@@ -34,6 +40,10 @@ export const Header: React.FC<HeaderProps> = ({ lang, onBookClick }) => {
         {/* Zone 1: Single text element wordmark */}
         <a
           href="#top"
+          onClick={(e) => {
+            e.preventDefault();
+            onNavigatePage('home', 'top');
+          }}
           className="text-lg font-bold tracking-tight text-[#141414] hover:text-[#9A7B34] transition-colors whitespace-nowrap shrink-0"
         >
           {lang === 'ar' ? FIRM_CONTACT.firmNameShortAr : FIRM_CONTACT.firmNameShortEn}
@@ -46,8 +56,12 @@ export const Header: React.FC<HeaderProps> = ({ lang, onBookClick }) => {
         >
           {navItems.map((item) => (
             <a
-              key={item.href}
-              href={item.href}
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigatePage('home', item.id);
+              }}
               className="hover:text-[#141414] underline-offset-8 hover:underline decoration-[#B69648] decoration-2 transition-colors whitespace-nowrap shrink-0"
             >
               {item.label}

@@ -250,13 +250,20 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10 text-xs text-[#C2B69C] flex items-center justify-between">
-              <span>
+            <div className="mt-6 pt-4 border-t border-white/10 text-xs text-[#C2B69C] space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="font-semibold text-[#D1B46A]">
+                  {lang === 'ar'
+                    ? 'إخلاء مسؤولية قانونية · السرية المهنية (PDPL)'
+                    : 'Legal Disclaimer · Confidentiality (PDPL)'}
+                </span>
+                <span className="text-[#D1B46A] font-mono-tabular">KSA · JED</span>
+              </div>
+              <p className="leading-relaxed text-[#D5CEBF]">
                 {lang === 'ar'
-                  ? 'تخضع كافة البيانات والمستندات للسرية المهنية التامة'
-                  : 'All documents are protected under strict attorney-client privilege'}
-              </span>
-              <span className="text-[#D1B46A] font-mono-tabular">KSA · JED</span>
+                  ? 'المعلومات والتقديرات المعروضة أعلاه هي لأغراض تثقيفية عامة فقط ولا تغني عن الاستشارة القانونية الخاصة، ولا تُعد توكيلاً رسمياً إلا بعد توقيع عقد وكالة وسداد الأتعاب.'
+                  : 'Estimates above are for general educational purposes only, do not substitute for specific legal advice, and do not constitute formal representation until a retainer contract is signed and fees are paid.'}
+              </p>
             </div>
           </div>
         </div>

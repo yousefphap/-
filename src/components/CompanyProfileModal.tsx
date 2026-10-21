@@ -238,7 +238,7 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({
                   href={FIRM_CONTACT.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-mono-tabular font-semibold text-[#15803D] hover:underline"
+                  className="inline-flex items-center gap-1 font-mono-tabular font-semibold text-[#9A7B34] hover:underline"
                 >
                   <span>{lang === 'ar' ? 'واتساب الاستشارات:' : 'WhatsApp:'}</span>
                   <span>{FIRM_CONTACT.whatsappDisplay}</span>

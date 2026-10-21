@@ -86,6 +86,13 @@ export interface ScopeEstimateResult {
   recommendedCategory: 'advisory' | 'representation';
 }
 
+export interface SocialMediaPlatform {
+  id: 'x' | 'instagram' | 'snapchat' | 'facebook' | 'tiktok' | 'whatsapp';
+  nameAr: string;
+  nameEn: string;
+  url: string;
+}
+
 export const FIRM_CONTACT = {
   phoneDisplay: '0569888100',
   phoneInternational: '+966569888100',
@@ -105,6 +112,45 @@ export const FIRM_CONTACT = {
   firmNameEn: 'Sami Al-Sharif Law Firm & Legal Consultations',
   firmNameShortEn: 'Sami Al-Sharif Law Firm',
 };
+
+export const SOCIAL_MEDIA_LINKS: SocialMediaPlatform[] = [
+  {
+    id: 'x',
+    nameAr: 'منصة إكس',
+    nameEn: 'X',
+    url: 'https://x.com/AlshareefLawyer',
+  },
+  {
+    id: 'instagram',
+    nameAr: 'إنستغرام',
+    nameEn: 'Instagram',
+    url: 'https://www.instagram.com/alshareef_lawyer',
+  },
+  {
+    id: 'snapchat',
+    nameAr: 'سناب شات',
+    nameEn: 'Snapchat',
+    url: 'https://www.snapchat.com/@alshareeflawyer',
+  },
+  {
+    id: 'facebook',
+    nameAr: 'فيسبوك',
+    nameEn: 'Facebook',
+    url: 'https://www.facebook.com/alshareeflawyer',
+  },
+  {
+    id: 'tiktok',
+    nameAr: 'تيك توك',
+    nameEn: 'TikTok',
+    url: 'https://www.tiktok.com/@alshareeflawyer',
+  },
+  {
+    id: 'whatsapp',
+    nameAr: 'واتساب',
+    nameEn: 'WhatsApp',
+    url: FIRM_CONTACT.whatsappUrl,
+  },
+];
 
 export const LEGAL_SERVICES: LegalService[] = [
   // Advisory Services (خدمات الاستشارات القانونية - Slide 9 & 18)
@@ -900,3 +946,241 @@ export function createConsultationTicket(
     serviceTitleEn: service.titleEn,
   };
 }
+
+export type ActivePage = 'home' | 'privacy' | 'terms' | 'disclaimer';
+
+export interface LegalPolicySection {
+  id: string;
+  index: string;
+  titleAr: string;
+  titleEn: string;
+  contentAr: string;
+  contentEn: string;
+  bulletsAr?: string[];
+  bulletsEn?: string[];
+}
+
+export const LEGAL_DISCLAIMER = {
+  titleAr: 'إخلاء المسؤولية القانونية',
+  titleEn: 'Legal Disclaimer',
+  shortTextAr:
+    'إخلاء مسؤولية قانونية: المعلومات والمواد القانونية والتقديرات المقدمة في هذا الموقع هي لأغراض تثقيفية وتعريفية عامة فقط، ولا تغني عن الاستشارة القانونية الخاصة لكل حالة بحسب وقائعها ومستنداتها. كما أن الاستشارات الأولية الإلكترونية لا تعتبر توكيلاً رسمياً إلا بعد توقيع عقد وكالة وسداد الأتعاب المتفق عليها.',
+  shortTextEn:
+    'Legal Disclaimer: The information, materials, and estimates provided on this website are for general educational and informational purposes only and do not substitute for specific legal counsel. Initial electronic consultations do not constitute formal legal representation until a written retainer/power of attorney contract is signed and agreed fees are paid.',
+};
+
+export const PRIVACY_POLICY_SECTIONS: LegalPolicySection[] = [
+  {
+    id: 'pdpl-compliance',
+    index: '01',
+    titleAr: 'الالتزام بنظام حماية البيانات الشخصية السعودي (PDPL)',
+    titleEn: 'Compliance with Saudi Personal Data Protection Law (PDPL)',
+    contentAr:
+      'تلتزم شركة سامي الشريف للمحاماة والاستشارات القانونية بحماية خصوصية بيانات الموكلين وزوار الموقع الإلكتروني وفق أحكام نظام حماية البيانات الشخصية في المملكة العربية السعودية الصادر بالمرسوم الملكي رقم (م/19) وتعديلاته ولوائحه التنفيذية، ووفق واجبات السرية المهنية المنصوص عليها في نظام المحاماة السعودي.',
+    contentEn:
+      'Sami Al-Sharif Law Firm & Legal Consultations is committed to protecting the privacy of client and visitor data in strict accordance with the Saudi Personal Data Protection Law (PDPL) issued by Royal Decree No. (M/19) and its Implementing Regulations, as well as the statutory confidentiality duties under the Saudi Law Practice Code.',
+  },
+  {
+    id: 'data-collected',
+    index: '02',
+    titleAr: 'البيانات الشخصية التي يتم جمعها وطريقة تحصيلها',
+    titleEn: 'Personal Data Collected & Collection Methods',
+    contentAr:
+      'نقتصر في جمع البيانات الشخصية على الحد الأدنى اللازم لتقديم خدماتنا القانونية والتواصل مع مقدم الطلب، ويتم جمعها مباشرة بموافقة صاحب البيانات عند تعبئة نموذج طلب الاستشارة أو التواصل عبر الواتساب أو البريد الإلكتروني الرسمي، وتشمل:',
+    contentEn:
+      'We limit personal data collection to the minimum necessary to process legal inquiries and communicate with applicants, collected directly with consent via our consultation form, WhatsApp, or official email:',
+    bulletsAr: [
+      'بيانات الهوية والتعريف: الاسم الكامل أو اسم المنشأة وصفة مقدم الطلب (فرد، شركة، مستثمر أجنبي).',
+      'بيانات التواصل: رقم الجوال وعنوان البريد الإلكتروني.',
+      'بيانات الطلب القانوني: نوع الخدمة القانونية المطلوبة، مستوى الأولوية، وملخص الموضوع أو الاستشارة.',
+    ],
+    bulletsEn: [
+      'Identification Data: Full name or entity name and client classification (individual, corporate, foreign investor).',
+      'Contact Details: Mobile phone number and email address.',
+      'Legal Inquiry Data: Selected legal service, urgency level, and brief summary of the legal matter.',
+    ],
+  },
+  {
+    id: 'processing-purpose',
+    index: '03',
+    titleAr: 'أغراض معالجة البيانات واستخدامها',
+    titleEn: 'Purposes of Data Processing & Use',
+    contentAr:
+      'تُعالج البيانات الشخصية حصراً للأغراض المشروعة المرتبطة بطلب المستفيد، ولا يتم استخدامها لأي أغراض تسويقية غير مصرح بها، وتتمثل أغراض المعالجة في:',
+    contentEn:
+      'Personal data is processed exclusively for legitimate purposes directly linked to the client request and is never used for unauthorized marketing:',
+    bulletsAr: [
+      'دراسة طلبات الاستشارات القانونية المبدئية وتحديد القسم المختص داخل الشركة.',
+      'إجراء فحص عدم تعارض المصالح المهنية قبل قبول التمثيل أو تقديم الاستشارة.',
+      'التواصل مع مقدم الطلب لتزويده بالرد المبدئي أو عرض الأتعاب أو تحديد موعد الجلسة الاستشارية.',
+      'الوفاء بالمتطلبات النظامية والقضائية المقررة على شركات المحاماة المرخصة في المملكة.',
+    ],
+    bulletsEn: [
+      'Reviewing initial legal consultation requests and assigning the appropriate specialist team.',
+      'Conducting mandatory conflict-of-interest checks prior to formal engagement.',
+      'Communicating with the applicant regarding initial assessments, fee proposals, or appointment scheduling.',
+      'Fulfilling regulatory and statutory obligations applicable to licensed law firms in Saudi Arabia.',
+    ],
+  },
+  {
+    id: 'consultation-confidentiality',
+    index: '04',
+    titleAr: 'سرية الاستشارات والمعلومات القانونية وعدم الإفصاح',
+    titleEn: 'Confidentiality of Legal Consultations & Non-Disclosure',
+    contentAr:
+      'تحاط كافة البيانات والمستندات والوقائع التي يشاركها العميل مع الشركة بسرية مهنية تامة، سواء أفضى التواصل إلى إبرام عقد تمثيل رسمي أم لم يُفضِ. ولا يجوز للشركة أو لأي من محاميها ومستشاريها إفشاء أي بيانات شخصية أو تفاصيل استشارة لأي طرف ثالث إلا في الحالات المنصوص عليها نظاماً في نظام حماية البيانات الشخصية (PDPL) ونظام المحاماة السعودي.',
+    contentEn:
+      'All data, documents, and facts shared with the firm are treated with strict professional confidentiality, regardless of whether a formal retainer is concluded. No personal data or consultation details are disclosed to third parties except as strictly mandated by the Saudi PDPL and the Saudi Law Practice Code.',
+  },
+  {
+    id: 'pdpl-rights',
+    index: '05',
+    titleAr: 'حقوق صاحب البيانات الشخصية وفق نظام (PDPL)',
+    titleEn: 'Data Subject Rights under Saudi PDPL',
+    contentAr:
+      'يكفل نظام حماية البيانات الشخصية السعودي لصاحب البيانات ممارسة الحقوق النظامية التالية في أي وقت عبر التواصل مع قنواتنا الرسمية:',
+    contentEn:
+      'Under the Saudi Personal Data Protection Law (PDPL), data subjects have the right to exercise the following statutory rights at any time through our official channels:',
+    bulletsAr: [
+      'الحق في العلم: معرفة المسوغ النظامي والغرض من جمع بياناته الشخصية.',
+      'الحق في الوصول والحصول على نسخة: الاطلاع على بياناته الشخصية المحفوظة لدى الشركة.',
+      'الحق في التصحيح والتحديث: طلب تعديل أو استكمال أو تحديث أي بيانات شخصية غير دقيقة.',
+      'الحق في طلب الإتلاف والمسح: طلب حذف بياناته الشخصية عند انتهاء الغرض من جمعها أو العدول عن الموافقة، ما لم يوجد مقتضى نظامي للاحتفاظ بها.',
+    ],
+    bulletsEn: [
+      'Right to Know: Being informed of the legal basis and purpose of collecting personal data.',
+      'Right of Access: Requesting access to and a readable copy of personal data held by the firm.',
+      'Right to Rectification: Requesting correction, completion, or updating of inaccurate personal data.',
+      'Right to Destruction: Requesting deletion/destruction of personal data when no longer needed or upon withdrawal of consent, subject to statutory retention rules.',
+    ],
+  },
+  {
+    id: 'security-storage',
+    index: '06',
+    titleAr: 'أمن البيانات وفترة الاحتفاظ بها والتواصل',
+    titleEn: 'Data Security, Retention & Contact Officer',
+    contentAr:
+      'تطبق الشركة التدابير الأمنية والتقنية والتنظيمية اللازمة لحماية البيانات من الفقد أو التلف أو الاختراق أو الوصول غير المصرح به. ولأي استفسار أو طلب يتعلق بحقوق حماية البيانات الشخصية، يمكنكم التواصل مباشرة عبر البريد الرسمي (alshareeflawyer@gmail.com) أو هاتف الشركة (0569888100).',
+    contentEn:
+      'We implement technical and organizational safeguards to protect personal data against unauthorized access, loss, or breach. For any requests regarding your PDPL rights, please contact us via official email (alshareeflawyer@gmail.com) or phone (0569888100).',
+  },
+];
+
+export const TERMS_AND_CONDITIONS_SECTIONS: LegalPolicySection[] = [
+  {
+    id: 'terms-acceptance',
+    index: '01',
+    titleAr: 'نطاق التطبيق والقبول بالشروط والأحكام',
+    titleEn: 'Scope of Application & Acceptance of Terms',
+    contentAr:
+      'تُنظم هذه الشروط والأحكام ضوابط استخدام الموقع الإلكتروني الرسمي لشركة سامي الشريف للمحاماة والاستشارات القانونية وجميع خدماته الرقمية التفاعلية. ويُعد تصفحك للموقع أو إرسالك لأي نموذج استشارة إلكتروني إقراراً منك بالاطلاع على هذه الشروط والموافقة عليها.',
+    contentEn:
+      'These Terms & Conditions govern the use of the official website of Sami Al-Sharif Law Firm & Legal Consultations and its interactive tools. Accessing this website or submitting an electronic inquiry constitutes your full acceptance of these terms.',
+  },
+  {
+    id: 'no-formal-retainer',
+    index: '02',
+    titleAr: 'طبيعة الاستشارات الأولية وشروط انعقاد التوكيل الرسمي',
+    titleEn: 'Initial Electronic Consultations & Formal Representation Conditions',
+    contentAr:
+      'توضيح نظامي جوهري: إن إرسال طلب استشارة عبر الموقع الإلكتروني أو عبر تطبيق الواتساب أو البريد الإلكتروني، أو استخدام أداة تقييم النطاق القانوني، أو تلقي رد أولي من فريق الشركة، لا يُعتبر توكيلاً رسمياً ولا ينشئ علاقة تعاقدية أو وكالة قانونية ملزمة؛ ولا تنعقد صفة التمثيل القانوني أو التوكيل الرسمي إلا بعد استيفاء الشروط التالية مجتمعة:',
+    contentEn:
+      'Essential Legal Notice: Submitting a consultation request via the website, WhatsApp, or email, using the scope estimator, or receiving an initial response does NOT constitute formal legal representation or create a binding attorney-client relationship. Formal representation is established ONLY after fulfilling all of the following conditions:',
+    bulletsAr: [
+      'مراجعة الشركة للطلب والتحقق النظامي من عدم وجود تعارض في المصالح.',
+      'توقيع عقد أتعاب محاماة واستشارات قانونية رسمي ومكتوب ومعتمد من الطرفين يحدد نطاق العمل بدقة.',
+      'إصدار وكالة شرعية / رسمية سارية المفعول عند تطلب الخدمة للتمثيل أمام الجهات القضائية أو الحكومية.',
+      'سداد العميل للدفعة المستحقة من الأتعاب المتفق عليها في العقد المبرم.',
+    ],
+    bulletsEn: [
+      'Completion of the firm’s internal review and statutory conflict-of-interest clearance.',
+      'Execution of a formal, written legal engagement/retainer contract signed by both parties defining the exact scope of work.',
+      'Issuance of a valid official Power of Attorney (where judicial or administrative representation is required).',
+      'Payment of the agreed retainer fees in accordance with the signed engagement contract.',
+    ],
+  },
+  {
+    id: 'educational-nature',
+    index: '03',
+    titleAr: 'الطبيعة التثقيفية للمحتوى وأداة تقييم النطاق',
+    titleEn: 'Informational Nature of Content & Scope Estimator',
+    contentAr:
+      'جميع المعلومات القانونية، وتفاصيل المخرجات، والمدد الزمنية التقريبية المعروضة في الموقع وفي أداة تقييم المسار القانوني هي مؤشرات استرشادية وتثقيفية عامة فقط، وقد تختلف الإجراءات والمتطلبات الفعلية باختلاف وقائع كل قضية والأنظمة واللوائح المطبقة وقت دراسة الملف.',
+    contentEn:
+      'All legal information, deliverable descriptions, and timeline estimates displayed on the website and within the Legal Scope Estimator are indicative and for general informational purposes only. Actual legal procedures and timelines depend on the specific facts and documents of each case.',
+  },
+  {
+    id: 'user-obligations',
+    index: '04',
+    titleAr: 'التزامات المستخدم وصحة البيانات المقدمة',
+    titleEn: 'User Obligations & Accuracy of Submitted Data',
+    contentAr:
+      'يتعهد المستخدم بصحة ودقة البيانات التي يدخلها في نماذج طلب الاستشارة، وبأنه صاحب الصفة النظامية أو المفوض النظامي للتواصل بشأن الموضوع المطروح، مع الالتزام بعدم استخدام الموقع لأي غرض يخالف الأنظمة المرعية في المملكة العربية السعودية.',
+    contentEn:
+      'Users warrant that all information submitted through consultation forms is accurate and that they possess the legal capacity or authorization to inquire about the matter, strictly complying with applicable laws in the Kingdom of Saudi Arabia.',
+  },
+  {
+    id: 'intellectual-property',
+    index: '05',
+    titleAr: 'حقوق الملكية الفكرية وحقوق النشر',
+    titleEn: 'Intellectual Property & Copyright',
+    contentAr:
+      'جميع المحتويات النصية، والتصاميم، والهيكلية التنظيمية للخدمات المنشورة على هذا الموقع هي ملكية خالصة لشركة سامي الشريف للمحاماة والاستشارات القانونية، ويُحظر نسخها أو إعادة نشرها لأغراض تجارية دون إذن خطي مسبق.',
+    contentEn:
+      'All textual content, visual design, and structured service methodologies on this website are the exclusive intellectual property of Sami Al-Sharif Law Firm & Legal Consultations and may not be reproduced commercially without prior written consent.',
+  },
+  {
+    id: 'governing-law',
+    index: '06',
+    titleAr: 'النظام الواجب التطبيق والاختصاص المكاني',
+    titleEn: 'Governing Law & Competent Jurisdiction',
+    contentAr:
+      'تخضع هذه الشروط والأحكام وتُفسر وفقاً للأنظمة واللوائح السارية في المملكة العربية السعودية، وتختص المحاكم المختصة في المملكة العربية السعودية (مكة المكرمة / جدة) بالفصل في أي نزاع ينشأ عن استخدام الموقع.',
+    contentEn:
+      'These Terms & Conditions are governed by and construed in accordance with the laws and regulations of the Kingdom of Saudi Arabia, with exclusive jurisdiction vested in the competent courts of Saudi Arabia (Makkah / Jeddah).',
+  },
+];
+
+export const DISCLAIMER_SECTIONS: LegalPolicySection[] = [
+  {
+    id: 'general-educational-purpose',
+    index: '01',
+    titleAr: 'الغرض التثقيفي والتعريفي العام للمحتوى',
+    titleEn: 'General Educational & Informational Purpose',
+    contentAr:
+      'إن كافة المواد والمعلومات والملخصات القانونية المنشورة عبر الموقع الإلكتروني لشركة سامي الشريف للمحاماة والاستشارات القانونية مُعدة لأغراض تثقيفية وتعريفية عامة فقط، ولا يُقصد بها تقديم فتوى أو رأي قانوني خاص أو استشارة نظامية نهائية يُعتمد عليها لاتخاذ قرار دون مراجعة محامٍ مختص.',
+    contentEn:
+      'All materials, summaries, and legal descriptions published on the website of Sami Al-Sharif Law Firm & Legal Consultations are prepared strictly for general educational and informational purposes and do not constitute formal legal opinions.',
+  },
+  {
+    id: 'no-substitute-for-counsel',
+    index: '02',
+    titleAr: 'عدم الاستغناء عن الاستشارة القانونية الخاصة',
+    titleEn: 'No Substitute for Specialized Legal Consultation',
+    contentAr:
+      'نظراً لأن الأحكام والمراكز النظامية تختلف باختلاف الوقائع والوثائق والعقود الخاصة بكل حالة، فإن المعلومات الواردة في الموقع لا تغني بأي حال عن طلب الاستشارة القانونية المتخصصة المبنية على دراسة شاملة للمستندات والوقائع الفعلية.',
+    contentEn:
+      'Because legal positions vary significantly based on specific facts, contracts, and evidentiary documents, the content on this website is no substitute for obtaining specialized legal advice tailored to your individual situation.',
+  },
+  {
+    id: 'no-agency-without-contract',
+    index: '03',
+    titleAr: 'عدم انعقاد الوكالة بمجرد المراسلة الإلكترونية',
+    titleEn: 'No Formal Agency Through Electronic Correspondence Alone',
+    contentAr:
+      'لا يُنشئ إرسال الاستفسارات أو طلبات الاستشارة الأولية عبر الموقع الإلكتروني أو الواتساب أو البريد الإلكتروني علاقة توكيل رسمي، ولا تلتزم الشركة بمباشرة أي إجراء قضائي أو نظامي نيابة عن المرسل إلا بعد توقيع عقد وكالة وأتعاب رسمي وسداد الأتعاب المتفق عليها.',
+    contentEn:
+      'Sending inquiries or initial consultation requests via the website, WhatsApp, or email does not establish a formal agency relationship. The firm assumes no duty to act before any judicial or administrative body until a written retainer agreement is signed and agreed fees are paid.',
+  },
+  {
+    id: 'limitation-of-liability',
+    index: '04',
+    titleAr: 'حدود المسؤولية عن القرارات الفردية',
+    titleEn: 'Limitation of Liability',
+    contentAr:
+      'تُخلي شركة سامي الشريف للمحاماة والاستشارات القانونية مسؤوليتها عن أي إجراءات أو تصرفات يتخذها زائر الموقع استناداً إلى الفهم العام للمحتوى التعريفي المنشور في الموقع دون الرجوع المباشر إلى مستشاري الشركة والحصول على دراسة قانونية مكتوبة ومعتمدة.',
+    contentEn:
+      'Sami Al-Sharif Law Firm & Legal Consultations disclaims liability for any actions taken by website visitors in reliance solely on general informational content without obtaining a formal, written legal assessment from our licensed counselors.',
+  },
+];
+

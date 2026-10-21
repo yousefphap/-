@@ -58,7 +58,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               href={FIRM_CONTACT.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-semibold text-[#15803D] hover:underline tabular-nums"
+              className="inline-flex items-center gap-1 font-semibold text-[#9A7B34] hover:underline tabular-nums"
             >
               <span>{lang === 'ar' ? 'واتساب الاستشارات:' : 'WhatsApp:'}</span>
               <span>{FIRM_CONTACT.whatsappDisplay}</span>
@@ -125,7 +125,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   href={FIRM_CONTACT.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 text-sm md:text-base font-semibold text-white bg-[#15803D] hover:bg-[#166534] rounded-lg transition-colors duration-150 whitespace-nowrap shrink-0 shadow-sm"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 text-sm md:text-base font-semibold text-[#141414] bg-[#D1B46A] hover:bg-[#B69648] rounded-lg transition-colors duration-150 whitespace-nowrap shrink-0 shadow-sm"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -250,7 +250,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     href={FIRM_CONTACT.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md bg-[#15803D] text-white font-semibold hover:bg-[#166534] transition-colors whitespace-nowrap shrink-0"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md bg-[#B69648] text-[#141414] font-semibold hover:bg-[#D1B46A] transition-colors whitespace-nowrap shrink-0"
                   >
                     <svg
                       viewBox="0 0 24 24"

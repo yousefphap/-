@@ -5,6 +5,10 @@ import {
   FIRM_VALUES,
   FIRM_GOALS,
   TEAM_PILLARS,
+  PRIVACY_POLICY_SECTIONS,
+  TERMS_AND_CONDITIONS_SECTIONS,
+  DISCLAIMER_SECTIONS,
+  LEGAL_DISCLAIMER,
   filterServices,
   validateConsultationInput,
   calculateScopeEstimate,
@@ -20,6 +24,10 @@ test('company profile dataset contains all 14 services across advisory and repre
   assert.equal(FIRM_VALUES.length, 5);
   assert.equal(FIRM_GOALS.length, 4);
   assert.equal(TEAM_PILLARS.length, 3);
+  assert.equal(PRIVACY_POLICY_SECTIONS.length, 6);
+  assert.equal(TERMS_AND_CONDITIONS_SECTIONS.length, 6);
+  assert.equal(DISCLAIMER_SECTIONS.length, 4);
+  assert.ok(LEGAL_DISCLAIMER.shortTextAr.includes('تثقيفية'));
 });
 
 test('filterServices filters accurately by Arabic and English search queries', () => {

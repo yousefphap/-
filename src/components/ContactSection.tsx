@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import {
   Language,
+  ActivePage,
   ClientEntityType,
   UrgencyLevel,
   ConsultationFormInput,
@@ -19,18 +20,67 @@ import {
   ConsultationTicket,
   LEGAL_SERVICES,
   FIRM_CONTACT,
+  SOCIAL_MEDIA_LINKS,
+  SocialMediaPlatform,
   validateConsultationInput,
   createConsultationTicket,
 } from '../utils/lawFirmLogic';
 
+const renderSocialPlatformIcon = (
+  id: SocialMediaPlatform['id'],
+  className = 'w-5 h-5'
+) => {
+  switch (id) {
+    case 'whatsapp':
+      return (
+        <svg viewBox="0 0 24 24" className={`${className} fill-current`} aria-hidden="true">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.625.846 5.059 2.284 7.033l-1.492 5.451 5.581-1.464c1.908 1.253 4.19 1.98 6.627 1.98 6.627 0 12-5.373 12-12s-5.373-12-12-12z" />
+        </svg>
+      );
+    case 'x':
+      return (
+        <svg viewBox="0 0 24 24" className={`${className} fill-current`} aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      );
+    case 'instagram':
+      return (
+        <svg viewBox="0 0 24 24" className={`${className} fill-current`} aria-hidden="true">
+          <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+        </svg>
+      );
+    case 'snapchat':
+      return (
+        <svg viewBox="0 0 24 24" className={`${className} fill-current`} aria-hidden="true">
+          <path d="M12.065 2c3.226 0 5.568 2.27 5.776 5.468.067 1.023-.073 2.138-.18 2.863-.05.337.075.562.362.662.43.149.988.268 1.375.475.344.184.484.513.344.849-.166.397-.665.622-1.267.798-.463.135-.773.329-.873.68-.133.469.146.976.578 1.576.78 1.084 1.91 2.094 3.237 2.55.346.119.583.394.525.736-.082.487-.778.887-1.855 1.078-.74.131-1.089.383-1.264.946-.145.469-.462.712-.964.712-.45 0-.968-.165-1.644-.312-.775-.169-1.454-.216-2.185-.216-.73 0-1.41.047-2.185.216-.676.147-1.194.312-1.644.312-.502 0-.819-.243-.964-.712-.175-.563-.524-.815-1.264-.946-1.077-.191-1.773-.591-1.855-1.078-.058-.342.179-.617.525-.736 1.327-.456 2.457-1.466 3.237-2.55.432-.6.711-1.107.578-1.576-.1-.351-.41-.545-.873-.68-.602-.176-1.101-.401-1.267-.798-.14-.336 0-.665.344-.849.387-.207.945-.326 1.375-.475.287-.1.412-.325.362-.662-.107-.725-.247-1.84-.18-2.863C6.497 4.27 8.839 2 12.065 2z" />
+        </svg>
+      );
+    case 'tiktok':
+      return (
+        <svg viewBox="0 0 24 24" className={`${className} fill-current`} aria-hidden="true">
+          <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z" />
+        </svg>
+      );
+    case 'facebook':
+    default:
+      return (
+        <svg viewBox="0 0 24 24" className={`${className} fill-current`} aria-hidden="true">
+          <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" />
+        </svg>
+      );
+  }
+};
+
 interface ContactSectionProps {
   lang: Language;
   prefilledForm: Partial<ConsultationFormInput> | null;
+  onNavigatePage: (page: ActivePage) => void;
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
   lang,
   prefilledForm,
+  onNavigatePage,
 }) => {
   const [form, setForm] = useState<ConsultationFormInput>({
     fullName: '',
@@ -219,7 +269,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
             {/* WhatsApp Consultation 0593500596 */}
             <div className="flex flex-col items-center text-center px-3">
-              <div className="w-7 h-7 text-[#22C55E] mb-3 flex items-center justify-center">
+              <div className="w-7 h-7 text-[#D1B46A] mb-3 flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
                   className="w-7 h-7 fill-current"
@@ -238,7 +288,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   href={FIRM_CONTACT.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-bold text-[#22C55E] hover:underline transition-colors font-mono-tabular"
+                  className="text-base font-bold text-white hover:text-[#D1B46A] transition-colors font-mono-tabular"
                 >
                   {FIRM_CONTACT.whatsappDisplay}
                 </a>
@@ -258,6 +308,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </button>
               </div>
             </div>
+          </div>
+
+          {/* Official Social Media Logos Only (Gold & White) */}
+          <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-center gap-4 flex-wrap">
+            {SOCIAL_MEDIA_LINKS.map((platform) => (
+              <a
+                key={platform.id}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={lang === 'ar' ? platform.nameAr : platform.nameEn}
+                aria-label={lang === 'ar' ? platform.nameAr : platform.nameEn}
+                className="w-12 h-12 rounded-xl bg-[#141414] border border-[#B69648]/60 text-[#D1B46A] hover:bg-[#B69648] hover:text-white hover:border-white transition-all flex items-center justify-center"
+              >
+                {renderSocialPlatformIcon(platform.id, 'w-5 h-5')}
+              </a>
+            ))}
           </div>
         </div>
 
@@ -523,6 +590,51 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 )}
               </div>
 
+              {/* PDPL Privacy & Non-Retainer Terms Notice */}
+              <div className="rounded-xl bg-[#FAF8F5] border border-[#E5DEC9] p-3.5 text-xs text-[#5C564B] leading-relaxed">
+                {lang === 'ar' ? (
+                  <>
+                    تُعالج بياناتكم بسرية تامة وفق{' '}
+                    <button
+                      type="button"
+                      onClick={() => onNavigatePage('privacy')}
+                      className="font-bold text-[#9A7B34] hover:underline cursor-pointer"
+                    >
+                      سياسة الخصوصية (نظام PDPL)
+                    </button>
+                    . وبموجب{' '}
+                    <button
+                      type="button"
+                      onClick={() => onNavigatePage('terms')}
+                      className="font-bold text-[#9A7B34] hover:underline cursor-pointer"
+                    >
+                      الشروط والأحكام
+                    </button>{' '}
+                    فإن إرسال الاستشارة الأولية الإلكترونية لا يُعد توكيلاً رسمياً إلا بعد توقيع عقد وكالة وسداد الأتعاب.
+                  </>
+                ) : (
+                  <>
+                    Your data is processed confidentially under our{' '}
+                    <button
+                      type="button"
+                      onClick={() => onNavigatePage('privacy')}
+                      className="font-bold text-[#9A7B34] hover:underline cursor-pointer"
+                    >
+                      Privacy Policy (Saudi PDPL)
+                    </button>
+                    . Per our{' '}
+                    <button
+                      type="button"
+                      onClick={() => onNavigatePage('terms')}
+                      className="font-bold text-[#9A7B34] hover:underline cursor-pointer"
+                    >
+                      Terms & Conditions
+                    </button>
+                    , initial electronic consultations do not constitute formal representation until a retainer contract is signed and fees are paid.
+                  </>
+                )}
+              </div>
+
               <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
                 <span className="text-xs text-[#5C564B]">
                   {lang === 'ar'
@@ -600,7 +712,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-[#15803D] text-white rounded-lg hover:bg-[#166534] transition-colors whitespace-nowrap shrink-0"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-[#D1B46A] text-[#141414] rounded-lg hover:bg-white transition-colors whitespace-nowrap shrink-0"
                   >
                     <span>
                       {lang === 'ar'
@@ -629,10 +741,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             )}
 
             {/* Direct WhatsApp Consultation Card (0593500596) */}
-            <div className="rounded-2xl bg-[#1C1B18] border border-[#22C55E]/40 p-6">
+            <div className="rounded-2xl bg-[#1C1B18] border border-[#B69648]/60 p-6">
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div>
-                  <span className="inline-block text-xs font-semibold text-[#22C55E] mb-1">
+                  <span className="inline-block text-xs font-semibold text-[#D1B46A] mb-1">
                     {lang === 'ar'
                       ? 'استشارة قانونية مباشرة عبر الواتساب'
                       : 'Direct WhatsApp Legal Consultation'}
@@ -643,7 +755,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       : 'Contact via WhatsApp & Get a Legal Consultation'}
                   </h4>
                 </div>
-                <div className="w-10 h-10 rounded-xl bg-[#15803D]/20 text-[#22C55E] flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#B69648]/20 text-[#D1B46A] flex items-center justify-center shrink-0">
                   <svg
                     viewBox="0 0 24 24"
                     className="w-5 h-5 fill-current"
@@ -668,7 +780,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   href={FIRM_CONTACT.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs md:text-sm font-bold text-white bg-[#15803D] hover:bg-[#166534] rounded-lg transition-colors whitespace-nowrap shrink-0"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs md:text-sm font-bold text-[#141414] bg-[#D1B46A] hover:bg-white rounded-lg transition-colors whitespace-nowrap shrink-0"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -768,31 +880,26 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     : 'View Our Location on Google Maps'}
                 </span>
               </a>
+
+              {/* Social Media Logos Only inside Stamp Card (Gold & White) */}
+              <div className="mt-5 pt-5 border-t border-white/10 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                {SOCIAL_MEDIA_LINKS.map((platform) => (
+                  <a
+                    key={platform.id}
+                    href={platform.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={lang === 'ar' ? platform.nameAr : platform.nameEn}
+                    aria-label={lang === 'ar' ? platform.nameAr : platform.nameEn}
+                    className="w-10 h-10 rounded-lg bg-[#141414] border border-[#B69648]/60 text-white hover:bg-[#B69648] hover:text-[#141414] hover:border-white transition-colors flex items-center justify-center"
+                  >
+                    {renderSocialPlatformIcon(platform.id, 'w-4 h-4')}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Quiet Footer (Slide 12 & 21) */}
-        <footer className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#9E9585]">
-          <div>
-            {lang === 'ar'
-              ? 'جميع الحقوق محفوظة © شركة سامي الشريف للمحاماة والاستشارات القانونية'
-              : 'All Rights Reserved © Sami Al-Sharif Law Firm & Legal Consultations'}
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="#about" className="hover:text-white transition-colors">
-              {lang === 'ar' ? 'من نحن' : 'About'}
-            </a>
-            <span>·</span>
-            <a href="#services" className="hover:text-white transition-colors">
-              {lang === 'ar' ? 'الخدمات القانونية' : 'Legal Services'}
-            </a>
-            <span>·</span>
-            <a href="#team" className="hover:text-white transition-colors">
-              {lang === 'ar' ? 'فريق العمل' : 'Our Team'}
-            </a>
-          </div>
-        </footer>
       </div>
     </section>
   );

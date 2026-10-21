@@ -256,6 +256,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           </div>
         )}
 
+        {/* Inline Content Legal Disclaimer Notice */}
+        <div className="mt-10 rounded-xl bg-white border border-[#D8CEB8] p-4 md:p-5 text-xs text-[#5C564B] leading-relaxed">
+          <strong className="text-[#9A7B34]">
+            {lang === 'ar' ? 'إخلاء مسؤولية قانونية: ' : 'Legal Disclaimer: '}
+          </strong>
+          {lang === 'ar'
+            ? 'المعلومات وتفاصيل الخدمات المقدمة في هذه الصفحة هي لأغراض تثقيفية وتعريفية عامة فقط ولا تغني عن الاستشارة القانونية الخاصة لكل حالة بحسب وقائعها ومستنداتها.'
+            : 'The service descriptions and information provided on this page are for general educational purposes only and do not substitute for specialized legal counsel tailored to your specific case.'}
+        </div>
+
         {/* Service Details Modal Dialog */}
         {activeService && (
           <div
