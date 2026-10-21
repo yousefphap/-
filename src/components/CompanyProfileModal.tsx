@@ -217,10 +217,19 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({
                 ).join(' · ')}
               </div>
               <div className="text-[#5C564B] flex flex-wrap items-center gap-4 mt-2">
-                <span className="inline-flex items-center gap-1">
+                <a
+                  href={FIRM_CONTACT.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-[#141414] hover:text-[#9A7B34] hover:underline"
+                >
                   <MapPin className="w-3.5 h-3.5 text-[#9A7B34]" />
-                  {lang === 'ar' ? FIRM_CONTACT.locationAr : FIRM_CONTACT.locationEn}
-                </span>
+                  <span>
+                    {lang === 'ar'
+                      ? `${FIRM_CONTACT.locationAr} (خرائط قوقل)`
+                      : `${FIRM_CONTACT.locationEn} (Google Maps)`}
+                  </span>
+                </a>
                 <span className="inline-flex items-center gap-1 font-mono-tabular">
                   <Phone className="w-3.5 h-3.5 text-[#9A7B34]" />
                   {FIRM_CONTACT.phoneDisplay}

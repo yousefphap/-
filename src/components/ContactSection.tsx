@@ -139,11 +139,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <div className="text-sm font-bold text-white mb-1">
                 {lang === 'ar' ? 'العنوان | Location' : 'Location | العنوان'}
               </div>
-              <div className="text-sm text-[#D5CEBF]">
+              <div className="text-sm text-[#D5CEBF] mb-2">
                 {lang === 'ar'
                   ? FIRM_CONTACT.locationAr
                   : FIRM_CONTACT.locationEn}
               </div>
+              <a
+                href={FIRM_CONTACT.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#B69648]/20 border border-[#B69648]/50 text-xs font-semibold text-[#D1B46A] hover:bg-[#B69648] hover:text-[#141414] transition-colors"
+              >
+                <MapPin className="w-3.5 h-3.5" />
+                <span>
+                  {lang === 'ar' ? 'فتح في خرائط قوقل' : 'Open in Google Maps'}
+                </span>
+              </a>
             </div>
 
             {/* Email */}
@@ -731,7 +742,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               )}
             </div>
 
-            {/* Official Brand Stamp Card */}
+            {/* Official Brand Stamp & Google Maps Location Card */}
             <div className="rounded-2xl bg-[#1C1B18] border border-[#B69648]/50 p-7 text-center sm:text-right">
               <div className="font-calligraphy text-xl text-[#D1B46A] leading-snug">
                 شركة سامي الشريف للمحاماة والاستشارات القانونية
@@ -739,11 +750,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <div className="text-[11px] tracking-[0.12em] text-[#C2B69C] mt-1 font-medium">
                 SAMI ALSHAREEF LAWFIRM AND LEGAL CONSULTATIONS
               </div>
-              <div className="text-xs text-[#9E9585] mt-2">
+              <div className="text-xs text-[#9E9585] mt-2 mb-4">
                 {lang === 'ar'
                   ? 'المملكة العربية السعودية · مكة المكرمة - جدة'
                   : 'Kingdom of Saudi Arabia · Makkah - Jeddah'}
               </div>
+              <a
+                href={FIRM_CONTACT.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-lg bg-[#B69648] hover:bg-[#D1B46A] text-[#141414] text-xs md:text-sm font-bold transition-colors"
+              >
+                <MapPin className="w-4 h-4 shrink-0" />
+                <span>
+                  {lang === 'ar'
+                    ? 'موقعنا على خرائط قوقل (Google Maps)'
+                    : 'View Our Location on Google Maps'}
+                </span>
+              </a>
             </div>
           </div>
         </div>

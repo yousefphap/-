@@ -99,6 +99,7 @@ export const FIRM_CONTACT = {
   email: 'alshareeflawyer@gmail.com',
   locationAr: 'المملكة العربية السعودية - مكة المكرمة - جدة',
   locationEn: 'Kingdom of Saudi Arabia · Makkah · Jeddah',
+  googleMapsUrl: 'https://maps.app.goo.gl/H7iEQmXCky7TXZFy7',
   firmNameAr: 'شركة سامي الشريف للمحاماة والاستشارات القانونية',
   firmNameShortAr: 'سامي الشريف للمحاماة',
   firmNameEn: 'Sami Al-Sharif Law Firm & Legal Consultations',

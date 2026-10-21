@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, FileText, ArrowUpLeft, ArrowUpRight, PhoneCall } from 'lucide-react';
+import { Globe, FileText, ArrowUpLeft, ArrowUpRight, PhoneCall, MapPin } from 'lucide-react';
 import { Language, FIRM_CONTACT } from '../utils/lawFirmLogic';
 
 interface HeroSectionProps {
@@ -40,7 +40,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {lang === 'ar' ? 'المملكة العربية السعودية' : 'Kingdom of Saudi Arabia'}
             </span>
             <span aria-hidden="true">·</span>
-            <span>{lang === 'ar' ? 'مكة المكرمة - جدة' : 'Makkah - Jeddah'}</span>
+            <a
+              href={FIRM_CONTACT.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-medium text-[#141414] hover:text-[#9A7B34] hover:underline transition-colors"
+            >
+              <MapPin className="w-3.5 h-3.5 text-[#9A7B34]" />
+              <span>
+                {lang === 'ar'
+                  ? 'مكة المكرمة - جدة (خرائط قوقل)'
+                  : 'Makkah - Jeddah (Google Maps)'}
+              </span>
+            </a>
             <span aria-hidden="true">·</span>
             <a
               href={FIRM_CONTACT.whatsappUrl}
