@@ -20,6 +20,7 @@ import { AboutVisionSection } from './components/AboutVisionSection';
 import { ServicesSection } from './components/ServicesSection';
 import { ScopeEstimatorSection } from './components/ScopeEstimatorSection';
 import { TeamSection } from './components/TeamSection';
+import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { LegalPagesView } from './components/LegalPagesView';
 import { SiteFooter } from './components/SiteFooter';
@@ -104,7 +105,15 @@ export default function App() {
               onApplyEstimateToBooking={handleApplyEstimateToBooking}
             />
 
-            <TeamSection lang={lang} />
+            <TeamSection
+              lang={lang}
+              onBookConsultation={scrollToContact}
+            />
+
+            <FaqSection
+              lang={lang}
+              onBookConsultation={scrollToContact}
+            />
 
             <ContactSection
               lang={lang}
@@ -136,7 +145,7 @@ export default function App() {
         rel="noopener noreferrer"
         aria-label={tr(
           lang,
-          `تواصل عبر الواتساب واحصل على استشارة ${FIRM_CONTACT.whatsappDisplay}`,
+          `تواصل مباشرة مع مستشار مختص عبر واتساب ${FIRM_CONTACT.whatsappDisplay}`,
           `WhatsApp Consultation ${FIRM_CONTACT.whatsappDisplay}`,
           `واٹس ایپ کے ذریعے قانونی مشاورت حاصل کریں ${FIRM_CONTACT.whatsappDisplay}`
         )}
@@ -154,7 +163,7 @@ export default function App() {
         <span>
           {tr(
             lang,
-            `تواصل عبر الواتساب واحصل على استشارة · ${FIRM_CONTACT.whatsappDisplay}`,
+            `تواصل مع مستشار عبر واتساب · ${FIRM_CONTACT.whatsappDisplay}`,
             `WhatsApp Consultation · ${FIRM_CONTACT.whatsappDisplay}`,
             `واٹس ایپ کے ذریعے قانونی مشاورت · ${FIRM_CONTACT.whatsappDisplay}`
           )}

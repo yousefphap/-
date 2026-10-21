@@ -97,7 +97,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                   onClick={() => onNavigatePage('home', 'services')}
                   className="hover:text-[#D1B46A] transition-colors cursor-pointer"
                 >
-                  {tr(lang, 'الخدمات القانونية (14)', 'Legal Services (14)', 'قانونی خدمات (14)')}
+                  {tr(lang, 'خدمات', 'Services', 'خدمات')}
                 </button>
               </li>
               <li>

@@ -1603,3 +1603,255 @@ export const DISCLAIMER_SECTIONS: LegalPolicySection[] = [
       'سامی الشریف لاء فرم اینڈ لیگل کنسلٹیشنز ایسے کسی بھی اقدام یا فیصلے کی ذمہ داری سے بری الذمہ ہے جو ویب سائٹ کے زائر نے فرم کے مستند مشیروں سے تحریری قانونی رائے حاصل کیے بغیر محض ویب سائٹ کے عمومی معلوماتی مواد کی بنیاد پر کیا ہو۔',
   },
 ];
+
+export interface TrustBarItem {
+  id: string;
+  titleAr: string;
+  titleEn: string;
+  titleUr: string;
+  descAr: string;
+  descEn: string;
+  descUr: string;
+}
+
+export const TRUST_BAR_ITEMS: TrustBarItem[] = [
+  {
+    id: 'moj-license',
+    titleAr: 'مرخص من وزارة العدل السعودية',
+    titleEn: 'Licensed by Saudi Ministry of Justice',
+    titleUr: 'سعودی وزارتِ انصاف سے لائسنس یافتہ',
+    descAr: 'مزاولة مهنة المحاماة والاستشارات الشرعية والنظامية بترخيص رسمي معتمد',
+    descEn: 'Officially licensed to practice law, judicial advocacy, and legal consultations in KSA',
+    descUr: 'مملکت میں وکالت اور قانونی مشاورت کا باضابطہ سرکاری لائسنس',
+  },
+  {
+    id: 'sba-member',
+    titleAr: 'عضوية الهيئة السعودية للمحامين',
+    titleEn: 'Saudi Bar Association (SBA) Membership',
+    titleUr: 'سعودی بار ایسوسی ایشن (SBA) کی رکنیت',
+    descAr: 'التزام كامل بمعايير السلوك المهني وميثاق أخلاقيات مهنة المحاماة',
+    descEn: 'Full adherence to professional conduct standards and legal ethics charter',
+    descUr: 'پیشہ ورانہ ضابطہ اخلاق اور وکالت کے اعلیٰ معیارات کی مکمل پاسداری',
+  },
+  {
+    id: 'pdpl-compliance',
+    titleAr: 'الالتزام التام بنظام حماية البيانات الشخصية PDPL',
+    titleEn: 'Strict Compliance with Saudi PDPL',
+    titleUr: 'سعودی پرسنل ڈیٹا پروٹیکشن لاء (PDPL) کی مکمل پابندی',
+    descAr: 'حماية صارمة لسرية بيانات الموكلين ووثائق الشركات والأسرار التجارية',
+    descEn: 'Rigorous protection of client data, corporate records, and trade secrets',
+    descUr: 'مؤکلین کے ذاتی ڈیٹا، کارپوریٹ ریکارڈز اور تجارتی رازوں کا مکمل تحفظ',
+  },
+];
+
+export interface WhyChooseUsItem {
+  id: string;
+  index: string;
+  titleAr: string;
+  titleEn: string;
+  titleUr: string;
+  descAr: string;
+  descEn: string;
+  descUr: string;
+  highlightAr: string;
+  highlightEn: string;
+  highlightUr: string;
+}
+
+export const WHY_CHOOSE_US_ITEMS: WhyChooseUsItem[] = [
+  {
+    id: 'strategic-presence',
+    index: '01',
+    titleAr: 'تواجد استراتيجي في مكة المكرمة وجدة وخدمة كافة مناطق المملكة',
+    titleEn: 'Strategic Presence in Makkah & Jeddah Serving All Regions of KSA',
+    titleUr: 'مکہ مکرمہ اور جدہ میں اسٹریٹجک موجودگی اور پوری مملکت میں خدمات',
+    descAr:
+      'موقع حيوي يمكّننا من مباشرة القضايا والمعاملات التجارية والعقارية والأوقاف والاستثمار في منطقة مكة المكرمة وجدة ومختلف محاكم وهيئات المملكة حضورياً وإلكترونياً.',
+    descEn:
+      'Direct on-the-ground representation in Makkah and Jeddah alongside seamless digital and physical advocacy before courts across all regions of Saudi Arabia.',
+    descUr:
+      'مکہ مکرمہ اور جدہ میں براہِ راست موجودگی کے ساتھ ساتھ مملکت کی تمام عدالتوں اور قانونی اداروں میں حضوری اور آن لائن پیروی۔',
+    highlightAr: 'مكة المكرمة · جدة · جميع محاكم المملكة',
+    highlightEn: 'Makkah · Jeddah · Nationwide Courts',
+    highlightUr: 'مکہ مکرمہ · جدہ · تمام سعودی عدالتیں',
+  },
+  {
+    id: 'clear-timelines',
+    index: '02',
+    titleAr: 'وضوح المدد الزمنية لإنجاز كل خدمة مسبقاً بشفافية تامة',
+    titleEn: 'Upfront Clarity on Execution Timelines & Deliverables',
+    titleUr: 'ہر خدمت کی تکمیل کے لیے مقررہ مدت اور مراحل کی پیشگی وضاحت',
+    descAr:
+      'نلتزم بتحديد الإطار الزمني المتوقع، والمستندات المطلوبة، والمخرجات القانونية المكتوبة لكل خدمة قبل البدء، مع تزويد الموكل بتقارير متابعة دورية.',
+    descEn:
+      'Every legal service features pre-defined review timeframes, clear document checklists, and structured written deliverables with periodic status updates.',
+    descUr:
+      'کام شروع کرنے سے قبل متوقع مدت، مطلوبہ دستاویزات اور تحریری قانونی مخرجات کی مکمل وضاحت اور باقاعدہ پیش رفت کی رپورٹس۔',
+    highlightAr: 'جداول زمنية محددة · تقارير دورية للموكل',
+    highlightEn: 'Defined SLAs · Periodic Client Reports',
+    highlightUr: 'واضح نظام الاوقات · باقاعدہ رپورٹس',
+  },
+  {
+    id: 'sharia-statutory-commercial',
+    index: '03',
+    titleAr: 'دمج التأصيل الشرعي والنظامي بالحلول التجارية المبتكرة',
+    titleEn: 'Synthesizing Sharia & Statutory Mastery with Commercial Agility',
+    titleUr: 'شرعی و قانونی مہارت اور جدید تجارتی حل کا بہترین امتزاج',
+    descAr:
+      'نجمع بين التمكن العميق من الأنظمة السعودية (المعاملات المدنية، الشركات، العمل، الإفلاس) وبين الفهم التجاري العميق الذي يحمي استمرارية الأعمال ونموها.',
+    descEn:
+      'Combining deep command of Saudi regulations (Civil Transactions, Companies, Labor, Bankruptcy) with practical commercial acumen that safeguards business growth.',
+    descUr:
+      'سعودی قوانین (دیوانی معاملات، کمپنیز، لیبر، دیوالیہ پن) میں گہری مہارت اور کاروباری ترقی کو محفوظ بنانے والی عملی حکمتِ عملی۔',
+    highlightAr: 'حماية وقائية · حلول غير تقليدية',
+    highlightEn: 'Preventive Protection · Innovative Strategy',
+    highlightUr: 'پیشگی تحفظ · جدید قانونی حکمتِ عملی',
+  },
+];
+
+export const FOUNDER_PROFILE = {
+  nameAr: 'المحامي والمستشار القانوني سامي الشريف',
+  nameEn: 'Sami Al-Sharif — Attorney at Law & Legal Counselor',
+  nameUr: 'ایڈووکیٹ اینڈ لیگل کونسلر سامی الشریف',
+  roleAr: 'المؤسس والمدير العام · شركة سامي الشريف للمحاماة والاستشارات القانونية',
+  roleEn: 'Founder & Managing Partner · Sami Al-Sharif Law Firm & Legal Consultations',
+  roleUr: 'بانی اور مینیجنگ پارٹنر · سامی الشریف لاء فرم اینڈ لیگل کنسلٹیشنز',
+  bioAr:
+    'يقود المحامي والمستشار القانوني سامي الشريف منظومة العمل القانوني والقضائي في الشركة بخبرة قيادية راسخة في الأنظمة السعودية، وتمثيل كبار الموكلين من الشركات والمؤسسات والمستثمرين والأفراد أمام المحاكم التجارية والعامة والإدارية وهيئات التحكيم، مع إشراف مباشر على جودة المخرجات القانونية وصياغة الاستراتيجيات الوقائية والعلاجية.',
+  bioEn:
+    'Attorney and Legal Counselor Sami Al-Sharif leads the firm’s judicial and advisory practice with extensive leadership experience in Saudi laws, representing major corporations, investors, and individuals before Commercial, General, and Administrative courts and arbitration tribunals.',
+  bioUr:
+    'ایڈووکیٹ اور قانونی مشیر سامی الشریف سعودی قوانین میں وسیع قائدانہ تجربے کے ساتھ فرم کی عدالتی اور مشاورتی خدمات کی قیادت کرتے ہیں، اور تجارتی، عمومی و انتظامی عدالتوں اور ثالثی ٹربیونلز کے روبرو بڑی کمپنیوں، سرمایہ کاروں اور افراد کی نمائندگی کرتے ہیں۔',
+  highlightsAr: [
+    'مرخص من وزارة العدل السعودية وعضو الهيئة السعودية للمحامين',
+    'خبرة قيادية في القضايا التجارية والشركات والأوقاف وتصفية التركات',
+    'إشراف مباشر على صياغة العقود الكبرى والتحكيم وتأهيل الإدارات القانونية',
+  ],
+  highlightsEn: [
+    'Licensed by the Saudi Ministry of Justice & Member of Saudi Bar Association',
+    'Leadership in commercial litigation, corporate law, Waqf, and estate liquidation',
+    'Direct supervision of high-value contracts, arbitration, and legal structuring',
+  ],
+  highlightsUr: [
+    'سعودی وزارتِ انصاف سے لائسنس یافتہ اور سعودی بار ایسوسی ایشن کے رکن',
+    'تجارتی مقدمات، کارپوریٹ لاء، اوقاف اور ترکہ کی تقسیم میں قائدانہ تجربہ',
+    'بڑے معاہدوں، ثالثی اور قانونی شعبہ جات کی تشکیل کی براہِ راست نگرانی',
+  ],
+};
+
+export interface FaqItem {
+  id: string;
+  questionAr: string;
+  questionEn: string;
+  questionUr: string;
+  answerAr: string;
+  answerEn: string;
+  answerUr: string;
+}
+
+export const FAQ_ITEMS: FaqItem[] = [
+  {
+    id: 'faq-confidentiality',
+    questionAr: 'كيف تضمنون سرية بيانات شركتي ومستنداتي القانونية؟',
+    questionEn: 'How do you guarantee the confidentiality of my company’s data and legal documents?',
+    questionUr: 'آپ میری کمپنی کے ڈیٹا اور قانونی دستاویزات کی رازداری کی ضمانت کیسے دیتے ہیں؟',
+    answerAr:
+      'تخضع جميع المراسلات والمستندات والوقائع التي يشاركها الموكل لالتزام السرية المهنية الصارم بموجب نظام المحاماة السعودي ونظام حماية البيانات الشخصية السعودي (PDPL)، حتى في مرحلة الاستشارة الأولية. كما نلتزم بتوقيع اتفاقيات عدم إفصاح (NDA) إضافية للشركات والصفقات الاستثمارية الحساسة.',
+    answerEn:
+      'All communications, documents, and facts shared by clients are protected by strict statutory confidentiality under the Saudi Law Practice Code and the Saudi Personal Data Protection Law (PDPL), starting from the initial inquiry. We also execute formal Non-Disclosure Agreements (NDAs) for sensitive corporate transactions.',
+    answerUr:
+      'مؤکل کی جانب سے شیئر کی گئی تمام خط و کتابت اور دستاویزات کو سعودی وکالت کے قانون اور پرسنل ڈیٹا پروٹیکشن لاء (PDPL) کے تحت ابتدائی مشاورت کے مرحلے سے ہی مکمل رازداری حاصل ہوتی ہے، نیز حساس کاروباری معاملات کے لیے الگ رازداری کا معاہدہ (NDA) بھی کیا جاتا ہے۔',
+  },
+  {
+    id: 'faq-fees',
+    questionAr: 'كيف يتم تحديد أتعاب المحاماة والاستشارات القانونية؟',
+    questionEn: 'How are legal consultation and representation fees determined?',
+    questionUr: 'قانونی مشاورت اور وکالت کی فیس کا تعین کیسے کیا جاتا ہے؟',
+    answerAr:
+      'نعتمد مبدأ الشفافية التامة منذ اليوم الأول؛ حيث يتم دراسة ملخص الموضوع والمستندات المبدئية، ثم تقديم عرض أتعاب مكتوب ومفصل يوضح نطاق العمل والمخرجات والمدد الزمنية وآلية السداد (سواء كان عقداً مقطوعاً لخدمة محددة، أو أتعاباً مرحلية مرتبطة بالإنجاز القضائي، أو عقد رعاية سنوي).',
+    answerEn:
+      'We operate with 100% transparency from day one. After reviewing your case summary and initial documents, we provide a written fee proposal detailing the exact scope, deliverables, timeline, and payment structure (fixed-fee advisory, milestone-based litigation retainer, or annual corporate retainer).',
+    answerUr:
+      'ہم پہلے دن سے مکمل شفافیت کا اصول اپناتے ہیں؛ معاملے کے ابتدائی جائزے کے بعد ایک تحریری اور واضح فیس پروپوزل پیش کیا جاتا ہے جس میں کام کا دائرہ کار، مراحل اور ادائیگی کا طریقہ کار (مخصوص خدمت کی فیس، مرحلہ وار عدالتی فیس، یا سالانہ معاہدہ) درج ہوتا ہے۔',
+  },
+  {
+    id: 'faq-annual-retainer',
+    questionAr: 'هل تقدمون عقود رعاية واستشارات قانونية سنوية للشركات والمؤسسات؟',
+    questionEn: 'Do you offer annual legal retainer agreements for companies and institutions?',
+    questionUr: 'کیا آپ کمپنیوں اور اداروں کے لیے سالانہ قانونی مشاورتی معاہدے پیش کرتے ہیں؟',
+    answerAr:
+      'نعم، نقدم باقات عقود رعاية قانونية سنوية ومرحلية مخصصة للشركات والمؤسسات التجارية، تشمل الاستشارات اليومية، صياغة ومراجعة العقود، تمثيل المنشأة في القضايا العمالية والتجارية، وتأهيل الإدارات القانونية الداخلية وحوكمة الشركات.',
+    answerEn:
+      'Yes, we provide tailored annual and quarterly corporate legal retainer agreements covering ongoing advisory, bilingual contract drafting and review, labor and commercial dispute representation, corporate governance, and in-house legal department structuring.',
+    answerUr:
+      'جی ہاں، ہم کمپنیوں اور تجارتی اداروں کے لیے سالانہ اور مرحلہ وار قانونی مشاورتی معاہدے فراہم کرتے ہیں جن میں روزمرہ قانونی مشورے، معاہدوں کی تیاری، لیبر و تجارتی مقدمات کی پیروی اور کارپوریٹ گورننس شامل ہے۔',
+  },
+  {
+    id: 'faq-initial-consultation',
+    questionAr: 'هل تعتبر الاستشارة الأولية الإلكترونية توكيلاً رسمياً، وكيف يتم التعاقد؟',
+    questionEn: 'Does an initial electronic consultation constitute a formal Power of Attorney?',
+    questionUr: 'کیا ابتدائی آن لائن مشاورت باقاعدہ وکالت سمجھی جاتی ہے، اور معاہدہ کیسے ہوتا ہے؟',
+    answerAr:
+      'وفقاً لضوابط المهنة والشروط والأحكام، فإن الاستشارة الأولية عبر الموقع أو الواتساب مخصصة لتقييم الموقف النظامي المبدئي ولا تعتبر توكيلاً رسمياً. وينعقد التوكيل الرسمي فور انتفاء تعارض المصالح، وتوقيع عقد أتعاب مكتوب بين الطرفين، وإصدار الوكالة الشرعية عبر منصة ناجز وسداد الدفعة المتفق عليها.',
+    answerEn:
+      'In accordance with regulatory standards, an initial inquiry via the website or WhatsApp is for preliminary evaluation and does not constitute a formal retainer. Formal representation begins once conflict checks are cleared, a written retainer contract is signed, an official Najiz Power of Attorney is issued, and agreed fees are paid.',
+    answerUr:
+      'ویب سائٹ یا واٹس ایپ کے ذریعے ابتدائی مشاورت صرف ابتدائی قانونی جائزے کے لیے ہے اور اسے باقاعدہ وکالت نہیں سمجھا جاتا۔ باقاعدہ وکالت تحریری معاہدے پر دستخط، ناجز پورٹل سے شرعی وکالت نامے کے اجرا اور طے شدہ فیس کی ادائیگی کے بعد نافذ ہوتی ہے۔',
+  },
+  {
+    id: 'faq-jurisdiction',
+    questionAr: 'ما هي المدن والمحاكم التي تغطيها خدمات شركة سامي الشريف؟',
+    questionEn: 'Which cities and courts are covered by Sami Al-Sharif Law Firm?',
+    questionUr: 'سامی الشریف لاء فرم کی خدمات کن شہروں اور عدالتوں کا احاطہ کرتی ہیں؟',
+    answerAr:
+      'يتواجد فريقنا بشكل رئيسي في منطقة مكة المكرمة ومحافظة جدة، ونباشر الترافع والتمثيل القضائي وتقديم الخدمات القانونية أمام كافة المحاكم (التجارية، العامة، العمالية، الإدارية، التنفيذ، الأحوال الشخصية) واللجان القضائية وهيئات التحكيم في جميع مناطق المملكة العربية السعودية.',
+    answerEn:
+      'Headquartered in the Makkah and Jeddah region, our team represents clients before all Saudi courts (Commercial, General, Labor, Administrative, Enforcement, Personal Status), judicial committees, and arbitration centers across the entire Kingdom of Saudi Arabia.',
+    answerUr:
+      'ہمارے مرکزی دفاتر مکہ مکرمہ اور جدہ میں واقع ہیں، اور ہماری ٹیم مملکتِ سعودی عرب کے تمام علاقوں میں تمام عدالتوں (تجارتی، عمومی، لیبر، انتظامی، نفاذ) اور ثالثی مراکز کے روبرو مؤکلین کی نمائندگی کرتی ہے۔',
+  },
+];
+
+export function buildServiceWhatsAppUrl(
+  service: LegalService,
+  lang: Language
+): string {
+  const text = tr(
+    lang,
+    `السلام عليكم ورحمة الله وبركاته، أرغب في طلب خدمة «${service.titleAr}» وحجز استشارة قانونية مع مستشار مختص لدى شركة سامي الشريف للمحاماة والاستشارات القانونية.`,
+    `Hello, I would like to request the service "${service.titleEn}" (${service.titleAr}) and book a consultation with a specialized legal counselor at Sami Al-Sharif Law Firm.`,
+    `السلام علیکم ورحمۃ اللہ وبرکاتہ، میں سامی الشریف لاء فرم میں «${service.titleUr}» (${service.titleAr}) کی خدمت حاصل کرنا اور ماہر قانونی مشیر سے مشاورت بک کرنا چاہتا ہوں۔`
+  );
+  return `https://wa.me/966593500596?text=${encodeURIComponent(text)}`;
+}
+
+export function buildScopeEstimateWhatsAppUrl(
+  params: {
+    entityType: ClientEntityType;
+    serviceId: string;
+    urgency: UrgencyLevel;
+  },
+  estimate: ScopeEstimateResult,
+  lang: Language
+): string {
+  const service =
+    LEGAL_SERVICES.find((s) => s.id === params.serviceId) || LEGAL_SERVICES[0];
+
+  const entityAr =
+    params.entityType === 'corporate'
+      ? 'شركة / مؤسسة تجارية'
+      : params.entityType === 'foreign_investor'
+      ? 'مستثمر أجنبي / شركة دولية'
+      : 'فرد / مستفيد خاص';
+
+  const urgencyAr =
+    params.urgency === 'priority' ? 'مسار عاجل (أولوية قصوى)' : 'مسار اعتيادي منظم';
+
+  const message =
+    lang === 'en'
+      ? `Hello Sami Al-Sharif Law Firm,\nI would like to adopt this legal scope & start procedures now:\n• Client Type: ${params.entityType}\n• Service: ${service.titleEn} (${service.titleAr})\n• Priority: ${params.urgency}\n• Recommended Model: ${estimate.engagementModelEn}\n• Initial Review: ${estimate.initialReviewDays} Business Days`
+      : `السلام عليكم ورحمة الله وبركاته،\nأرغب في اعتماد هذا المسار القانوني والبدء في الإجراءات الآن لدى شركة سامي الشريف للمحاماة:\n• صفة طالب الخدمة: ${entityAr}\n• الخدمة المطلوبة: ${service.titleAr}\n• مستوى الأولوية: ${urgencyAr}\n• نموذج التعاقد المقترح: ${estimate.engagementModelAr}\n• مدة الدراسة الأولية: ${estimate.initialReviewDays} أيام عمل`;
+
+  return `https://wa.me/966593500596?text=${encodeURIComponent(message)}`;
+}
+
