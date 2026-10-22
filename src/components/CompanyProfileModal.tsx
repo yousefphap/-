@@ -225,9 +225,9 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({
               <h3 className="text-base font-bold mb-3 text-[#141414]">
                 {tr(
                   lang,
-                  'خدمات الاستشارات القانونية (6)',
-                  'Legal Advisory Services (6)',
-                  'قانونی مشاورتی خدمات (6)'
+                  `خدمات الاستشارات القانونية (${advisoryServices.length})`,
+                  `Legal Advisory Services (${advisoryServices.length})`,
+                  `قانونی مشاورتی خدمات (${advisoryServices.length})`
                 )}
               </h3>
               <ul className="space-y-2 text-xs md:text-sm text-[#4A463D]">
@@ -248,9 +248,9 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({
               <h3 className="text-base font-bold mb-3 text-[#D1B46A]">
                 {tr(
                   lang,
-                  'خدمات التمثيل القانوني (8)',
-                  'Legal Representation Services (8)',
-                  'قانونی و عدالتی نمائندگی کی خدمات (8)'
+                  `خدمات التمثيل القانوني (${representationServices.length})`,
+                  `Legal Representation Services (${representationServices.length})`,
+                  `قانونی و عدالتی نمائندگی کی خدمات (${representationServices.length})`
                 )}
               </h3>
               <ul className="space-y-2 text-xs md:text-sm text-[#D5CEBF]">

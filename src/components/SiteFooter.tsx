@@ -101,6 +101,23 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                 </button>
               </li>
               <li>
+                <a
+                  href="calculators.html"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigatePage('calculators');
+                  }}
+                  className="text-[#D1B46A] font-bold hover:underline transition-colors cursor-pointer"
+                >
+                  {tr(
+                    lang,
+                    'الحاسبات والأدوات القانونية الذكية',
+                    'Smart Legal Calculators',
+                    'ذہین قانونی کیلکولیٹرز'
+                  )}
+                </a>
+              </li>
+              <li>
                 <button
                   type="button"
                   onClick={() => onNavigatePage('home', 'estimator')}

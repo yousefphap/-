@@ -13,6 +13,10 @@ import {
   TERMS_AND_CONDITIONS_SECTIONS,
   DISCLAIMER_SECTIONS,
   LEGAL_DISCLAIMER,
+  HERO_STATS_COUNTER,
+  FEATURED_PRACTICE_CARDS,
+  METHODOLOGY_STEPS,
+  LEGAL_BLOG_ARTICLES,
   filterServices,
   validateConsultationInput,
   calculateScopeEstimate,
@@ -21,17 +25,21 @@ import {
   buildScopeEstimateWhatsAppUrl,
 } from './lawFirmLogic.ts';
 
-test('company profile dataset contains all 14 services, trust bar, USPs, founder, and 5 FAQs', () => {
-  assert.equal(LEGAL_SERVICES.length, 14);
+test('company profile dataset contains all 20 services, trust bar, USPs, founder, methodology, blog, and 5 FAQs', () => {
+  assert.equal(LEGAL_SERVICES.length, 20);
   const advisory = filterServices(LEGAL_SERVICES, 'advisory', '');
   const representation = filterServices(LEGAL_SERVICES, 'representation', '');
-  assert.equal(advisory.length, 6);
-  assert.equal(representation.length, 8);
+  assert.equal(advisory.length, 10);
+  assert.equal(representation.length, 10);
   assert.equal(FIRM_VALUES.length, 5);
   assert.equal(FIRM_GOALS.length, 4);
   assert.equal(TEAM_PILLARS.length, 3);
   assert.equal(TRUST_BAR_ITEMS.length, 3);
   assert.equal(WHY_CHOOSE_US_ITEMS.length, 3);
+  assert.equal(HERO_STATS_COUNTER.length, 4);
+  assert.equal(FEATURED_PRACTICE_CARDS.length, 4);
+  assert.equal(METHODOLOGY_STEPS.length, 4);
+  assert.equal(LEGAL_BLOG_ARTICLES.length, 3);
   assert.equal(FAQ_ITEMS.length, 5);
   assert.ok(FOUNDER_PROFILE.nameAr.includes('سامي الشريف'));
   assert.equal(PRIVACY_POLICY_SECTIONS.length, 6);

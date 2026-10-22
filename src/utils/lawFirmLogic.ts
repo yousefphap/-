@@ -897,6 +897,294 @@ export const LEGAL_SERVICES: LegalService[] = [
     typicalTimelineUr: 'نفاذ کی درخواست جمع کرانے کے لیے 1 تا 2 کاروباری دن',
     iconKey: 'file-check',
   },
+  {
+    id: 'real-estate-disputes',
+    index: '15',
+    category: 'representation',
+    titleAr: 'العقود والمنازعات العقارية والتطوير',
+    titleEn: 'Real Estate Contracts, Development & Disputes',
+    titleUr: 'رئیل اسٹیٹ معاہدے، ترقیاتی منصوبے اور تنازعات',
+    summaryAr:
+      'صياغة عقود المقاولات والتطوير العقاري، قضايا التعويضات ونزع الملكية، وتسوية المنازعات العقارية.',
+    summaryEn:
+      'Drafting construction and real estate development contracts, expropriation compensation claims, and resolving property disputes.',
+    summaryUr:
+      'تعمیراتی اور رئیل اسٹیٹ ڈویلپمنٹ کے معاہدوں کی تیاری، جائیداد کے حصول اور معاوضے کے مقدمات، اور عقاری تنازعات کا تصفیہ۔',
+    deliverablesAr: [
+      'صياغة ومراجعة عقود المقاولات الهندسية (FIDIC) وعقود التطوير والاستثمار العقاري',
+      'التمثيل والترافع في قضايا الملكية العقارية، تداخل الصكوك، ورفع اليد',
+      'إعداد ملفات المطالبة بالتعويض العادل عن نزع الملكية للمنفعة العامة أمام اللجان المختصة',
+    ],
+    deliverablesEn: [
+      'Drafting and reviewing FIDIC construction and real estate development agreements',
+      'Litigating property ownership disputes, title overlaps, and possession claims',
+      'Filing fair compensation petitions for public-interest expropriation before specialized committees',
+    ],
+    deliverablesUr: [
+      'تعمیراتی معاہدوں (FIDIC) اور رئیل اسٹیٹ ڈویلپمنٹ و سرمایہ کاری کے معاہدوں کی تیاری اور نظرثانی',
+      'جائیداد کی ملکیت کے تنازعات، اسناد کے تداخل اور قبضے کی واپسی کے مقدمات میں عدالتی نمائندگی',
+      'عوامی مفاد کے لیے جائیداد کے حصول پر منصفانہ معاوضے کے مطالبات مجاز کمیٹیوں میں پیش کرنا',
+    ],
+    requiredDocsAr: [
+      'صكوك الملكية العقارية أو وثائق الاستحكام والكروكيات التنظيمية',
+      'مسودات عقود المقاولات أو التطوير العقاري والملاحق الفنية',
+      'قرارات نزع الملكية أو محاضر التقدير الصادرة من الجهة المختصة',
+    ],
+    requiredDocsEn: [
+      'Property title deeds, regulatory survey maps, or ownership certificates',
+      'Draft construction or development contracts and technical schedules',
+      'Expropriation notices or valuation reports issued by authorities',
+    ],
+    requiredDocsUr: [
+      'جائیداد کی ملکیتی اسناد اور منظور شدہ نقشہ جات',
+      'تعمیراتی یا ترقیاتی معاہدوں کے مسودے اور تکنیکی ضمیمہ جات',
+      'حصولِ اراضی کے سرکاری نوٹس یا تخمینہ کمیٹی کی رپورٹس',
+    ],
+    typicalTimelineAr: '3 - 7 أيام عمل',
+    typicalTimelineEn: '3 - 7 Business Days',
+    typicalTimelineUr: '3 تا 7 کاروباری دن',
+    iconKey: 'building',
+  },
+  {
+    id: 'hajj-umrah-tourism',
+    index: '16',
+    category: 'advisory',
+    titleAr: 'رعاية قطاع الحج والعمرة والسياحة',
+    titleEn: 'Hajj, Umrah & Tourism Sector Legal Care',
+    titleUr: 'حج، عمرہ اور سیاحت کے شعبے کی قانونی معاونت',
+    summaryAr:
+      'صياغة ومراجعة عقود شركات العمرة والتشغيل الفندقي والإعاشة والنقل واستخراج التراخيص النظامية.',
+    summaryEn:
+      'Drafting and reviewing contracts for Umrah operators, hotel management, catering, transport, and obtaining regulatory licenses.',
+    summaryUr:
+      'عمرہ کمپنیوں، ہوٹل آپریشنز، کیٹرنگ اور ٹرانسپورٹ کے معاہدوں کی تیاری و نظرثانی اور سرکاری لائسنس کا اجرا۔',
+    deliverablesAr: [
+      'صياغة ومراجعة عقود شركات ومؤسسات الحج والعمرة والوكلاء الخارجيين',
+      'إعداد اتفاقيات التشغيل الفندقي وتسكين الحجاج والمعتمرين وعقود الإعاشة والنقل',
+      'تقديم الاستشارات النظامية واستخراج وتجديد تراخيص وزارة الحج والعمرة ووزارة السياحة',
+    ],
+    deliverablesEn: [
+      'Drafting and reviewing agreements for Hajj & Umrah operators and international agents',
+      'Preparing hotel management, pilgrim accommodation, catering, and transport contracts',
+      'Regulatory compliance and licensing with the Ministry of Hajj & Umrah and Ministry of Tourism',
+    ],
+    deliverablesUr: [
+      'حج و عمرہ کمپنیوں اور بیرونی ایجنٹوں کے معاہدوں کی تیاری اور قانونی جانچ پڑتال',
+      'ہوٹل مینجمنٹ، حجاج و معتمرین کی رہائش، کیٹرنگ اور ٹرانسپورٹ کے معاہدوں کی تیاری',
+      'وزارتِ حج و عمرہ اور وزارتِ سیاحت کے لائسنس کے اجرا اور تجدید کے لیے قانونی مشاورت',
+    ],
+    requiredDocsAr: [
+      'السجل التجاري وتراخيص وزارة الحج والعمرة أو وزارة السياحة',
+      'مسودات عقود التشغيل الفندقي أو الإعاشة أو النقل المراد إبرامها',
+      'بيانات الوكلاء أو الشركاء التشغيليين والنطاق الموسمي للخدمة',
+    ],
+    requiredDocsEn: [
+      'Commercial Registration and Ministry of Hajj/Tourism licenses',
+      'Draft hotel operation, catering, or transport agreements',
+      'Details of operating partners, foreign agents, and seasonal scope',
+    ],
+    requiredDocsUr: [
+      'تجارتی رجسٹریشن اور وزارتِ حج و عمرہ یا وزارتِ سیاحت کا لائسنس',
+      'ہوٹل آپریشن، کیٹرنگ یا ٹرانسپورٹ کے مجوزہ معاہدوں کے مسودے',
+      'آپریٹنگ پارٹنرز یا بیرونی ایجنٹوں کی تفصیلات اور موسمی دائرہ کار',
+    ],
+    typicalTimelineAr: '2 - 5 أيام عمل',
+    typicalTimelineEn: '2 - 5 Business Days',
+    typicalTimelineUr: '2 تا 5 کاروباری دن',
+    iconKey: 'landmark',
+  },
+  {
+    id: 'franchise-commercial-agencies',
+    index: '17',
+    category: 'advisory',
+    titleAr: 'الامتياز التجاري (الفرنشايز) والوكالات',
+    titleEn: 'Commercial Franchise & Agencies',
+    titleUr: 'کمرشل فرنچائز اور تجارتی ایجنسیاں',
+    summaryAr:
+      'إعداد عقود الامتياز التجاري ووثائق الإفصاح وتسجيل الوكالات التجارية وعقود التوزيع.',
+    summaryEn:
+      'Preparing commercial franchise agreements, disclosure documents, and registering commercial agencies and distribution contracts.',
+    summaryUr:
+      'کمرشل فرنچائز معاہدوں اور افشائے معلومات کی دستاویزات کی تیاری، نیز تجارتی ایجنسیوں اور ڈسٹری بیوشن معاہدوں کی رجسٹریشن۔',
+    deliverablesAr: [
+      'صياغة اتفاقيات الامتياز التجاري (الفرنشايز) الرئيسية والفرعية وفق نظام الامتياز التجاري السعودي',
+      'إعداد وثيقة الإفصاح النظامية (Disclosure Document) وقيدها لدى وزارة التجارة',
+      'صياغة وتسجيل عقود الوكالات التجارية والتوزيع الحصري وغير الحصري',
+    ],
+    deliverablesEn: [
+      'Drafting master and unit Franchise Agreements compliant with the Saudi Commercial Franchise Law',
+      'Preparing statutory Franchise Disclosure Documents (FDD) and filing with the Ministry of Commerce',
+      'Drafting and registering Commercial Agency and exclusive/non-exclusive distribution agreements',
+    ],
+    deliverablesUr: [
+      'سعودی کمرشل فرنچائز قانون کے مطابق مرکزی اور ذیلی فرنچائز معاہدوں کی تیاری',
+      'قانونی افشائے معلومات کی دستاویز (Disclosure Document) کی تیاری اور وزارتِ تجارت میں اندراج',
+      'تجارتی ایجنسی اور ڈسٹری بیوشن کے معاہدوں کی تیاری اور سرکاری رجسٹریشن',
+    ],
+    requiredDocsAr: [
+      'شهادة تسجيل العلامة التجارية والسجل التجاري لمانح أو صاحب الامتياز',
+      'القوائم المالية ودليل التشغيل التجاري للعلامة المانحة للامتياز',
+      'الشروط التجارية والمالية المتفق عليها ونطاق المنطقة الجغرافية',
+    ],
+    requiredDocsEn: [
+      'Trademark registration certificate and CR of franchisor/franchisee',
+      'Financial statements and operational manual of the franchise brand',
+      'Agreed commercial royalties, fees, and territorial exclusivity terms',
+    ],
+    requiredDocsUr: [
+      'ٹریڈ مارک رجسٹریشن سرٹیفکیٹ اور فرنچائزر یا فرنچائزی کی تجارتی رجسٹریشن',
+      'فرنچائز برانڈ کے مالیاتی گوشوارے اور آپریشنل مینوئل',
+      'طے شدہ تجارتی و مالی شرائط اور جغرافیائی حدود کی تفصیل',
+    ],
+    typicalTimelineAr: '4 - 8 أيام عمل',
+    typicalTimelineEn: '4 - 8 Business Days',
+    typicalTimelineUr: '4 تا 8 کاروباری دن',
+    iconKey: 'handshake',
+  },
+  {
+    id: 'pdpl-digital-compliance',
+    index: '18',
+    category: 'advisory',
+    titleAr: 'الامتثال الرقمي وحماية البيانات PDPL',
+    titleEn: 'Digital Compliance & Data Protection (PDPL)',
+    titleUr: 'ڈیجیٹل تعمیل اور ڈیٹا کا تحفظ (PDPL)',
+    summaryAr:
+      'تأهيل المنصات والمتاجر الإلكترونية للامتثال لنظام حماية البيانات الشخصية والتجارة الإلكترونية.',
+    summaryEn:
+      'Qualifying digital platforms and e-commerce stores for compliance with the Saudi Personal Data Protection Law (PDPL) and E-Commerce Law.',
+    summaryUr:
+      'ڈیجیٹل پلیٹ فارمز اور ای کامرس اسٹورز کو سعودی ذاتی ڈیٹا کے تحفظ کے قانون (PDPL) اور ای کامرس ضوابط کے مطابق بنانا۔',
+    deliverablesAr: [
+      'إعداد سياسات الخصوصية وسجلات أنشطة معالجة البيانات وفق نظام حماية البيانات الشخصية (PDPL) ولوائحه',
+      'صياغة الشروط والأحكام وسياسات الاستبدال والاسترجاع للمنصات الرقمية والمتاجر الإلكترونية',
+      'تقييم الامتثال لاشتراطات سدايا (SDAIA) ونظام التجارة الإلكترونية وضوابط نقل البيانات',
+    ],
+    deliverablesEn: [
+      'Drafting Privacy Policies and Records of Processing Activities (RoPA) under Saudi PDPL',
+      'Preparing Terms & Conditions, refund policies, and user agreements for digital platforms',
+      'SDAIA & E-Commerce Law compliance audit, consent mechanisms, and cross-border data rules',
+    ],
+    deliverablesUr: [
+      'سعودی قانون برائے تحفظِ ذاتی ڈیٹا (PDPL) کے مطابق پرائیویسی پالیسیز اور ڈیٹا پروسیسنگ ریکارڈز کی تیاری',
+      'ڈیجیٹل پلیٹ فارمز اور ای کامرس اسٹورز کے لیے شرائط و ضوابط اور واپسی کی پالیسیوں کی تیاری',
+      'سدایا (SDAIA) اور ای کامرس قانون کے تقاضوں کی تعمیل کا جائزہ اور ڈیٹا کے تحفظ کے ضوابط',
+    ],
+    requiredDocsAr: [
+      'وصف المنصة الرقمية أو المتجر الإلكتروني ونوع البيانات التي يتم جمعها',
+      'السياسات والشروط الحالية المطبقة في الموقع أو التطبيق (إن وجدت)',
+      'قائمة مزودي الخدمات التقنية والاستضافة السحابية وبوابات الدفع',
+    ],
+    requiredDocsEn: [
+      'Overview of the digital platform/app and categories of personal data collected',
+      'Existing privacy policies and terms of service (if any)',
+      'List of third-party cloud hosting providers and payment gateways',
+    ],
+    requiredDocsUr: [
+      'ڈیجیٹل پلیٹ فارم یا ای کامرس اسٹور کی تفصیل اور جمع کیے جانے والے ذاتی ڈیٹا کی نوعیت',
+      'ویب سائٹ یا ایپ میں موجودہ شرائط اور پالیسیاں (اگر موجود ہوں)',
+      'کلاؤڈ ہوسٹنگ فراہم کنندگان اور پیمنٹ گیٹ ویز کی فہرست',
+    ],
+    typicalTimelineAr: '5 - 10 أيام عمل',
+    typicalTimelineEn: '5 - 10 Business Days',
+    typicalTimelineUr: '5 تا 10 کاروباری دن',
+    iconKey: 'shield-alert',
+  },
+  {
+    id: 'judicial-notarization',
+    index: '19',
+    category: 'representation',
+    titleAr: 'خدمات التوثيق العدلي السريع',
+    titleEn: 'Express Judicial Notarization Services',
+    titleUr: 'فوری عدالتی توثیق کی خدمات',
+    summaryAr:
+      'توثيق عقود الشركات، الإفراغات العقارية، وإصدار الوكالات والإقرارات المالية المعتمدة.',
+    summaryEn:
+      'Notarizing corporate contracts, real estate title transfers (Ifragh), and issuing certified Powers of Attorney and financial acknowledgments.',
+    summaryUr:
+      'کمپنیوں کے معاہدوں کی توثیق، جائیداد کی منتقلی (افراغ)، اور مصدقہ وکالت ناموں و مالیاتی اقرار ناموں کا اجرا۔',
+    deliverablesAr: [
+      'إصدار وفسخ الوكالات الشرعية للأفراد والشركات وتوثيق عقود التأسيس وملاحقها',
+      'إتمام الإفراغات العقارية الفورية وتوثيق الرهون العقارية وفكها بشكل نظامي معتمد',
+      'توثيق الإقرارات المالية واستلام المبالغ والتنازلات المعتمدة كسندات تنفيذية مباشرة',
+    ],
+    deliverablesEn: [
+      'Issuing and revoking Powers of Attorney for individuals and companies and notarizing bylaws',
+      'Executing immediate real estate title transfers (Ifragh) and mortgage registrations',
+      'Notarizing financial acknowledgments and debt settlements as direct executive instruments',
+    ],
+    deliverablesUr: [
+      'افراد اور کمپنیوں کے لیے شرعی وکالت ناموں کا اجرا و منسوخی اور عقدِ تاسیس کی توثیق',
+      'فوری عقاری افراغ (جائیداد کی منتقلی) اور رہن کی توثیق و فکِ رہن کی تکمیل',
+      'مالیاتی اقرار ناموں اور قرضوں کی وصولی کی بطور ایگزیکٹو سند باقاعدہ توثیق',
+    ],
+    requiredDocsAr: [
+      'الهوية الوطنية أو الإقامة السارية للأطراف (أو السجل التجاري وعقد التأسيس للشركات)',
+      'صك الملكية الإلكتروني الساري وتفاصيل الثمن المتفق عليه في حال الإفراغ العقاري',
+      'حساب أبشر والنفاذ الوطني الموحد مفعل لكافة أطراف عملية التوثيق',
+    ],
+    requiredDocsEn: [
+      'Valid National ID/Iqama of parties (or CR and Articles of Association for corporate entities)',
+      'Electronic property title deed and agreed price details (for real estate transfers)',
+      'Active Absher / Nafath access for all signatory parties',
+    ],
+    requiredDocsUr: [
+      'فریقین کا فعال قومی شناختی کارڈ یا اقامہ (کمپنیوں کے لیے تجارتی رجسٹریشن اور عقدِ تاسیس)',
+      'جائیداد کی منتقلی کی صورت میں الیکٹرانک صکِ ملکیت اور طے شدہ قیمت کی تفصیل',
+      'توثیق کے تمام فریقین کے لیے فعال ابشر (Absher) اور نفاذ (Nafath) اکاؤنٹ',
+    ],
+    typicalTimelineAr: '1 - 2 يوم عمل',
+    typicalTimelineEn: '1 - 2 Business Days',
+    typicalTimelineUr: '1 تا 2 کاروباری دن',
+    iconKey: 'file-check',
+  },
+  {
+    id: 'annual-corporate-retainers',
+    index: '20',
+    category: 'advisory',
+    titleAr: 'باقات الرعاية القانونية السنوية للشركات',
+    titleEn: 'Annual Corporate Legal Retainer Packages',
+    titleUr: 'کمپنیوں کے لیے سالانہ قانونی نگہداشت کے پیکیجز',
+    summaryAr:
+      'إدارة قانونية خارجية متكاملة للشركات والمؤسسات بعقود سنوية أو ربع سنوية مرنة.',
+    summaryEn:
+      'Integrated external legal department management for companies and institutions through flexible annual or quarterly retainer contracts.',
+    summaryUr:
+      'لچکدار سالانہ یا سہ ماہی معاہدوں کے ذریعے کمپنیوں اور اداروں کے لیے مکمل بیرونی قانونی انتظام و مشاورت۔',
+    deliverablesAr: [
+      'تخصيص مستشار قانوني وفريق عمل لمتابعة كافة الاستشارات اليومية وصياغة ومراجعة العقود على مدار العام',
+      'تنظيم ملفات الموارد البشرية والتحقيقات الإدارية وصياغة اللوائح الداخلية وفق نظام العمل',
+      'التمثيل القانوني والقضائي وتحصيل مديونيات الشركة وتقديم تقارير أداء قانونية دورية للإدارة العليا',
+    ],
+    deliverablesEn: [
+      'Dedicated legal counsel and team for ongoing daily consultations and year-round contract review',
+      'HR legal compliance, internal labor regulations, and disciplinary investigation oversight',
+      'Litigation advocacy, corporate debt collection, and quarterly executive legal risk reports',
+    ],
+    deliverablesUr: [
+      'روزمرہ قانونی مشاورت اور سال بھر معاہدوں کی تیاری و نظرثانی کے لیے مخصوص قانونی مشیر اور ٹیم کی تقرری',
+      'سعودی لیبر لاء کے مطابق ہیومن ریسورس (HR) فائلوں، اندرونی ضوابط اور انتظامی تحقیقات کی نگرانی',
+      'عدالتی نمائندگی، کمپنی کے واجبات کی وصولی اور اعلیٰ انتظامیہ کے لیے سہ ماہی قانونی کارکردگی رپورٹس',
+    ],
+    requiredDocsAr: [
+      'السجل التجاري وعقد التأسيس والتراخيص النظامية للشركة أو المؤسسة',
+      'نبذة عن حجم العمليات وعدد الموظفين والعقود السنوية المتوقعة',
+      'تحديد الباقة المطلوبة (سنوية أو ربع سنوية) ونطاق الخدمات المشمولة',
+    ],
+    requiredDocsEn: [
+      'Commercial Registration, Articles of Association, and regulatory licenses of the entity',
+      'Overview of operational scale, headcount, and estimated annual contract volume',
+      'Selection of preferred retainer tier (Annual or Quarterly) and covered scope',
+    ],
+    requiredDocsUr: [
+      'کمپنی یا ادارے کی تجارتی رجسٹریشن، عقدِ تاسیس اور سرکاری لائسنس',
+      'کاروباری حجم، ملازمین کی تعداد اور سالانہ متوقع معاہدوں کا مختصر جائزہ',
+      'مطلوبہ پیکیج (سالانہ یا سہ ماہی) اور شامل خدمات کے دائرہ کار کا انتخاب',
+    ],
+    typicalTimelineAr: 'تعاقد فوري',
+    typicalTimelineEn: 'Immediate Contracting',
+    typicalTimelineUr: 'فوری معاہدہ',
+    iconKey: 'building-2',
+  },
 ];
 
 export const FIRM_VALUES: FirmValue[] = [
@@ -1290,7 +1578,12 @@ export function createConsultationTicket(
   };
 }
 
-export type ActivePage = 'home' | 'privacy' | 'terms' | 'disclaimer';
+export type ActivePage =
+  | 'home'
+  | 'calculators'
+  | 'privacy'
+  | 'terms'
+  | 'disclaimer';
 
 export interface LegalPolicySection {
   id: string;
@@ -1854,4 +2147,486 @@ export function buildScopeEstimateWhatsAppUrl(
 
   return `https://wa.me/966593500596?text=${encodeURIComponent(message)}`;
 }
+
+export interface HeroStatCounterItem {
+  id: string;
+  value: string;
+  labelAr: string;
+  labelEn: string;
+  labelUr: string;
+  sublabelAr: string;
+  sublabelEn: string;
+  sublabelUr: string;
+  iconKey: 'clients' | 'consultations' | 'cases' | 'experience';
+}
+
+export const HERO_STATS_COUNTER: HeroStatCounterItem[] = [
+  {
+    id: 'stat-clients',
+    value: '+300',
+    labelAr: 'عميل موثوق',
+    labelEn: 'Trusted Clients',
+    labelUr: 'معتمد مؤکلین',
+    sublabelAr: 'شركات ومستثمرون وأفراد',
+    sublabelEn: 'Corporations, investors & individuals',
+    sublabelUr: 'کمپنیاں، سرمایہ کار اور افراد',
+    iconKey: 'clients',
+  },
+  {
+    id: 'stat-consultations',
+    value: '+3500',
+    labelAr: 'استشارة قانونية ناجحة',
+    labelEn: 'Successful Consultations',
+    labelUr: 'کامیاب قانونی مشاورت',
+    sublabelAr: 'رأي نظامي مؤصل ومكتوب',
+    sublabelEn: 'Grounded statutory opinions',
+    sublabelUr: 'مستند قانونی آراء',
+    iconKey: 'consultations',
+  },
+  {
+    id: 'stat-cases',
+    value: '+1000',
+    labelAr: 'قضية واستشارة منجزة',
+    labelEn: 'Cases & Matters Handled',
+    labelUr: 'نمٹائے گئے مقدمات اور معاملات',
+    sublabelAr: 'أمام مختلف محاكم المملكة',
+    sublabelEn: 'Before courts across KSA',
+    sublabelUr: 'مملکت کی مختلف عدالتوں میں',
+    iconKey: 'cases',
+  },
+  {
+    id: 'stat-services',
+    value: '+20',
+    labelAr: 'خدمة قانونية تخصصية',
+    labelEn: 'Specialized Legal Services',
+    labelUr: 'خصوصی قانونی خدمات',
+    sublabelAr: 'بثلاث لغات معتمدة (عربي · EN · اردو)',
+    sublabelEn: 'In 3 official languages (AR · EN · UR)',
+    sublabelUr: '3 منظور شدہ زبانوں میں خدمات',
+    iconKey: 'experience',
+  },
+];
+
+export interface FeaturedPracticeCard {
+  id: string;
+  number: string;
+  serviceId: string;
+  isFeatured?: boolean;
+  badgeAr?: string;
+  badgeEn?: string;
+  badgeUr?: string;
+  titleAr: string;
+  titleEn: string;
+  titleUr: string;
+  descAr: string;
+  descEn: string;
+  descUr: string;
+  bulletsAr: string[];
+  bulletsEn: string[];
+  bulletsUr: string[];
+  ctaAr: string;
+  ctaEn: string;
+  ctaUr: string;
+  iconKey: 'commercial' | 'civil' | 'family' | 'labor';
+}
+
+export const FEATURED_PRACTICE_CARDS: FeaturedPracticeCard[] = [
+  {
+    id: 'featured-commercial',
+    number: '01',
+    serviceId: 'company-formation',
+    isFeatured: true,
+    badgeAr: 'الخدمة المميزة',
+    badgeEn: 'Featured Practice',
+    badgeUr: 'نمایاں خدمت',
+    titleAr: 'القضايا التجارية والشركات',
+    titleEn: 'Commercial & Corporate Law',
+    titleUr: 'تجارتی مقدمات اور کمپنیز لاء',
+    descAr:
+      'تمثيل قانوني متكامل للشركات ورواد الأعمال والمستثمرين لحماية المصالح التجارية وصياغة العقود وحسم المنازعات.',
+    descEn:
+      'Comprehensive legal representation for corporations, entrepreneurs, and investors to protect commercial interests and resolve disputes.',
+    descUr:
+      'کاروباری مفادات کے تحفظ، معاہدوں کی تیاری اور تنازعات کے حل کے لیے کمپنیوں اور سرمایہ کاروں کی مکمل قانونی نمائندگی۔',
+    bulletsAr: [
+      'تأسيس الشركات وصياغة عقود الشركاء والحوكمة',
+      'المنازعات التجارية والوكالات والامتياز التجاري',
+      'الاندماج والاستحواذ والفحص النافي للجهالة',
+      'الأوراق التجارية والإفلاس والتسوية الوقائية',
+    ],
+    bulletsEn: [
+      'Company formation, shareholder agreements & governance',
+      'Commercial disputes, agencies & franchise law',
+      'Mergers, acquisitions & legal due diligence',
+      'Commercial papers, bankruptcy & protective settlement',
+    ],
+    bulletsUr: [
+      'کمپنیوں کا قیام، شراکت داری کے معاہدے اور گورننس',
+      'تجارتی تنازعات، ایجنسیز اور فرنچائز معاہدے',
+      'انضمام و استحواذ اور قانونی جانچ پڑتال',
+      'تجارتی دستاویزات، دیوالیہ پن اور حفاظتی تصفیہ',
+    ],
+    ctaAr: 'طلب استشارة تجارية',
+    ctaEn: 'Request Commercial Counsel',
+    ctaUr: 'تجارتی مشاورت حاصل کریں',
+    iconKey: 'commercial',
+  },
+  {
+    id: 'featured-civil',
+    number: '02',
+    serviceId: 'real-estate-development',
+    titleAr: 'القضايا المدنية والعقارية',
+    titleEn: 'Civil & Real Estate Law',
+    titleUr: 'دیوانی اور جائیداد کے مقدمات',
+    descAr:
+      'حماية الحقوق المدنية والملكيات العقارية وتسوية منازعات المقاولات والتطوير العقاري والتعويضات أمام المحاكم المختصة.',
+    descEn:
+      'Safeguarding civil rights and property titles while resolving construction, real estate development, and compensation claims.',
+    descUr:
+      'دیوانی حقوق اور جائیداد کی ملکیت کا تحفظ نیز تعمیرات، رئیل اسٹیٹ اور ہرجانے کے تنازعات کا عدالتی تصفیہ۔',
+    bulletsAr: [
+      'المطالبات المالية والتعويضات المدنية والعقدية',
+      'المنازعات العقارية وعقود المقاولات والتطوير',
+      'فسخ العقود وتنفيذ الالتزامات المدنية',
+      'الإفراغات العقارية والتوثيق العدلي السريع',
+    ],
+    bulletsEn: [
+      'Financial claims and contractual civil damages',
+      'Real estate disputes & construction contracts',
+      'Contract rescission and specific performance',
+      'Property conveyancing & rapid judicial notarization',
+    ],
+    bulletsUr: [
+      'مالیاتی مطالبات اور دیوانی و معاہداتی ہرجانے',
+      'جائیداد کے تنازعات اور تعمیراتی معاہدے',
+      'معاہدوں کی منسوخی اور قانونی ذمہ داریوں کا نفاذ',
+      'جائیداد کی منتقلی اور فوری عدالتی توثیق',
+    ],
+    ctaAr: 'طلب استشارة مدنية',
+    ctaEn: 'Request Civil Counsel',
+    ctaUr: 'دیوانی مشاورت حاصل کریں',
+    iconKey: 'civil',
+  },
+  {
+    id: 'featured-estates',
+    number: '03',
+    serviceId: 'liquidation-estates',
+    titleAr: 'الأحوال الشخصية والتركات',
+    titleEn: 'Personal Status, Estates & Waqf',
+    titleUr: 'عائلی معاملات، ترکہ اور اوقاف',
+    descAr:
+      'معالجة قضايا الأسرة والتركات والأوقاف بمهنية عالية وخصوصية تامة تراعي الجوانب الشرعية والنظامية والأسرية.',
+    descEn:
+      'Handling family law, estate division, and Waqf endowments with utmost confidentiality and Sharia-compliant precision.',
+    descUr:
+      'مکمل رازداری اور شرعی و قانونی اصولوں کے مطابق عائلی معاملات، ترکہ کی تقسیم اور اوقاف کے مقدمات کی پیروی۔',
+    bulletsAr: [
+      'حصر وتصفية التركات وقسمتها رضائياً وقضائياً',
+      'صياغة وتوثيق صكوك الأوقاف ولوائح النظارة',
+      'قضايا الأسرة والوصايا والهبات الشرعية',
+      'إدارة وحماية أصول التركات العقارية والمالية',
+    ],
+    bulletsEn: [
+      'Estate inventory, liquidation & amicable/judicial division',
+      'Waqf endowment deeds & governance regulations',
+      'Family law matters, wills, and Sharia gifts',
+      'Managing real estate and financial estate assets',
+    ],
+    bulletsUr: [
+      'ترکہ کا شمار، تصفیہ اور رضامندی یا عدالت سے تقسیم',
+      'وقف دستاویزات اور نظارت کے ضوابط کی تیاری',
+      'عائلی مقدمات، وصیتیں اور شرعی ہبہ جات',
+      'جائیداد اور مالیاتی ترکہ کے اثاثوں کا انتظام',
+    ],
+    ctaAr: 'طلب استشارة أسرية وتركات',
+    ctaEn: 'Request Estate Counsel',
+    ctaUr: 'ترکہ و عائلی مشاورت',
+    iconKey: 'family',
+  },
+  {
+    id: 'featured-labor',
+    number: '04',
+    serviceId: 'litigation-advocacy',
+    titleAr: 'القضايا العمالية والامتثال',
+    titleEn: 'Labor Law & Corporate Compliance',
+    titleUr: 'لیبر لاء اور کارپوریٹ تعمیل',
+    descAr:
+      'تنظيم العلاقات التعاقدية العمالية وتمثيل أصحاب العمل والموظفين أمام المحاكم العمالية وفق نظام العمل السعودي.',
+    descEn:
+      'Regulating employment relationships and representing employers and executives before Saudi Labor Courts.',
+    descUr:
+      'سعودی لیبر لاء کے مطابق ملازمت کے معاہدوں کی تنظیم اور لیبر عدالتوں میں آجرین و ملازمین کی نمائندگی۔',
+    bulletsAr: [
+      'الترافع في المنازعات العمالية أمام المحاكم المختصة',
+      'صياغة عقود العمل ولوائح تنظيم العمل الداخلية',
+      'تسوية مستحقات نهاية الخدمة والتعويضات العمالية',
+      'باقات الرعاية القانونية السنوية والامتثال PDPL',
+    ],
+    bulletsEn: [
+      'Litigation before Saudi Labor Courts & committees',
+      'Drafting employment contracts & internal bylaws',
+      'End-of-service benefits & labor compensation claims',
+      'Annual corporate retainers & PDPL data compliance',
+    ],
+    bulletsUr: [
+      'لیبر عدالتوں میں ملازمتی تنازعات کی پیروی',
+      'ملازمت کے معاہدوں اور اندرونی ضوابط کی تیاری',
+      'اختتامِ ملازمت کے واجبات اور ہرجانے کا تصفیہ',
+      'سالانہ قانونی رعايتی پیکیجز اور PDPL تعمیل',
+    ],
+    ctaAr: 'طلب استشارة عمالية',
+    ctaEn: 'Request Labor Counsel',
+    ctaUr: 'لیبر مشاورت حاصل کریں',
+    iconKey: 'labor',
+  },
+];
+
+export interface MethodologyStep {
+  id: string;
+  number: string;
+  titleAr: string;
+  titleEn: string;
+  titleUr: string;
+  descAr: string;
+  descEn: string;
+  descUr: string;
+}
+
+export const METHODOLOGY_STEPS: MethodologyStep[] = [
+  {
+    id: 'step-study',
+    number: '01',
+    titleAr: 'دراسة الحالة والوقائع',
+    titleEn: 'Case & Fact Assessment',
+    titleUr: 'معاملے اور واقعات کا مطالعہ',
+    descAr:
+      'الاستماع الدقيق لتفاصيل الموضوع وفحص كافة العقود والمستندات والبينات لتشخيص المركز النظامي بدقة.',
+    descEn:
+      'Thoroughly examining facts, contracts, and evidentiary documents to diagnose your exact statutory position.',
+    descUr:
+      'معاملے کی تفصیلات کا بغور جائزہ اور تمام معاہدوں و دستاویزات کی جانچ پڑتال تاکہ قانونی حیثیت کا درست تعین ہو سکے۔',
+  },
+  {
+    id: 'step-strategy',
+    number: '02',
+    titleAr: 'بناء الاستراتيجية القانونية',
+    titleEn: 'Legal Strategy Architecture',
+    titleUr: 'قانونی حکمتِ عملی کی تشکیل',
+    descAr:
+      'تقييم الفرص والمخاطر وصياغة خارطة طريق نظامية محكمة تحدد المسار الوقائي أو القضائي الأمثل والمدد المتوقعة.',
+    descEn:
+      'Evaluating risks and opportunities to craft a rigorous legal roadmap defining the optimal preventive or judicial path.',
+    descUr:
+      'خطرات اور مواقع کا جائزہ لے کر ایک مضبوط قانونی روڈ میپ تیار کرنا جو بہترین عدالتی یا مشاورتی راستہ متعین کرے۔',
+  },
+  {
+    id: 'step-advocacy',
+    number: '03',
+    titleAr: 'الترافع والمباشرة النظامية',
+    titleEn: 'Advocacy & Execution',
+    titleUr: 'عدالتی پیروی اور قانونی عملدرآمد',
+    descAr:
+      'تمثيل الموكل باحترافية عالية أمام المحاكم واللجان القضائية والجهات المختصة مع متابعة حثيثة وتقارير دورية.',
+    descEn:
+      'Representing the client with distinction before courts, tribunals, and authorities with continuous status reporting.',
+    descUr:
+      'عدالتوں، کمیٹیوں اور متعلقہ اداروں کے روبرو اعلیٰ پیشہ ورانہ نمائندگی اور مؤکل کو باقاعدہ رپورٹس کی فراہمی۔',
+  },
+  {
+    id: 'step-resolution',
+    number: '04',
+    titleAr: 'حسم النتائج والتنفيذ',
+    titleEn: 'Resolution & Enforcement',
+    titleUr: 'نتائج کا حصول اور نفاذ',
+    descAr:
+      'متابعة صدور الأحكام والقرارات النهائية واستكمال إجراءات التنفيذ وتحصيل الحقوق وإقفال الملف بنجاح.',
+    descEn:
+      'Securing final judgments or agreements and completing enforcement proceedings to recover rights and close the file.',
+    descUr:
+      'حتمی عدالتی فیصلوں کا حصول اور نفاذ کی کارروائی مکمل کر کے حقوق کی وصولی اور فائل کی کامیاب تکمیل۔',
+  },
+];
+
+export interface LegalBlogArticle {
+  id: string;
+  categoryAr: string;
+  categoryEn: string;
+  categoryUr: string;
+  dateAr: string;
+  dateEn: string;
+  dateUr: string;
+  titleAr: string;
+  titleEn: string;
+  titleUr: string;
+  excerptAr: string;
+  excerptEn: string;
+  excerptUr: string;
+  fullContentAr: string[];
+  fullContentEn: string[];
+  fullContentUr: string[];
+  keyTakeawaysAr: string[];
+  keyTakeawaysEn: string[];
+  keyTakeawaysUr: string[];
+  relatedServiceId: string;
+}
+
+export const LEGAL_BLOG_ARTICLES: LegalBlogArticle[] = [
+  {
+    id: 'blog-companies-law',
+    categoryAr: 'نظام الشركات',
+    categoryEn: 'Companies Law',
+    categoryUr: 'کمپنیز لاء',
+    dateAr: 'أكتوبر 2026',
+    dateEn: 'October 2026',
+    dateUr: 'اکتوبر 2026',
+    titleAr:
+      'أهم التعديلات في نظام الشركات السعودي الجديد وأثرها على رواد الأعمال والمستثمرين',
+    titleEn:
+      'Key Reforms in the New Saudi Companies Law and Their Impact on Entrepreneurs & Investors',
+    titleUr:
+      'نئے سعودی کمپنیز لاء میں اہم ترامیم اور کاروباری افراد و سرمایہ کاروں پر ان کے اثرات',
+    excerptAr:
+      'قراءة قانونية شاملة لأبرز التغييرات في هيكلة الشركات، شركة المساهمة المبسطة، وحماية حقوق الشركاء والمساهمين وفق التحديثات التنظيمية.',
+    excerptEn:
+      'An analytical overview of corporate structuring reforms, Simplified Joint Stock Companies (SJSC), and shareholder protection mechanisms.',
+    excerptUr:
+      'کمپنیوں کی تشکیل میں نئی اصلاحات، سادہ جوائنٹ اسٹاک کمپنی اور شراکت داروں کے حقوق کے تحفظ کا جامع قانونی جائزہ۔',
+    fullContentAr: [
+      'أحدث نظام الشركات السعودي الصادر بالمرسوم الملكي رقم (م/132) نقلة نوعية في البيئة التشريعية الاستثمارية بالمملكة، حيث منح مرونة واسعة لتأسيس الكيانات التجارية وتنظيم العلاقة بين الشركاء والمساهمين.',
+      'ومن أبرز المستجدات استحداث «شركة المساهمة المبسطة» لتلبية احتياجات الشركات الناشئة ورواد الأعمال ورأس المال الجريء، بالإضافة إلى إتاحة تضمين اتفاقيات الشركاء ومواثيق العائلة ضمن عقود التأسيس والأنظمة الأساسية بشكل ملزم.',
+      'تنصح شركة سامي الشريف للمحاماة والاستشارات القانونية كافة المنشآت بمراجعة عقود تأسيسها ولوائح الحوكمة ومصفوفة الصلاحيات لضمان التوافق التام مع النظام وتجنب منازعات الشركاء.',
+    ],
+    fullContentEn: [
+      'The Saudi Companies Law issued by Royal Decree No. (M/132) introduced transformative flexibility for corporate structuring, governance, and investment across the Kingdom.',
+      'Key innovations include the Simplified Joint Stock Company (SJSC) tailored for startups and venture capital, alongside enforceable shareholder agreements and family charters embedded directly within corporate bylaws.',
+      'Sami Al-Sharif Law Firm advises businesses to audit their Articles of Association and governance matrices to ensure full statutory alignment and prevent partner disputes.',
+    ],
+    fullContentUr: [
+      'شاہی فرمان نمبر (م/132) کے تحت جاری کردہ نئے سعودی کمپنیز لاء نے مملکت میں کاروباری ڈھانچے اور سرمایہ کاری کے لیے غیر معمولی لچک فراہم کی ہے۔',
+      'اس قانون کی نمایاں خصوصیات میں اسٹارٹ اپس کے لیے سادہ جوائنٹ اسٹاک کمپنی کا تعارف اور شراکت داروں کے معاہدوں و خاندانی چارٹر کو کمپنی کے آئین کا حصہ بنانے کی سہولت شامل ہے۔',
+      'سامی الشریف لاء فرم تمام کمپنیوں کو مشورہ دیتی ہے کہ وہ اپنے عقدِ تاسیس اور گورننس ضوابط کی تجدید کریں تاکہ ممکنہ تنازعات سے بچا جا سکے۔',
+    ],
+    keyTakeawaysAr: [
+      'مرونة إصدار فئات متعددة من الأسهم بحقوق وامتيازات متفاوتة',
+      'تنظيم مسؤولية المديرين وأعضاء مجلس الإدارة وضوابط تعارض المصالح',
+      'تيسير إجراءات التحول والاندماج والاستحواذ وتخارج الشركاء',
+    ],
+    keyTakeawaysEn: [
+      'Flexibility to issue multiple share classes with distinct voting/dividend rights',
+      'Clear fiduciary duties for directors and conflict-of-interest safeguards',
+      'Streamlined procedures for entity conversion, M&A, and partner exits',
+    ],
+    keyTakeawaysUr: [
+      'مختلف حقوق اور مراعات کے ساتھ حصص کی متعدد اقسام جاری کرنے کی سہولت',
+      'ڈائریکٹرز کی ذمہ داریوں اور مفادات کے ٹکراؤ کے واضح ضوابط',
+      'کمپنیوں کے انضمام، تبدیلی اور شراکت داروں کے اخراج کے آسان مراحل',
+    ],
+    relatedServiceId: 'corporate-governance',
+  },
+  {
+    id: 'blog-estates-governance',
+    categoryAr: 'الأحوال الشخصية والتركات',
+    categoryEn: 'Estates & Waqf',
+    categoryUr: 'ترکہ اور اوقاف',
+    dateAr: 'سبتمبر 2026',
+    dateEn: 'September 2026',
+    dateUr: 'ستمبر 2026',
+    titleAr:
+      'الإطار النظامي لقسمة التركات وحوكمة الشركات العائلية والأوقاف في المملكة',
+    titleEn:
+      'Statutory Framework for Estate Division, Family Business Governance & Waqf in KSA',
+    titleUr:
+      'مملکت میں ترکہ کی تقسیم، خاندانی کمپنیوں کی گورننس اور اوقاف کا قانونی فریم ورک',
+    excerptAr:
+      'استعراض شامل للضوابط الشرعية والنظامية التي تكفل سرعة حصر وتصفية التركات وحماية الأصول العائلية والتجارية من التعطل.',
+    excerptEn:
+      'A comprehensive guide to Sharia and statutory procedures that accelerate estate inventory, partition, and family asset continuity.',
+    excerptUr:
+      'ترکہ کے تیز رفتار شمار و تقسیم اور خاندانی و تجارتی اثاثوں کو تعطل سے بچانے کے شرعی اور قانونی ضوابط کا جائزہ۔',
+    fullContentAr: [
+      'تُعد قضايا التركات والشركات العائلية من أدق الملفات القانونية التي تتطلب توازناً حكيماً بين الحفاظ على الروابط الأسرية وصون الحقوق الشرعية والنظامية لكل وارث دون تعطيل الأصول الاستثمارية والعقارية.',
+      'يتيح النظام السعودي توثيق القسمة الرضائية بشكل فوري متى اتفق الورثة، أو اللجوء إلى إجراءات القسمة القضائية المنظمة عبر المحاكم المختصة ومصفي التركات المعتمدين.',
+      'كما يسهم إعداد مواثيق العائلة وصياغة صكوك الأوقاف الذرية والخيرية المحكمة في استدامة الثروات العائلية عبر الأجيال ومنع تفتت الكيانات التجارية.',
+    ],
+    fullContentEn: [
+      'Estate liquidation and family business transitions require a delicate balance between preserving family harmony and protecting each heir’s statutory and Sharia entitlement without freezing productive assets.',
+      'Saudi regulations enable rapid notarization of amicable partition deeds when heirs agree, or structured judicial liquidation through specialized courts.',
+      'Establishing family charters and well-governed Waqf endowments ensures multi-generational asset sustainability and prevents business fragmentation.',
+    ],
+    fullContentUr: [
+      'ترکہ کی تقسیم اور خاندانی کاروبار کی منتقلی میں خاندانی ہم آہنگی اور ہر وارث کے شرعی و قانونی حق کے تحفظ کے درمیان توازن انتہائی ضروری ہے۔',
+      'سعودی نظام میں ورثاء کے اتفاق کی صورت میں رضامندی سے تقسیم کی فوری توثیق یا عدالت کے ذریعے منظم تقسیم کا مکمل انتظام موجود ہے۔',
+      'خاندانی چارٹر اور مستحکم وقف دستاویزات کی تیاری خاندانی اثاثوں اور کاروبار کو نسل در نسل محفوظ رکھتی ہے۔',
+    ],
+    keyTakeawaysAr: [
+      'حصر الأصول العقارية والأسهم والحسابات البنكية عبر المنصات الرسمية',
+      'صياغة عقود القسمة الرضائية وتوثيقها لحسم النزاعات مبكراً',
+      'هيكلة الأوقاف ومواثيق الشركات العائلية لضمان استمرارية الأعمال',
+    ],
+    keyTakeawaysEn: [
+      'Comprehensive asset tracing across real estate, equities, and bank accounts',
+      'Drafting and notarizing amicable partition agreements to avoid prolonged litigation',
+      'Structuring Waqf deeds and family charters for long-term continuity',
+    ],
+    keyTakeawaysUr: [
+      'سرکاری پلیٹ فارمز کے ذریعے جائیداد، حصص اور بینک اکاؤنٹس کا مکمل شمار',
+      'طویل مقدمہ بازی سے بچنے کے لیے باہمی رضامندی سے تقسیم کے معاہدوں کی توثیق',
+      'کاروبار کے تسلسل کے لیے وقف اسناد اور خاندانی چارٹر کی تیاری',
+    ],
+    relatedServiceId: 'liquidation-estates',
+  },
+  {
+    id: 'blog-real-estate-contracts',
+    categoryAr: 'العقارات والمقاولات',
+    categoryEn: 'Real Estate & Construction',
+    categoryUr: 'رئیل اسٹیٹ اور تعمیرات',
+    dateAr: 'أغسطس 2026',
+    dateEn: 'August 2026',
+    dateUr: 'اگست 2026',
+    titleAr:
+      'الضمانات القانونية في عقود البيع والتطوير العقاري والمقاولات في مكة وجدة',
+    titleEn:
+      'Legal Safeguards in Real Estate Development, Conveyancing & Construction Contracts',
+    titleUr:
+      'مکہ مکرمہ اور جدہ میں رئیل اسٹیٹ ڈویلپمنٹ، خرید و فروخت اور تعمیراتی معاہدوں کی قانونی ضمانتیں',
+    excerptAr:
+      'دليل عملي للمستثمرين والملاك حول التحقق من الصكوك، صياغة شروط التسليم والغرامات، وحماية الاستثمارات العقارية.',
+    excerptEn:
+      'A practical guide for investors and property owners on title verification, milestone penalty clauses, and real estate dispute prevention.',
+    excerptUr:
+      'سرمایہ کاروں اور مالکان کے لیے جائیداد کی اسناد کی تصدیق، معاہدے کی شرائط اور رئیل اسٹیٹ سرمایہ کاری کے تحفظ کے لیے عملی رہنمائی۔',
+    fullContentAr: [
+      'يشهد القطاع العقاري في مكة المكرمة وجدة ومختلف مناطق المملكة نمواً متسارعاً ومشاريع تطويرية كبرى، مما يجعل الصياغة القانونية الدقيقة لعقود التطوير العقاري والمقاولات والبيع على الخارطة ركيزة أساسية لحماية رؤوس الأموال.',
+      'تتطلب العمليات العقارية فحصاً قانونياً شاملاً لتسلسل الملكية، والتحقق من خلو العقار من الرهون أو القيود التنظيمية، وضبط جداول الدفعات المالية وربطها بنسب الإنجاز الهندسي الفعلي.',
+      'يقدم فريقنا القانوني رعاية متكاملة تشمل صياغة العقود، التوثيق العدلي السريع للإفراغات، والتمثيل القضائي في قضايا العقارات والتعويضات ونزع الملكية.',
+    ],
+    fullContentEn: [
+      'With rapid real estate growth in Makkah, Jeddah, and across KSA, precision-drafted property development, off-plan sales, and construction contracts are vital to safeguarding capital.',
+      'Successful real estate transactions require rigorous title due diligence, verification against encumbrances, and milestone-linked payment schedules.',
+      'Our legal team provides end-to-end representation including contract drafting, rapid judicial notarization, and litigation in property and expropriation compensation claims.',
+    ],
+    fullContentUr: [
+      'مکہ مکرمہ، جدہ اور پوری مملکت میں رئیل اسٹیٹ کے شعبے کی تیز رفتار ترقی کے پیشِ نظر سرمائے کے تحفظ کے لیے مضبوط تعمیراتی اور ترقیاتی معاہدے ناگزیر ہیں۔',
+      'جائیداد کے سودوں میں ملکیت کی اسناد کی جانچ پڑتال اور مالیاتی ادائیگیوں کو تعمیراتی مراحل سے مشروط کرنا انتہائی اہم ہے۔',
+      'ہماری قانونی ٹیم معاہدوں کی تیاری، فوری عدالتی توثیق اور جائیداد و معاوضے کے مقدمات میں مکمل نمائندگی فراہم کرتی ہے۔',
+    ],
+    keyTakeawaysAr: [
+      'التحقق القانوني من الصكوك العقارية والتراخيص قبل التعاقد',
+      'ضبط بنود الشرط الجزائي، الأوامر التغييرية، وضمانات حسن التنفيذ',
+      'تحديد آليات فض المنازعات والتحكيم الهندسي والتمثيل القضائي',
+    ],
+    keyTakeawaysEn: [
+      'Pre-contractual legal due diligence on title deeds and regulatory permits',
+      'Structuring liquidated damages, variation orders, and performance bonds',
+      'Clear dispute resolution, technical arbitration, and litigation clauses',
+    ],
+    keyTakeawaysUr: [
+      'معاہدے سے قبل جائیداد کی اسناد اور سرکاری اجازت ناموں کی قانونی تصدیق',
+      'تاخیر کے جرمانے، تغیراتی احکامات اور کارکردگی کی ضمانتوں کی درست شقیں',
+      'تنازعات کے حل، تکنیکی ثالثی اور عدالتی نمائندگی کے واضح ضوابط',
+    ],
+    relatedServiceId: 'real-estate-development',
+  },
+];
+
 

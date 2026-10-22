@@ -52,14 +52,14 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
               type="button"
               onClick={() => onSelectLang(item.code)}
               aria-pressed={isActive}
-              title={item.title}
+              title={item.labelEn}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 isActive
-                  ? 'bg-[#141414] text-[#D1B46A] shadow-xs border border-[#B69648]'
-                  : 'text-[#4A463D] hover:text-[#141414] hover:bg-white/70 border border-transparent'
+                  ? 'bg-[#1B4332] text-[#C69C47] shadow-xs border border-[#C69C47]'
+                  : 'text-[#2C2821] hover:text-[#141414] hover:bg-white border border-transparent'
               }`}
             >
-              {item.nativeLabel}
+              {item.labelNative}
             </button>
           );
         })}
