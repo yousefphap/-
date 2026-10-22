@@ -101,6 +101,7 @@ export default function App() {
       <Header
         lang={lang}
         activePage={activePage}
+        onSelectLang={setLang}
         onNavigatePage={handleNavigatePage}
         onBookClick={scrollToContact}
       />

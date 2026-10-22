@@ -7,7 +7,6 @@ import {
   isRtl,
   tr,
 } from '../utils/lawFirmLogic';
-import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeroSectionProps {
   lang: Language;
@@ -191,8 +190,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   )}
                 </span>
               </button>
-
-              <LanguageSwitcher lang={lang} onSelectLang={onSelectLang} />
             </div>
           </div>
         </div>
