@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
       }`}
     >
       <div className="max-w-[1280px] mx-auto min-h-[68px] sm:h-20 px-3.5 sm:px-6 py-2 sm:py-0 flex items-center justify-between gap-2 sm:gap-4 lg:gap-6">
-        {/* Zone 1: Brand Title (Responsive for mobile & desktop) */}
+        {/* Zone 1: Brand Logo & Title (Responsive for mobile & desktop) */}
         <a
           href="index.html"
           onClick={(e) => {
@@ -70,12 +70,23 @@ export const Header: React.FC<HeaderProps> = ({
               onNavigatePage('home', 'top');
             }
           }}
-          className={`font-calligraphy font-bold text-xs sm:text-base lg:text-lg xl:text-xl leading-snug transition-colors cursor-pointer min-w-0 flex-1 lg:flex-initial ${
+          className={`inline-flex items-center gap-2.5 sm:gap-3 font-calligraphy font-bold text-xs sm:text-base lg:text-lg xl:text-xl leading-snug transition-colors cursor-pointer min-w-0 flex-1 lg:flex-initial ${
             isLightHeader
               ? 'text-[#141414] hover:text-[#1B4332]'
               : 'text-white hover:text-[#C69C47]'
           }`}
         >
+          <img
+            src="/logo.png"
+            alt={tr(
+              lang,
+              'شعار شركة سامي الشريف للمحاماة والاستشارات القانونية',
+              'Sami Al-Sharif Law Firm Logo',
+              'سامی الشریف لاء فرم لوگو'
+            )}
+            data-testid="header-brand-logo"
+            className="w-9 h-9 sm:w-11 sm:h-11 object-contain shrink-0"
+          />
           <span className="block sm:inline truncate">
             {tr(
               lang,

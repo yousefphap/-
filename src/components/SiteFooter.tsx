@@ -51,11 +51,26 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/10">
           {/* Col 1: Firm Identity (5 cols) */}
           <div className="md:col-span-5">
-            <div className="font-calligraphy text-2xl text-[#D1B46A] mb-1.5">
-              {lang === 'ur' ? FIRM_CONTACT.firmNameUr : FIRM_CONTACT.firmNameAr}
-            </div>
-            <div className="text-[11px] tracking-[0.14em] text-[#C2B69C] font-medium mb-3">
-              SAMI ALSHAREEF LAWFIRM AND LEGAL CONSULTATIONS
+            <div className="flex items-center gap-3.5 mb-3">
+              <img
+                src="/logo.png"
+                alt={tr(
+                  lang,
+                  'شعار شركة سامي الشريف للمحاماة والاستشارات القانونية',
+                  'Sami Al-Sharif Law Firm Logo',
+                  'سامی الشریف لاء فرم لوگو'
+                )}
+                data-testid="footer-brand-logo"
+                className="w-14 h-14 object-contain shrink-0"
+              />
+              <div>
+                <div className="font-calligraphy text-xl sm:text-2xl text-[#D1B46A] mb-1">
+                  {lang === 'ur' ? FIRM_CONTACT.firmNameUr : FIRM_CONTACT.firmNameAr}
+                </div>
+                <div className="text-[10px] sm:text-[11px] tracking-[0.14em] text-[#C2B69C] font-medium">
+                  SAMI ALSHAREEF LAWFIRM AND LEGAL CONSULTATIONS
+                </div>
+              </div>
             </div>
             <p className="text-xs text-[#9E9585] leading-relaxed max-w-md">
               {tr(

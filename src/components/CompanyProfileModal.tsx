@@ -92,6 +92,16 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({
         <div className="p-6 md:p-10 space-y-10">
           {/* Cover Header */}
           <div className="bg-[#141414] text-white rounded-2xl p-8 text-center border border-[#B69648]/40">
+            <img
+              src="/logo.png"
+              alt={tr(
+                lang,
+                'شعار شركة سامي الشريف للمحاماة والاستشارات القانونية',
+                'Sami Al-Sharif Law Firm Logo',
+                'سامی الشریف لاء فرم لوگو'
+              )}
+              className="w-20 h-20 object-contain mx-auto mb-3"
+            />
             <div className="font-calligraphy text-2xl md:text-3xl text-[#D1B46A] mb-2">
               {lang === 'ur' ? FIRM_CONTACT.firmNameUr : FIRM_CONTACT.firmNameAr}
             </div>

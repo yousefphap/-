@@ -60,6 +60,15 @@ export default function App() {
     document.documentElement.dir = isRtl(lang) ? 'rtl' : 'ltr';
   }, [lang]);
 
+  useEffect(() => {
+    const gtagFn = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+    if (typeof gtagFn === 'function') {
+      gtagFn('config', 'G-1XJHT87J3E', {
+        page_path: activePage === 'home' ? '/' : `/${activePage}`,
+      });
+    }
+  }, [activePage]);
+
   const handleNavigatePage = (page: ActivePage, sectionId?: string) => {
     setActivePage(page);
     if (page === 'home') {
