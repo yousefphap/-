@@ -213,44 +213,6 @@ export const ScopeEstimatorSection: React.FC<ScopeEstimatorSectionProps> = ({
                   )}
                 </strong>
               </div>
-              <button
-                type="button"
-                onClick={() =>
-                  onApplyEstimateToBooking({ entityType, serviceId, urgency })
-                }
-                className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-[#141414] bg-[#FAF8F5] border border-[#D8CEB8] hover:border-[#141414] rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
-              >
-                <span>
-                  {tr(
-                    lang,
-                    'نقل الاختيارات إلى نموذج الحجز',
-                    'Apply to Booking Form',
-                    'انتخاب کو بکنگ فارم میں منتقل کریں'
-                  )}
-                </span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-3.5 h-3.5 shrink-0"
-                  aria-hidden="true"
-                >
-                  {rtl ? (
-                    <>
-                      <path d="M19 12H5" />
-                      <path d="m12 19-7-7 7-7" />
-                    </>
-                  ) : (
-                    <>
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </>
-                  )}
-                </svg>
-              </button>
             </div>
           </div>
 

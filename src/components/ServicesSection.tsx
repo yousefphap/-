@@ -870,23 +870,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       )}
                     </span>
                   </a>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const id = activeService.id;
-                      setActiveService(null);
-                      onSelectServiceForBooking(id);
-                    }}
-                    className="px-5 py-2.5 text-xs font-bold text-white bg-[#1B4332] hover:bg-[#143325] rounded-lg transition-colors cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    {tr(
-                      lang,
-                      'تعبئة نموذج الحجز لهذه الخدمة ←',
-                      'Fill Booking Form →',
-                      'بکنگ فارم پُر کریں ←'
-                    )}
-                  </button>
                 </div>
               </div>
             </div>

@@ -52,8 +52,6 @@ export default function App() {
   const [lang, setLang] = useState<Language>('ar');
   const [activePage, setActivePage] = useState<ActivePage>(getInitialActivePage);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [prefilledForm, setPrefilledForm] =
-    useState<Partial<ConsultationFormInput> | null>(null);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -91,17 +89,11 @@ export default function App() {
     handleNavigatePage('home', 'contact');
   };
 
-  const handleSelectServiceForBooking = (serviceId: string) => {
-    setPrefilledForm({ serviceId });
+  const handleSelectServiceForBooking = () => {
     scrollToContact();
   };
 
-  const handleApplyEstimateToBooking = (params: {
-    entityType: ClientEntityType;
-    serviceId: string;
-    urgency: UrgencyLevel;
-  }) => {
-    setPrefilledForm(params);
+  const handleApplyEstimateToBooking = () => {
     scrollToContact();
   };
 
@@ -160,7 +152,6 @@ export default function App() {
 
             <ContactSection
               lang={lang}
-              prefilledForm={prefilledForm}
               onNavigatePage={(page) => handleNavigatePage(page)}
             />
           </>
